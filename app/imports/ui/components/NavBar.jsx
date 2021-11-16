@@ -39,7 +39,7 @@ class NavBar extends React.Component {
       <Container>
         <Menu style={this.menuStyle} attached="top" borderless inverted>
           <Menu.Item as={NavLink} activeClassName="" exact to="/">
-            <Header inverted as='h1'>Surf Breaks</Header>
+            <Header inverted as='h1'>WaveCache</Header>
           </Menu.Item>
           <Menu.Item position="right">
             {this.props.currentUser === '' ? (
