@@ -5,31 +5,11 @@ import { withTracker } from 'meteor/react-meteor-data';
 import { withRouter, NavLink } from 'react-router-dom';
 import { Menu, Dropdown, Header, Container } from 'semantic-ui-react';
 import '../../../client/style.css';
+import { menuStyle, subMenuStyle, subMenuItemStyle } from '../layouts/style';
 
 /** The NavBar appears at the top of every page. Rendered by the App Layout component. */
 class NavBar extends React.Component {
   render() {
-    const blueColor = '#2196f3';
-    const standardFont = 'Comfortaa';
-    const menuStyle = {
-      marginBottom: '10px',
-      backgroundColor: blueColor,
-      fontFamily: standardFont,
-    };
-    const subMenuStyle = {
-      boxShadow: 'none',
-      border: 'none',
-      backgroundColor: 'white',
-      marginBottom: '10px',
-      display: 'flex',
-      justifyContent: 'center',
-    };
-    const subMenuItemStyle = {
-      color: blueColor,
-      paddingRight: '2rem',
-      paddingLeft: '2rem',
-      fontFamily: 'Comfortaa',
-    };
     return (
       <Container>
         <Menu style={menuStyle} attached="top" borderless inverted>
