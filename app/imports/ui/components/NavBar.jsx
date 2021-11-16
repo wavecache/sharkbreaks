@@ -9,12 +9,15 @@ import '../../../client/style.css';
 /** The NavBar appears at the top of every page. Rendered by the App Layout component. */
 class NavBar extends React.Component {
   blueColor = '#2196f3';
+
   standardFont = 'Comfortaa';
+
   menuStyle = {
     marginBottom: '10px',
     backgroundColor: this.blueColor,
     fontFamily: this.standardFont,
   };
+
   subMenuStyle = {
     boxShadow: 'none',
     border: 'none',
@@ -23,12 +26,14 @@ class NavBar extends React.Component {
     display: 'flex',
     justifyContent: 'center',
   };
+
   subMenuItemStyle = {
     color: this.blueColor,
     paddingRight: '2rem',
     paddingLeft: '2rem',
     fontFamily: 'Comfortaa',
   };
+
   render() {
     return (
       <Container>
