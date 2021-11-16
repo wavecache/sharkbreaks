@@ -1,6 +1,10 @@
+/* ----------- Global styles ----------- */
+
 const blueColor = '#2196f3';
 
 const standardFont = 'Comfortaa';
+
+/* ----------- Navigation bar ----------- */
 
 export const menuStyle = {
   marginBottom: '10px',
