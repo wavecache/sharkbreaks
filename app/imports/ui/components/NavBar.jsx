@@ -5,14 +5,17 @@ import { withTracker } from 'meteor/react-meteor-data';
 import { withRouter, NavLink } from 'react-router-dom';
 import { Menu, Dropdown, Header } from 'semantic-ui-react';
 import { Roles } from 'meteor/alanning:roles';
+import '../../../client/style.css';
 
 /** The NavBar appears at the top of every page. Rendered by the App Layout component. */
 class NavBar extends React.Component {
   render() {
     const blueColor = '#2196f3';
+    const standardFont = 'Comfortaa';
     const menuStyle = {
       marginBottom: '10px',
       backgroundColor: blueColor,
+      fontFamily: standardFont,
     };
     const subMenuStyle = {
       boxShadow: 'none',
@@ -26,6 +29,7 @@ class NavBar extends React.Component {
       color: blueColor,
       paddingRight: '2rem',
       paddingLeft: '2rem',
+      fontFamily: 'Comfortaa',
     };
     return (
       <div>
@@ -33,13 +37,6 @@ class NavBar extends React.Component {
           <Menu.Item as={NavLink} activeClassName="" exact to="/">
             <Header inverted as='h1'>Surf Breaks</Header>
           </Menu.Item>
-          {this.props.currentUser ? (
-            [<Menu.Item as={NavLink} activeClassName="active" exact to="/add" key='add'>Add Stuff</Menu.Item>,
-              <Menu.Item as={NavLink} activeClassName="active" exact to="/list" key='list'>List Stuff</Menu.Item>]
-          ) : ''}
-          {Roles.userIsInRole(Meteor.userId(), 'admin') ? (
-            <Menu.Item as={NavLink} activeClassName="active" exact to="/admin" key='admin'>Admin</Menu.Item>
-          ) : ''}
           <Menu.Item position="right">
             {this.props.currentUser === '' ? (
               <Dropdown id="login-dropdown" text="Login" pointing="top right" icon={'user'}>
