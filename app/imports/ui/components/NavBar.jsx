@@ -8,31 +8,31 @@ import '../../../client/style.css';
 
 /** The NavBar appears at the top of every page. Rendered by the App Layout component. */
 class NavBar extends React.Component {
+  blueColor = '#2196f3';
+  standardFont = 'Comfortaa';
+  menuStyle = {
+    marginBottom: '10px',
+    backgroundColor: this.blueColor,
+    fontFamily: this.standardFont,
+  };
+  subMenuStyle = {
+    boxShadow: 'none',
+    border: 'none',
+    backgroundColor: 'white',
+    marginBottom: '10px',
+    display: 'flex',
+    justifyContent: 'center',
+  };
+  subMenuItemStyle = {
+    color: this.blueColor,
+    paddingRight: '2rem',
+    paddingLeft: '2rem',
+    fontFamily: 'Comfortaa',
+  };
   render() {
-    const blueColor = '#2196f3';
-    const standardFont = 'Comfortaa';
-    const menuStyle = {
-      marginBottom: '10px',
-      backgroundColor: blueColor,
-      fontFamily: standardFont,
-    };
-    const subMenuStyle = {
-      boxShadow: 'none',
-      border: 'none',
-      backgroundColor: 'white',
-      marginBottom: '10px',
-      display: 'flex',
-      justifyContent: 'center',
-    };
-    const subMenuItemStyle = {
-      color: blueColor,
-      paddingRight: '2rem',
-      paddingLeft: '2rem',
-      fontFamily: 'Comfortaa',
-    };
     return (
       <Container>
-        <Menu style={menuStyle} attached="top" borderless inverted>
+        <Menu style={this.menuStyle} attached="top" borderless inverted>
           <Menu.Item as={NavLink} activeClassName="" exact to="/">
             <Header inverted as='h1'>Surf Breaks</Header>
           </Menu.Item>
@@ -53,24 +53,24 @@ class NavBar extends React.Component {
             )}
           </Menu.Item>
         </Menu>
-        <Menu style={subMenuStyle} borderless attached="top" fluid secondary>
+        <Menu style={this.subMenuStyle} borderless attached="top" fluid secondary>
           <Menu.Item as={NavLink} activeClassName="" exact to="/">
-            <Header style={subMenuItemStyle} as='h3'>Find Your Break</Header>
+            <Header style={this.subMenuItemStyle} as='h3'>Find Your Break</Header>
           </Menu.Item>
           <Menu.Item as={NavLink} activeClassName="" exact to="/">
-            <Header style={subMenuItemStyle} as='h3'>Surfing Conditions</Header>
+            <Header style={this.subMenuItemStyle} as='h3'>Surfing Conditions</Header>
           </Menu.Item>
           <Menu.Item as={NavLink} activeClassName="" exact to="/">
-            <Header style={subMenuItemStyle} as='h3'>Forum</Header>
+            <Header style={this.subMenuItemStyle} as='h3'>Forum</Header>
           </Menu.Item>
           {this.props.currentUser === '' ? null : (
             <Menu.Item as={NavLink} activeClassName="" exact to="/">
-              <Header style={subMenuItemStyle} as='h3'>Friends List</Header>
+              <Header style={this.subMenuItemStyle} as='h3'>Friends List</Header>
             </Menu.Item>
           )}
           {this.props.currentUser === '' ? null : (
             <Menu.Item as={NavLink} activeClassName="" exact to="/">
-              <Header style={subMenuItemStyle} as='h3'>Friends List</Header>
+              <Header style={this.subMenuItemStyle} as='h3'>Friends List</Header>
             </Menu.Item>
           )}
         </Menu>
