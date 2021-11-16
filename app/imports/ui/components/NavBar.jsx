@@ -3,8 +3,7 @@ import PropTypes from 'prop-types';
 import { Meteor } from 'meteor/meteor';
 import { withTracker } from 'meteor/react-meteor-data';
 import { withRouter, NavLink } from 'react-router-dom';
-import { Menu, Dropdown, Header } from 'semantic-ui-react';
-import { Roles } from 'meteor/alanning:roles';
+import { Menu, Dropdown, Header, Container } from 'semantic-ui-react';
 import '../../../client/style.css';
 
 /** The NavBar appears at the top of every page. Rendered by the App Layout component. */
@@ -22,8 +21,6 @@ class NavBar extends React.Component {
       border: 'none',
       backgroundColor: 'white',
       marginBottom: '10px',
-      display: 'flex',
-      justifyContent: 'center',
     };
     const subMenuItemStyle = {
       color: blueColor,
@@ -32,7 +29,7 @@ class NavBar extends React.Component {
       fontFamily: 'Comfortaa',
     };
     return (
-      <div>
+      <Container>
         <Menu style={menuStyle} attached="top" borderless inverted>
           <Menu.Item as={NavLink} activeClassName="" exact to="/">
             <Header inverted as='h1'>Surf Breaks</Header>
@@ -73,7 +70,7 @@ class NavBar extends React.Component {
             </Menu.Item>
           </Menu.Item>
         </Menu>
-      </div>
+      </Container>
     );
   }
 }
