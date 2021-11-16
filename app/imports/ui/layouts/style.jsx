@@ -1,8 +1,16 @@
-/* ----------- Global styles ----------- */
+/* ----------- Constants ----------- */
 
 const blueColor = '#2196f3';
 
 const standardFont = 'Comfortaa';
+
+const backGroundColor = '#E9FFFD';
+
+/* ----------- Global styles ----------- */
+
+export const backgroundStyle = {
+  backgroundColor: backGroundColor,
+};
 
 /* ----------- Navigation bar ----------- */
 
@@ -15,7 +23,7 @@ export const menuStyle = {
 export const subMenuStyle = {
   boxShadow: 'none',
   border: 'none',
-  backgroundColor: 'white',
+  backgroundColor: backGroundColor,
   marginBottom: '10px',
   display: 'flex',
   justifyContent: 'center',

@@ -15,13 +15,14 @@ import NotFound from '../pages/NotFound';
 import Signin from '../pages/Signin';
 import Signup from '../pages/Signup';
 import Signout from '../pages/Signout';
+import { backgroundStyle } from './style';
 
 /** Top-level layout component for this application. Called in imports/startup/client/startup.jsx. */
 class App extends React.Component {
   render() {
     return (
       <Router>
-        <div>
+        <div style={ backgroundStyle }>
           <NavBar/>
           <Switch>
             <Route exact path="/" component={Landing}/>
