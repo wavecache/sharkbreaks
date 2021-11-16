@@ -21,6 +21,8 @@ class NavBar extends React.Component {
       border: 'none',
       backgroundColor: 'white',
       marginBottom: '10px',
+      display: 'flex',
+      justifyContent: 'center',
     };
     const subMenuItemStyle = {
       color: blueColor,
@@ -52,23 +54,25 @@ class NavBar extends React.Component {
           </Menu.Item>
         </Menu>
         <Menu style={subMenuStyle} borderless attached="top" fluid secondary>
-          <Menu.Item>
-            <Menu.Item as={NavLink} activeClassName="" exact to="/" position='left'>
-              <Header style={subMenuItemStyle} as='h3'>Find Your Break</Header>
-            </Menu.Item>
-            <Menu.Item as={NavLink} activeClassName="" exact to="/">
-              <Header style={subMenuItemStyle} as='h3'>Surfing Conditions</Header>
-            </Menu.Item>
+          <Menu.Item as={NavLink} activeClassName="" exact to="/">
+            <Header style={subMenuItemStyle} as='h3'>Find Your Break</Header>
+          </Menu.Item>
+          <Menu.Item as={NavLink} activeClassName="" exact to="/">
+            <Header style={subMenuItemStyle} as='h3'>Surfing Conditions</Header>
+          </Menu.Item>
+          <Menu.Item as={NavLink} activeClassName="" exact to="/">
+            <Header style={subMenuItemStyle} as='h3'>Forum</Header>
+          </Menu.Item>
+          {this.props.currentUser === '' ? null : (
             <Menu.Item as={NavLink} activeClassName="" exact to="/">
               <Header style={subMenuItemStyle} as='h3'>Friends List</Header>
             </Menu.Item>
+          )}
+          {this.props.currentUser === '' ? null : (
             <Menu.Item as={NavLink} activeClassName="" exact to="/">
-              <Header style={subMenuItemStyle} as='h3'>Forum</Header>
+              <Header style={subMenuItemStyle} as='h3'>Friends List</Header>
             </Menu.Item>
-            <Menu.Item as={NavLink} activeClassName="" exact to="/" position='right'>
-              <Header style={subMenuItemStyle} as='h3'>Your Profile</Header>
-            </Menu.Item>
-          </Menu.Item>
+          )}
         </Menu>
       </Container>
     );
