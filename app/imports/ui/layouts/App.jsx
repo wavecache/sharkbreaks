@@ -16,7 +16,7 @@ import Signin from '../pages/Signin';
 import Signup from '../pages/Signup';
 import Signout from '../pages/Signout';
 import { backgroundStyle, blueColor, blueTextStyle } from './style';
-import { surfBreakMockObject } from '../../api/MockObjects';
+import { surfBreakMockObject, surfBreakMockObjects } from '../../api/MockObjects';
 import SurfBreak from '../components/SurfBreak';
 
 /** Top-level layout component for this application. Called in imports/startup/client/startup.jsx. */
@@ -43,7 +43,7 @@ class App extends React.Component {
             <h2 style={ { ...blueTextStyle, ...{ textAlign: 'center' } } }>Test Area</h2>
             <hr color={blueColor}/>
             <h3 style={blueTextStyle}>Surf Break Card</h3>
-            <SurfBreak surfBreak={surfBreakMockObject} />
+            <SurfBreak surfBreak={surfBreakMockObjects[2]} />
             <hr/>
           </div>
         </div>
