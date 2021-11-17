@@ -1,6 +1,6 @@
 /* ----------- Constants ----------- */
 
-const blueColor = '#2196f3';
+export const blueColor = '#2196f3';
 
 const standardFont = 'Comfortaa';
 
