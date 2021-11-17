@@ -15,7 +15,7 @@ import NotFound from '../pages/NotFound';
 import Signin from '../pages/Signin';
 import Signup from '../pages/Signup';
 import Signout from '../pages/Signout';
-import { backgroundStyle } from './style';
+import { backgroundStyle, blueColor, blueTextStyle } from './style';
 import { surfBreakMockObject } from '../../api/MockObjects';
 import SurfBreak from '../components/SurfBreak';
 
@@ -39,11 +39,11 @@ class App extends React.Component {
           </Switch>
           <Footer/>
           <div>
-            <hr/>
-            <h2 style={ { textAlign: 'center' } }>Test Area</h2>
-            <hr/>
-            <h3>Surf Break Card</h3>
-            <SurfBreak surfBreak={surfBreakMockObject} _/>
+            <hr color={blueColor}/>
+            <h2 style={ { ...blueTextStyle, ...{ textAlign: 'center' } } }>Test Area</h2>
+            <hr color={blueColor}/>
+            <h3 style={blueTextStyle}>Surf Break Card</h3>
+            <SurfBreak surfBreak={surfBreakMockObject} />
             <hr/>
           </div>
         </div>
