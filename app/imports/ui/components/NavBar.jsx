@@ -11,7 +11,7 @@ import { menuStyle, subMenuStyle, subMenuItemStyle } from '../layouts/style';
 class NavBar extends React.Component {
   render() {
     return (
-      <Container>
+      <div>
         <Menu style={menuStyle} attached="top" borderless inverted>
           <Menu.Item as={NavLink} activeClassName="" exact to="/">
             <Header inverted as='h1'>WaveCache</Header>
@@ -33,28 +33,30 @@ class NavBar extends React.Component {
             )}
           </Menu.Item>
         </Menu>
-        <Menu style={subMenuStyle} borderless attached="top" fluid secondary>
-          <Menu.Item as={NavLink} activeClassName="" exact to="/">
-            <Header style={subMenuItemStyle} as='h3'>Find Your Break</Header>
-          </Menu.Item>
-          <Menu.Item as={NavLink} activeClassName="" exact to="/">
-            <Header style={subMenuItemStyle} as='h3'>Surfing Conditions</Header>
-          </Menu.Item>
-          <Menu.Item as={NavLink} activeClassName="" exact to="/">
-            <Header style={subMenuItemStyle} as='h3'>Forum</Header>
-          </Menu.Item>
-          {this.props.currentUser === '' ? null : (
+        <Container>
+          <Menu style={subMenuStyle} borderless attached="top" fluid secondary>
             <Menu.Item as={NavLink} activeClassName="" exact to="/">
-              <Header style={subMenuItemStyle} as='h3'>Friends List</Header>
+              <Header style={subMenuItemStyle} as='h3'>Find Your Break</Header>
             </Menu.Item>
-          )}
-          {this.props.currentUser === '' ? null : (
             <Menu.Item as={NavLink} activeClassName="" exact to="/">
-              <Header style={subMenuItemStyle} as='h3'>Friends List</Header>
+              <Header style={subMenuItemStyle} as='h3'>Surfing Conditions</Header>
             </Menu.Item>
-          )}
-        </Menu>
-      </Container>
+            <Menu.Item as={NavLink} activeClassName="" exact to="/">
+              <Header style={subMenuItemStyle} as='h3'>Forum</Header>
+            </Menu.Item>
+            {this.props.currentUser === '' ? null : (
+              <Menu.Item as={NavLink} activeClassName="" exact to="/">
+                <Header style={subMenuItemStyle} as='h3'>Friends List</Header>
+              </Menu.Item>
+            )}
+            {this.props.currentUser === '' ? null : (
+              <Menu.Item as={NavLink} activeClassName="" exact to="/">
+                <Header style={subMenuItemStyle} as='h3'>Friends List</Header>
+              </Menu.Item>
+            )}
+          </Menu>
+        </Container>
+      </div>
     );
   }
 }
