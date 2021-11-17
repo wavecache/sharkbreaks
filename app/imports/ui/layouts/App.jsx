@@ -16,6 +16,8 @@ import Signin from '../pages/Signin';
 import Signup from '../pages/Signup';
 import Signout from '../pages/Signout';
 import { backgroundStyle } from './style';
+import { surfBreakMockObject } from '../../api/MockObjects';
+import SurfBreak from '../components/SurfBreak';
 
 /** Top-level layout component for this application. Called in imports/startup/client/startup.jsx. */
 class App extends React.Component {
@@ -36,6 +38,14 @@ class App extends React.Component {
             <Route component={NotFound}/>
           </Switch>
           <Footer/>
+          <div>
+            <hr/>
+            <h2 style={ { textAlign: 'center' } }>Test Area</h2>
+            <hr/>
+            <h3>Surf Break Card</h3>
+            <SurfBreak surfBreak={surfBreakMockObject} _/>
+            <hr/>
+          </div>
         </div>
       </Router>
     );

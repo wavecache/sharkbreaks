@@ -35,3 +35,10 @@ export const subMenuItemStyle = {
   paddingLeft: '2rem',
   fontFamily: 'Comfortaa',
 };
+
+/* ----------- Surf Break Card ----------- */
+
+export const surfBreakCardStyle = {
+  fontFamily: standardFont,
+  color: blueColor,
+};
