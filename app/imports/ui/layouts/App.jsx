@@ -16,7 +16,7 @@ import Signin from '../pages/Signin';
 import Signup from '../pages/Signup';
 import Signout from '../pages/Signout';
 import { backgroundStyle, blueColor, blueTextStyle } from './style';
-import { surfBreakMockObject, surfBreakMockObjects } from '../../api/MockObjects';
+import { surfBreakMockObjects } from '../../api/MockObjects';
 import SurfBreak from '../components/SurfBreak';
 
 /** Top-level layout component for this application. Called in imports/startup/client/startup.jsx. */
