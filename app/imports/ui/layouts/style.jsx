@@ -12,6 +12,11 @@ export const backgroundStyle = {
   backgroundColor: backGroundColor,
 };
 
+export const blueTextStyle = {
+  color: blueColor,
+  fontFamily: standardFont,
+};
+
 /* ----------- Navigation bar ----------- */
 
 export const menuStyle = {

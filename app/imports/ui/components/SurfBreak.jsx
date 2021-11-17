@@ -2,7 +2,7 @@ import React from 'react';
 import { Card, Image, Icon, Table } from 'semantic-ui-react';
 import { withRouter, Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
-import { surfBreakCardStyle } from '../layouts/style';
+import { blueTextStyle, surfBreakCardStyle } from '../layouts/style';
 
 class SurfBreak extends React.Component {
   render() {
@@ -10,11 +10,11 @@ class SurfBreak extends React.Component {
       <Card style={surfBreakCardStyle}>
         <Image src={this.props.surfBreak.image} wrapped ui={false} />
         <Card.Content>
-          <Card.Header>{this.props.surfBreak.name}</Card.Header>
+          <Card.Header style={blueTextStyle}>{this.props.surfBreak.name}</Card.Header>
           <Card.Meta>
             <span >{this.props.surfBreak.address}</span>
           </Card.Meta>
-          <Card.Description>
+          <Card.Description style={surfBreakCardStyle}>
             {this.props.surfBreak.description}
           </Card.Description>
         </Card.Content>
