@@ -51,7 +51,7 @@ class NavBar extends React.Component {
             )}
             {this.props.currentUser === '' ? null : (
               <Menu.Item as={NavLink} activeClassName="" exact to="/">
-                <Header style={subMenuItemStyle} as='h3'>Friends List</Header>
+                <Header style={subMenuItemStyle} as='h3'>Your Profile</Header>
               </Menu.Item>
             )}
           </Menu>
