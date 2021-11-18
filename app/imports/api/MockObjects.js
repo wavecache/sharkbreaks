@@ -39,3 +39,12 @@ export const surfBreakMockObjects = [
   surfBreakMockObject2,
   surfBreakMockObject3,
 ];
+
+/* ----------- Friends List ----------- */
+
+export const contacts = [{
+  firstName: 'Chicken', lastName: 'Joe', level: 'Advanced',
+  image: 'https://m.media-amazon.com/images/I/51e3smIL9bL._AC_SL1000_.jpg',
+  bio: 'Eh, no drop in on me brah',
+},
+];

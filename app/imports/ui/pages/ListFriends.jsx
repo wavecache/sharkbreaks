@@ -5,16 +5,10 @@ import { withTracker } from 'meteor/react-meteor-data';
 import PropTypes from 'prop-types';
 import { Stuffs } from '../../api/stuff/Stuff';
 import Friend from '../components/Friend';
+import { contacts } from '../../api/MockObjects';
 
 /** Renders a table containing all of the Stuff documents. Use <StuffItem> to render each row. */
 class ListFriends extends React.Component {
-
-  contacts = [{
-    firstName: 'Chicken', lastName: 'Joe', level: 'Advanced',
-    image: 'https://m.media-amazon.com/images/I/51e3smIL9bL._AC_SL1000_.jpg',
-    bio: 'Eh, no drop in on me brah',
-  },
-  ];// If the subscription(s) have been received, render the page, otherwise show a loading icon.
 
   render() {
     return (this.props.ready) ? this.renderPage() : <Loader active>Getting data</Loader>;
@@ -26,7 +20,7 @@ class ListFriends extends React.Component {
       <Container>
         <Header as="h2" textAlign="center">Friends</Header>
         <Card.Group>
-          {this.contacts.map((friend, index) => <Friend key={index} friend={friend} />)}
+          {contacts.map((friend, index) => <Friend key={index} friend={friend} />)}
         </Card.Group>
       </Container>
     );

@@ -2,15 +2,16 @@ import React from 'react';
 import { Card, Image } from 'semantic-ui-react';
 import PropTypes from 'prop-types';
 import { withRouter } from 'react-router-dom';
+import { backgroundStyle, blueTextStyle } from '../layouts/style';
 
 /** Renders a single row in the List Stuff table. See pages/ListStuff.jsx. */
 class Friend extends React.Component {
   render() {
     return (
-      <Card>
+      <Card style={ { ...backgroundStyle, ...blueTextStyle } }>
         <Image src={this.props.friend.image} wrapped ui={false} />
         <Card.Content>
-          <Card.Header>{this.props.friend.firstName} {this.props.friend.lastName}</Card.Header>
+          <Card.Header style={ { ...backgroundStyle, ...blueTextStyle } }>{this.props.friend.firstName} {this.props.friend.lastName}</Card.Header>
           <Card.Meta>
             <span className='date'>{this.props.friend.level}</span>
           </Card.Meta>
