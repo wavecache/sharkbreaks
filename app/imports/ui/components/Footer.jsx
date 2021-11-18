@@ -7,7 +7,7 @@ class Footer extends React.Component {
   render() {
 
     return (
-      <footer style={ { backgroundColor: blueColor} }>
+      <footer style={ { backgroundColor: blueColor } }>
         <div style={whiteTextStyle} className="ui center aligned container">
           <hr color={blueColor}/>
               WaveCache <br />

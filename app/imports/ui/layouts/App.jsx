@@ -20,7 +20,6 @@ import { surfBreakMockObjects } from '../../api/MockObjects';
 import SurfBreak from '../components/SurfBreak';
 import SurfBreaks from '../pages/SurfBreaks';
 
-
 /** Top-level layout component for this application. Called in imports/startup/client/startup.jsx. */
 class App extends React.Component {
   render() {
