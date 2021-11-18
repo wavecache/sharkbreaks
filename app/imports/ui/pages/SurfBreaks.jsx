@@ -11,7 +11,7 @@ class SurfBreaks extends React.Component {
   render() {
     return (
       <Container>
-        <Header style={ blueTextStyle } as="h2" textAlign="center">List Surf Breaks</Header>
+        <Header style={ blueTextStyle } as="h2" textAlign="center">Surf Breaks</Header>
         <CardGroup>
           {surfBreakMockObjects.map((surfBreak, index) => <SurfBreak key={index} surfBreak={surfBreak}/>)}
         </CardGroup>

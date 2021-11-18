@@ -33,7 +33,7 @@ export const subMenuStyle = {
   borderBottom: 'solid',
   borderColor: blueColor,
   backgroundColor: backGroundColor,
-  marginBottom: '10px',
+  marginBottom: '20px',
   display: 'flex',
   justifyContent: 'center',
 };
