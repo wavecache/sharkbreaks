@@ -18,6 +18,8 @@ import Signout from '../pages/Signout';
 import { backgroundStyle, blueColor, blueTextStyle } from './style';
 import { surfBreakMockObjects } from '../../api/MockObjects';
 import SurfBreak from '../components/SurfBreak';
+import SurfBreaks from '../pages/SurfBreaks';
+
 
 /** Top-level layout component for this application. Called in imports/startup/client/startup.jsx. */
 class App extends React.Component {
@@ -32,6 +34,7 @@ class App extends React.Component {
             <Route path="/signup" component={Signup}/>
             <Route path="/signout" component={Signout}/>
             <ProtectedRoute path="/list" component={ListStuff}/>
+            <ProtectedRoute path="/surfBreaks" component={SurfBreaks}/>
             <ProtectedRoute path="/add" component={AddStuff}/>
             <ProtectedRoute path="/edit/:_id" component={EditStuff}/>
             <AdminProtectedRoute path="/admin" component={ListStuffAdmin}/>
