@@ -12,6 +12,7 @@ const surfBreakMockObject2 = {
   name: 'HALE’IWA',
   followersIds: ['sldknflskdnf', 'sdlkfnvosdfngo'],
   image: 'https://lushpalm.com/wp-content/uploads/2017/11/oahu-surf-spots-north-shore.webp',
+  // eslint-disable-next-line max-len
   description: 'Elmo is a red Muppet character on the long-running PBS/HBO children\'s television show Sesame Street. A furry red monster with a falsetto voice, he has illeism, and also hosts the last full fifteen-minute segment on Sesame Street, "Elmo\'s World", which is aimed at toddlers.',
   address: 'Hale`iwa, Hawai`i 96712',
 };
