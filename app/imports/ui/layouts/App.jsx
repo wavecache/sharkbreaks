@@ -7,7 +7,7 @@ import { HashRouter as Router, Route, Switch, Redirect } from 'react-router-dom'
 import NavBar from '../components/NavBar';
 import Footer from '../components/Footer';
 import Landing from '../pages/Landing';
-import ListStuff from '../pages/ListStuff';
+import ListFriends from '../pages/ListFriends';
 import ListStuffAdmin from '../pages/ListStuffAdmin';
 import AddStuff from '../pages/AddStuff';
 import EditStuff from '../pages/EditStuff';
@@ -15,26 +15,39 @@ import NotFound from '../pages/NotFound';
 import Signin from '../pages/Signin';
 import Signup from '../pages/Signup';
 import Signout from '../pages/Signout';
+import { backgroundStyle, blueColor, blueTextStyle } from './style';
+import { surfBreakMockObjects } from '../../api/MockObjects';
+import SurfBreak from '../components/SurfBreak';
+import SurfBreaks from '../pages/SurfBreaks';
 
 /** Top-level layout component for this application. Called in imports/startup/client/startup.jsx. */
 class App extends React.Component {
   render() {
     return (
       <Router>
-        <div>
+        <div style={ backgroundStyle }>
           <NavBar/>
           <Switch>
             <Route exact path="/" component={Landing}/>
             <Route path="/signin" component={Signin}/>
             <Route path="/signup" component={Signup}/>
             <Route path="/signout" component={Signout}/>
-            <ProtectedRoute path="/list" component={ListStuff}/>
+            <ProtectedRoute path="/surfBreaks" component={SurfBreaks}/>
+            <ProtectedRoute path="/list" component={ListFriends}/>
             <ProtectedRoute path="/add" component={AddStuff}/>
             <ProtectedRoute path="/edit/:_id" component={EditStuff}/>
             <AdminProtectedRoute path="/admin" component={ListStuffAdmin}/>
             <Route component={NotFound}/>
           </Switch>
           <Footer/>
+          <div>
+            <hr color={blueColor}/>
+            <h2 style={ { ...blueTextStyle, ...{ textAlign: 'center' } } }>Test Area</h2>
+            <hr color={blueColor}/>
+            <h3 style={blueTextStyle}>Surf Break Card</h3>
+            <SurfBreak surfBreak={surfBreakMockObjects[2]} />
+            <hr/>
+          </div>
         </div>
       </Router>
     );
