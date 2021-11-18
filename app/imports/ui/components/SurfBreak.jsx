@@ -1,5 +1,5 @@
 import React from 'react';
-import { Card, Image, Icon, Table } from 'semantic-ui-react';
+import { Card, Image, Icon } from 'semantic-ui-react';
 import { withRouter, Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import { blueTextStyle, surfBreakCardStyle } from '../layouts/style';
