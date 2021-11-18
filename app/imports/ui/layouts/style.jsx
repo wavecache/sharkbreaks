@@ -17,6 +17,11 @@ export const blueTextStyle = {
   fontFamily: standardFont,
 };
 
+export const whiteTextStyle = {
+  color: 'white',
+  fontFamily: standardFont,
+};
+
 /* ----------- Navigation bar ----------- */
 
 export const menuStyle = {
