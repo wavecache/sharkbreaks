@@ -1,11 +1,7 @@
 import React from 'react';
-import { Meteor } from 'meteor/meteor';
 import { CardGroup, Container, Header, Loader } from 'semantic-ui-react';
-import { withTracker } from 'meteor/react-meteor-data';
-import PropTypes from 'prop-types';
 import Contact from '../components/Contact';
-import { Contacts } from '../../api/contact/Contact';
-import { Notes } from '../../api/note/Notes';
+import { surfBreakMockObjects } from '../../api/MockObjects';
 
 /** Renders a table containing all of the Stuff documents. Use <StuffItem> to render each row. */
 class SurfBreaksList extends React.Component {
@@ -21,7 +17,7 @@ class SurfBreaksList extends React.Component {
       <Container>
         <Header as="h2" textAlign="center">List Contacts</Header>
         <CardGroup>
-          {this.props.contacts.map((contact, index) => <Contact key={index} contact={contact} notes={this.props.notes.filter(note => (note.contactId === contact._id))}/>)};
+          {this.props.surfBreakMockObjects.map((contact, index) => <Contact key={index}> }
         </CardGroup>
       </Container>
     );
@@ -31,7 +27,6 @@ class SurfBreaksList extends React.Component {
 // Require an array of Stuff documents in the props.
 SurfBreaksList.propTypes = {
   contacts: PropTypes.array.isRequired,
-  notes: PropTypes.array.isRequired,
   ready: PropTypes.bool.isRequired,
 };
 
