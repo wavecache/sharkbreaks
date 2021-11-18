@@ -39,9 +39,6 @@ class NavBar extends React.Component {
               <Header style={subMenuItemStyle} as='h3'>Find Your Break</Header>
             </Menu.Item>
             <Menu.Item as={NavLink} activeClassName="" exact to="/">
-              <Header style={subMenuItemStyle} as='h3'>Surfing Conditions</Header>
-            </Menu.Item>
-            <Menu.Item as={NavLink} activeClassName="" exact to="/">
               <Header style={subMenuItemStyle} as='h3'>Forum</Header>
             </Menu.Item>
             {this.props.currentUser === '' ? null : (
