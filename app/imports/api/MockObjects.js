@@ -1,5 +1,7 @@
 /* ----------- SurfBreak ----------- */
 
+import PropTypes from 'prop-types';
+
 export const surfBreakMockObject = {
   name: 'Banzai Pipeline',
   followersIds: ['ksdnfksfn', 'sldknflskdnf', 'sdlkfnvosdfngo'],
@@ -39,6 +41,15 @@ export const surfBreakMockObjects = [
   surfBreakMockObject2,
   surfBreakMockObject3,
 ];
+
+/* ----------- Specific SurfBreak page ----------- */
+
+export const surfBreakConditionMockObject = {
+  temperature: 90,
+  windSpeed: 23,
+  windDir: 'NW',
+  waveHeight: 5,
+};
 
 /* ----------- Friends List ----------- */
 
