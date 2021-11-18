@@ -6,6 +6,7 @@ import PropTypes from 'prop-types';
 import { Stuffs } from '../../api/stuff/Stuff';
 import Friend from '../components/Friend';
 import { contacts } from '../../api/MockObjects';
+import { blueTextStyle } from '../layouts/style';
 
 /** Renders a table containing all of the Stuff documents. Use <StuffItem> to render each row. */
 class ListFriends extends React.Component {
@@ -18,7 +19,7 @@ class ListFriends extends React.Component {
   renderPage() {
     return (
       <Container>
-        <Header as="h2" textAlign="center">Friends</Header>
+        <Header as="h2" textAlign="center" style={ blueTextStyle } >Friends</Header>
         <Card.Group>
           {contacts.map((friend, index) => <Friend key={index} friend={friend} />)}
         </Card.Group>
