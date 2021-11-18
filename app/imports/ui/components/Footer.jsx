@@ -1,5 +1,5 @@
 import React from 'react';
-import { blueColor, whiteTextStyle } from '../layouts/style';
+import { blueColor, whiteTextStyle, footerStyle } from '../layouts/style';
 
 /** The Footer appears at the bottom of every page. Rendered by the App Layout component. */
 class Footer extends React.Component {
@@ -7,7 +7,7 @@ class Footer extends React.Component {
   render() {
 
     return (
-      <footer style={ { backgroundColor: blueColor } }>
+      <footer style={ footerStyle }>
         <div style={whiteTextStyle} className="ui center aligned container">
           <hr color={blueColor}/>
               WaveCache <br />

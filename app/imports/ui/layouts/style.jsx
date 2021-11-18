@@ -50,6 +50,14 @@ export const subMenuItemStyle = {
   fontFamily: 'Comfortaa',
 };
 
+/* ----------- Footer ----------- */
+
+export const footerStyle = {
+  backgroundColor: blueColor,
+  paddingBottom: '10px',
+  marginTop: '1rem',
+};
+
 /* ----------- Surf Break Card ----------- */
 
 export const surfBreakCardStyle = {
