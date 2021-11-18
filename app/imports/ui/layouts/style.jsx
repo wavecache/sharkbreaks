@@ -27,7 +27,11 @@ export const menuStyle = {
 
 export const subMenuStyle = {
   boxShadow: 'none',
-  border: 'none',
+  borderTop: 'none',
+  borderLeft: 'none',
+  borderRight: 'none',
+  borderBottom: 'solid',
+  borderColor: blueColor,
   backgroundColor: backGroundColor,
   marginBottom: '10px',
   display: 'flex',
