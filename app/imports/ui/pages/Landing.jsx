@@ -11,11 +11,6 @@ class Landing extends React.Component {
           <Image size='small' circular src="/images/meteor-logo.png"/>
         </Grid.Column>
 
-        <Grid.Column width={8}>
-          <h1>Welcome to this template</h1>
-          <p>Now get to work and modify this app!</p>
-        </Grid.Column>
-
       </Grid>
     );
   }
