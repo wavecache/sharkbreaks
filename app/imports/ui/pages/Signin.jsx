@@ -49,8 +49,8 @@ export default class Signin extends React.Component {
             <Header as="h2" textAlign="center" style={blueTextStyle}>
               Login to your account
             </Header>
-            <Form onSubmit={this.submit}>
-              <Segment stacked>
+            <Form onSubmit={this.submit} style={blueTextStyle}>
+              <Segment stacked style={blueTextStyle}>
                 <Form.Input
                   label="Email"
                   id="signin-form-email"
@@ -60,6 +60,7 @@ export default class Signin extends React.Component {
                   type="email"
                   placeholder="E-mail address"
                   onChange={this.handleChange}
+                  style={blueTextStyle}
                 />
                 <Form.Input
                   label="Password"
@@ -70,11 +71,12 @@ export default class Signin extends React.Component {
                   placeholder="Password"
                   type="password"
                   onChange={this.handleChange}
+                  style={blueTextStyle}
                 />
-                <Form.Button id="signin-form-submit" content="Submit"/>
+                <Form.Button style={blueTextStyle} id="signin-form-submit" content="Submit"/>
               </Segment>
             </Form>
-            <Message>
+            <Message style={blueTextStyle}>
               <Link to="/signup">Click here to Register</Link>
             </Message>
             {this.state.error === '' ? (
@@ -84,6 +86,7 @@ export default class Signin extends React.Component {
                 error
                 header="Login was not successful"
                 content={this.state.error}
+                style={blueTextStyle}
               />
             )}
           </Grid.Column>
