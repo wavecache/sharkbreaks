@@ -7,7 +7,7 @@ import { Accounts } from 'meteor/accounts-base';
 const options = [
   { key: 'r', text: 'regular', value: 'regular' },
   { key: 'g', text: 'goofy', value: 'goofy' },
-  { key: 'o', text: 'Other', value: 'other' },
+  { key: 'o', text: 'other', value: 'other' },
 ];
 
 const options2 = [
