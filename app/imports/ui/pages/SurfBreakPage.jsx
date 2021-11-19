@@ -8,9 +8,8 @@ import {
   Menu,
   Visibility,
 } from 'semantic-ui-react';
-import PropTypes from 'prop-types';
 import { blueTextStyle, centerStyle, fixedOverlayMenuStyle, fixedOverlayStyle, overlayMenuStyle, overlayStyle } from '../layouts/style';
-import { paragraph, surfBreakConditionMockObject, } from '../../api/MockObjects';
+import { paragraph, surfBreakConditionMockObject } from '../../api/MockObjects';
 import SurfBreakConditions from '../components/SurfBreakPage/SurfBreakConditions';
 
 export default class SurfBreakPage extends Component {
@@ -99,7 +98,7 @@ export default class SurfBreakPage extends Component {
           </div>
 
           {_.times(3, (i) => (
-            <p>{this.surfBreakPage.description}</p>
+            <p>{this.surfBreakPage.description} {i}</p>
           ))}
         </Container>
       </div>

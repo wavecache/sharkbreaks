@@ -71,7 +71,6 @@ export const surfBreakCardStyle = {
   color: blueColor,
 };
 
-
 /* ----------- Surf Break Page ----------- */
 
 export const fixedMenuStyle = {
