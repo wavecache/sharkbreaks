@@ -7,7 +7,7 @@ import { Accounts } from 'meteor/accounts-base';
 const options = [
   { key: 'r', text: 'regular', value: 'regular' },
   { key: 'g', text: 'goofy', value: 'goofy' },
-  { key: 'o', text: 'Other', value: 'other' },
+  { key: 'o', text: 'other', value: 'other' },
 ];
 
 const options2 = [
@@ -66,6 +66,8 @@ class Signup extends React.Component {
                   <Form.Input
                     label="First Name"
                     id="signup-form-firstname"
+                    icon="hand peace outline icon"
+                    iconPosition="left"
                     name="firstname"
                     type="firstname"
                     placeholder="First Name"
@@ -74,23 +76,17 @@ class Signup extends React.Component {
                   <Form.Input
                     label="Last Name"
                     id="signup-form-lastname"
+                    icon="hand peace outline icon"
+                    iconPosition="left"
                     name="lastname"
                     type="lastname"
                     placeholder="Last Name"
                     onChange={this.handleChange}
                   />
-                  <Form.Select
-                    fluid
-                    label='Stance'
-                    id="signup-form-stance"
-                    name="stance"
-                    type="stance"
-                    options={options}
-                    placeholder='Stance'
-                  />
+
                 </Form.Group>
 
-                <Form.Group inline>
+                <Form.Group widths='equal'>
                   <Form.Select
                     fluid
                     label='Skill'
@@ -100,6 +96,17 @@ class Signup extends React.Component {
                     options={options2}
                     placeholder='Skill'
                   />
+
+                  <Form.Select
+                    fluid
+                    label='Stance'
+                    id="signup-form-stance"
+                    name="stance"
+                    type="stance"
+                    options={options}
+                    placeholder='Stance'
+                  />
+
                 </Form.Group>
                 Stay informed about:
                 <Form.Group>
