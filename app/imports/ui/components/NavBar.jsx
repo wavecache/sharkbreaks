@@ -16,6 +16,7 @@ class NavBar extends React.Component {
           <Menu style={subMenuStyle} borderless attached="top" fluid secondary>
             <Menu.Item as={NavLink} activeClassName="" exact to="/" position='left'>
               <Image src='/images/meteor-logo.png' size='small'/>
+
             </Menu.Item>
             <Menu.Item as={NavLink} activeClassName="" exact to="/surfBreaks">
               <Header style={subMenuItemStyle} as='h2'>Find Your Break</Header>
