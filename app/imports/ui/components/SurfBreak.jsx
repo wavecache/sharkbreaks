@@ -1,6 +1,6 @@
 import React from 'react';
 import { Card, Image, Icon } from 'semantic-ui-react';
-import { withRouter, Link } from 'react-router-dom';
+import { withRouter, NavLink } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import { blueTextStyle, surfBreakCardStyle } from '../layouts/style';
 
@@ -19,7 +19,7 @@ class SurfBreak extends React.Component {
           </Card.Description>
         </Card.Content>
         <Card.Content>
-          <Link >Go to Surf Break page</Link>
+          <NavLink to={{ pathname: '/surfBreakPage/', _id: this.props.surfBreak._id }} >Go to Surf Break page</NavLink>
         </Card.Content>
         <Card.Content extra>
           <a>
@@ -40,8 +40,8 @@ SurfBreak.propTypes = {
     image: PropTypes.string,
     description: PropTypes.string,
     address: PropTypes.string,
+    _id: PropTypes.string,
   }).isRequired,
-  _id: PropTypes.string,
 };
 
 // Wrap this component in withRouter since we use the <Link> React Router element.
