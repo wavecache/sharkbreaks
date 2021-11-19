@@ -1,18 +1,18 @@
 import React from 'react';
 import { Segment } from 'semantic-ui-react';
 import PropTypes from 'prop-types';
-import { blueTextStyle } from '../../layouts/style';
+import { blueColor, blueTextStyle } from '../../layouts/style';
 
 class SurfBreakConditions extends React.Component {
 
   render() {
 
     return (
-      <Segment.Group compact style={blueTextStyle}>
+      <Segment.Group compact size='massive' style={{ ...blueTextStyle, ...{ borderColor: blueColor } }} >
         <Segment>
-          <h4>Surfing Conditions</h4>
+          <h4 style={ { ...blueTextStyle, ...{ fontSize: '2rem' } } }>Surfing Conditions</h4>
         </Segment>
-        <Segment.Group>
+        <Segment.Group style={{ borderColor: blueColor }}>
           <Segment>
             <p>Temperature: {this.props.surfBreakConditions.temperature} °F</p>
           </Segment>
