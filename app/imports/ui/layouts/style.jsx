@@ -64,3 +64,10 @@ export const surfBreakCardStyle = {
   fontFamily: standardFont,
   color: blueColor,
 };
+
+/* ----------- Landing Page ----------- */
+
+export const landingHeader = {
+  fontSize: '50px',
+  fontFamily: 'Julius Sans One',
+};
