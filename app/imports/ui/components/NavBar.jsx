@@ -14,37 +14,38 @@ class NavBar extends React.Component {
       <div>
         <Container>
           <Menu style={subMenuStyle} borderless attached="top" fluid secondary>
-            <Menu.Item as={NavLink} activeClassName="" exact to="/">
-              <Image size='tiny' circular src="/images/meteor-logo.png"/>
+            <Menu.Item as={NavLink} activeClassName="" exact to="/" position='left'>
+              <Image src='/images/meteor-logo.png' size='small'/>
+
             </Menu.Item>
             <Menu.Item as={NavLink} activeClassName="" exact to="/surfBreaks">
-              <Header style={subMenuItemStyle} as='h3'>Find Your Break</Header>
+              <Header style={subMenuItemStyle} as='h2'>Find Your Break</Header>
             </Menu.Item>
             <Menu.Item as={NavLink} activeClassName="" exact to="/">
-              <Header style={subMenuItemStyle} as='h3'>Forum</Header>
+              <Header style={subMenuItemStyle} as='h2'>Forum</Header>
             </Menu.Item>
             {this.props.currentUser === '' ? null : (
               <Menu.Item as={NavLink} activeClassName="" exact to="/list">
-                <Header style={subMenuItemStyle} as='h3'>Friends List</Header>
+                <Header style={subMenuItemStyle} as='h2'>Friends List</Header>
               </Menu.Item>
             )}
             {this.props.currentUser === '' ? null : (
               <Menu.Item as={NavLink} activeClassName="" exact to="/">
-                <Header style={subMenuItemStyle} as='h3'>Your Profile</Header>
+                <Header style={subMenuItemStyle} as='h2'>Your Profile</Header>
               </Menu.Item>
             )}
-            <Menu.Item>
+            <Menu.Item position="right">
               {this.props.currentUser === '' ? (
-                <Dropdown style={subMenuItemStyle} id="login-dropdown" text="Login" icon={'user'}>
+                <Dropdown style={subMenuItemStyle} id="login-dropdown" text="Login" pointing="top right" icon={'user'}>
                   <Dropdown.Menu>
-                    <Dropdown.Item id="login-dropdown-sign-in" icon="user" text="Sign In" as={NavLink} exact to="/signin"/>
-                    <Dropdown.Item id="login-dropdown-sign-up" icon="add user" text="Sign Up" as={NavLink} exact to="/signup"/>
+                    <Dropdown.Item style={subMenuItemStyle} id="login-dropdown-sign-in" icon="user" text="Sign In" as={NavLink} exact to="/signin"/>
+                    <Dropdown.Item style={subMenuItemStyle} id="login-dropdown-sign-up" icon="add user" text="Sign Up" as={NavLink} exact to="/signup"/>
                   </Dropdown.Menu>
                 </Dropdown>
               ) : (
-                <Dropdown style={subMenuItemStyle} id="navbar-current-user" text={this.props.currentUser} icon={'user'}>
+                <Dropdown style={subMenuItemStyle} id="navbar-current-user" text={this.props.currentUser} pointing="top right" icon={'user'}>
                   <Dropdown.Menu>
-                    <Dropdown.Item id="navbar-sign-out" icon="sign out" text="Sign Out" as={NavLink} exact to="/signout"/>
+                    <Dropdown.Item style={subMenuItemStyle} id="navbar-sign-out" icon="sign out" text="Sign Out" as={NavLink} exact to="/signout"/>
                   </Dropdown.Menu>
                 </Dropdown>
               )}

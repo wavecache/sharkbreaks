@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import { Link, Redirect } from 'react-router-dom';
 import { Container, Form, Grid, Header, Message, Segment, Checkbox } from 'semantic-ui-react';
 import { Accounts } from 'meteor/accounts-base';
+import { blueTextStyle } from '../layouts/style';
 
 const options = [
   { key: 'r', text: 'regular', value: 'regular' },
@@ -56,7 +57,7 @@ class Signup extends React.Component {
       <Container id="signup-page">
         <Grid textAlign="center" verticalAlign="middle" centered columns={2}>
           <Grid.Column>
-            <Header as="h2" textAlign="center">
+            <Header as="h2" textAlign="center" style={blueTextStyle}>
               Register your account
             </Header>
             <Form onSubmit={this.submit}>
@@ -66,6 +67,8 @@ class Signup extends React.Component {
                   <Form.Input
                     label="First Name"
                     id="signup-form-firstname"
+                    icon="hand peace outline icon"
+                    iconPosition="left"
                     name="firstname"
                     type="firstname"
                     placeholder="First Name"
@@ -74,23 +77,17 @@ class Signup extends React.Component {
                   <Form.Input
                     label="Last Name"
                     id="signup-form-lastname"
+                    icon="hand peace outline icon"
+                    iconPosition="left"
                     name="lastname"
                     type="lastname"
                     placeholder="Last Name"
                     onChange={this.handleChange}
                   />
-                  <Form.Select
-                    fluid
-                    label='Stance'
-                    id="signup-form-stance"
-                    name="stance"
-                    type="stance"
-                    options={options}
-                    placeholder='Stance'
-                  />
+
                 </Form.Group>
 
-                <Form.Group inline>
+                <Form.Group widths='equal'>
                   <Form.Select
                     fluid
                     label='Skill'
@@ -100,22 +97,38 @@ class Signup extends React.Component {
                     options={options2}
                     placeholder='Skill'
                   />
+
+                  <Form.Select
+                    fluid
+                    label='Stance'
+                    id="signup-form-stance"
+                    name="stance"
+                    type="stance"
+                    options={options}
+                    placeholder='Stance'
+                  />
+
                 </Form.Group>
                 Stay informed about:
                 <Form.Group>
                   <Form.Field>
                     <Checkbox label='North Shore'
                       id="signup-form-north"
-                      name="north"/>
+                      name="north"
+                      style={ { padding: '0px 4px 0px 4px' } }
+                    />
                     <Checkbox label='West Side'
                       id="signup-form-west"
-                      name="west"/>
+                      name="west"
+                      style={ { padding: '0px 4px 0px 4px' } }/>
                     <Checkbox label='South Shore'
                       id="signup-form-south"
-                      name="south"/>
+                      name="south"
+                      style={ { padding: '0px 4px 0px 4px' } }/>
                     <Checkbox label='East Side'
                       id="signup-form-east"
-                      name="east"/>
+                      name="east"
+                      style={ { padding: '0px 4px 0px 4px' } }/>
                   </Form.Field>
                 </Form.Group>
 

@@ -65,6 +65,7 @@ export const surfBreakCardStyle = {
   color: blueColor,
 };
 
+
 /* ----------- Surf Break Page ----------- */
 
 export const fixedMenuStyle = {
@@ -95,4 +96,11 @@ export const overlayMenuStyle = {
 export const fixedOverlayMenuStyle = {
   ...overlayMenuStyle,
   left: '800px',
+
+/* ----------- Landing Page ----------- */
+
+export const landingHeader = {
+  fontSize: '50px',
+  fontFamily: 'Julius Sans One',
+
 };
