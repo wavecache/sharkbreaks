@@ -1,7 +1,7 @@
 import _ from 'lodash';
 import React, { Component } from 'react';
 import {
-  Container,
+  Container, Grid, GridColumn,
   Header,
   Icon,
   Image,
@@ -9,28 +9,21 @@ import {
   Visibility,
 } from 'semantic-ui-react';
 import PropTypes from 'prop-types';
-import { blueTextStyle, fixedOverlayMenuStyle, fixedOverlayStyle, overlayMenuStyle, overlayStyle } from '../layouts/style';
-import { paragraph } from '../../api/MockObjects';
-
-const LeftImage = () => (
-  <Image
-    floated='left'
-    size='medium'
-    src='/images/wireframe/square-image.png'
-    style={{ margin: '2em 2em 2em -4em' }}
-  />
-);
-
-const RightImage = () => (
-  <Image
-    floated='right'
-    size='medium'
-    src='/images/wireframe/square-image.png'
-    style={{ margin: '2em -4em 2em 2em' }}
-  />
-);
+import { blueTextStyle, centerStyle, fixedOverlayMenuStyle, fixedOverlayStyle, overlayMenuStyle, overlayStyle } from '../layouts/style';
+import { paragraph, surfBreakConditionMockObject, } from '../../api/MockObjects';
+import SurfBreakConditions from '../components/SurfBreakPage/SurfBreakConditions';
 
 export default class SurfBreakPage extends Component {
+
+  surfBreakPage = {
+    name: 'PUA’ENA POINT',
+    followersIds: ['sldknflskdnf', 'sdlkfnvosdfngo'],
+    image: 'https://lushpalm.com/wp-content/uploads/2017/11/oahu-surf-spots-haleiwa.webp',
+    description: paragraph,
+    address: '59-337 Ke Nui Rd, Haleiwa, HI 96712',
+    _id: 'sfgebfefgbrgnhfgndfbdfb',
+  }
+
   state = {
     menuFixed: false,
     overlayFixed: false,
@@ -57,9 +50,19 @@ export default class SurfBreakPage extends Component {
 
     return (
       <div>
+        <Container>
+          <Grid columns={2} style={centerStyle}>
+            <GridColumn style={centerStyle}>
+              <Image src={this.surfBreakPage.image} size='large' rounded={true}/>
+            </GridColumn>
+            <GridColumn style={centerStyle}>
+              <SurfBreakConditions surfBreakConditions={surfBreakConditionMockObject}/>
+            </GridColumn>
+          </Grid>
+        </Container>
 
         <Container text style={{ marginTop: '2em', marginBottom: '2em' }}>
-          <Header as='h1' style={ blueTextStyle }>{this.props.surfBreakPage.name}</Header>
+          <Header as='h1' style={ blueTextStyle }>{this.surfBreakPage.name}</Header>
         </Container>
 
         <Container text>
@@ -96,7 +99,7 @@ export default class SurfBreakPage extends Component {
           </div>
 
           {_.times(3, (i) => (
-            <Paragraph key={i} />
+            <p>{this.surfBreakPage.description}</p>
           ))}
         </Container>
       </div>
@@ -104,7 +107,7 @@ export default class SurfBreakPage extends Component {
   }
 }
 
-SurfBreakPage.propTypes = {
+/* SurfBreakPage.propTypes = {
   surfBreakPage: PropTypes.shape({
     name: PropTypes.string,
     followersIds: PropTypes.array,
@@ -113,4 +116,4 @@ SurfBreakPage.propTypes = {
     address: PropTypes.string,
     _id: PropTypes.string,
   }).isRequired,
-};
+}; */

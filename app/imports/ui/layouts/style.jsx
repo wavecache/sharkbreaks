@@ -22,6 +22,12 @@ export const whiteTextStyle = {
   fontFamily: standardFont,
 };
 
+export const centerStyle = {
+  marginBottom: '20px',
+  display: 'flex',
+  justifyContent: 'center',
+};
+
 /* ----------- Navigation bar ----------- */
 
 export const menuStyle = {

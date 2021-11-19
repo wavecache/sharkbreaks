@@ -8,7 +8,7 @@ class SurfBreakConditions extends React.Component {
   render() {
 
     return (
-      <Segment.Group compact size='massive' style={{ ...blueTextStyle, ...{ borderColor: blueColor } }} >
+      <Segment.Group compact size='large' style={{ ...blueTextStyle, ...{ borderColor: blueColor } }} >
         <Segment>
           <h4 style={ { ...blueTextStyle, ...{ fontSize: '2rem' } } }>Surfing Conditions</h4>
         </Segment>
