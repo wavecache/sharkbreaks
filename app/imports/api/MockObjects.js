@@ -60,6 +60,14 @@ export const paragraph = [
   'accumsan porttitor, facilisis luctus, metus',
 ].join('');
 
+export const membersMockArray = [
+  'Constantin',
+  'Kevin',
+  'Quinn',
+  'Chase',
+  'Lasse',
+];
+
 /* ----------- Friends List ----------- */
 
 export const contacts = [{

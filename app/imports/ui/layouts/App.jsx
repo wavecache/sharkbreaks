@@ -16,11 +16,12 @@ import Signin from '../pages/Signin';
 import Signup from '../pages/Signup';
 import Signout from '../pages/Signout';
 import { backgroundStyle, blueColor, blueTextStyle } from './style';
-import { surfBreakConditionMockObject, surfBreakMockObjects } from '../../api/MockObjects';
+import { membersMockArray, surfBreakConditionMockObject, surfBreakMockObjects } from '../../api/MockObjects';
 import SurfBreak from '../components/SurfBreak';
 import SurfBreaks from '../pages/SurfBreaks';
 import SurfBreakConditions from '../components/SurfBreakPage/SurfBreakConditions';
 import SurfBreakPage from '../pages/SurfBreakPage';
+import SurfBreakMembers from '../components/SurfBreakPage/SurfBreakMembers';
 
 /** Top-level layout component for this application. Called in imports/startup/client/startup.jsx. */
 class App extends React.Component {
@@ -52,6 +53,7 @@ class App extends React.Component {
             <hr/>
             <h3 style={blueTextStyle}>Surf Break Page Stuff</h3>
             <SurfBreakConditions surfBreakConditions={surfBreakConditionMockObject}/>
+            <SurfBreakMembers members={membersMockArray}/>
           </div>
         </div>
       </Router>

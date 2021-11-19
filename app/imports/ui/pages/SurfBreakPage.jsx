@@ -9,8 +9,9 @@ import {
   Visibility,
 } from 'semantic-ui-react';
 import { blueTextStyle, centerStyle, fixedOverlayMenuStyle, fixedOverlayStyle, overlayMenuStyle, overlayStyle } from '../layouts/style';
-import { paragraph, surfBreakConditionMockObject } from '../../api/MockObjects';
+import { membersMockArray, paragraph, surfBreakConditionMockObject } from '../../api/MockObjects';
 import SurfBreakConditions from '../components/SurfBreakPage/SurfBreakConditions';
+import SurfBreakMembers from '../components/SurfBreakPage/SurfBreakMembers';
 
 export default class SurfBreakPage extends Component {
 
@@ -50,7 +51,7 @@ export default class SurfBreakPage extends Component {
     return (
       <div>
         <Container>
-          <Grid columns={2} style={centerStyle}>
+          <Grid columns={2} >
             <GridColumn style={centerStyle}>
               <Image src={this.surfBreakPage.image} size='large' rounded={true}/>
             </GridColumn>
@@ -101,6 +102,7 @@ export default class SurfBreakPage extends Component {
             <p>{this.surfBreakPage.description} {i}</p>
           ))}
         </Container>
+        <SurfBreakMembers members={membersMockArray}/>
       </div>
     );
   }
