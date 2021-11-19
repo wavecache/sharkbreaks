@@ -3,38 +3,20 @@ import PropTypes from 'prop-types';
 import { Meteor } from 'meteor/meteor';
 import { withTracker } from 'meteor/react-meteor-data';
 import { withRouter, NavLink } from 'react-router-dom';
-import { Menu, Dropdown, Header, Container } from 'semantic-ui-react';
+import { Menu, Dropdown, Header, Container, Image } from 'semantic-ui-react';
 import '../../../client/style.css';
-import { menuStyle, subMenuStyle, subMenuItemStyle } from '../layouts/style';
+import { subMenuStyle, subMenuItemStyle } from '../layouts/style';
 
 /** The NavBar appears at the top of every page. Rendered by the App Layout component. */
 class NavBar extends React.Component {
   render() {
     return (
       <div>
-        <Menu style={menuStyle} attached="top" borderless inverted>
-          <Menu.Item as={NavLink} activeClassName="" exact to="/">
-            <Header inverted as='h1'>WaveCache</Header>
-          </Menu.Item>
-          <Menu.Item position="right">
-            {this.props.currentUser === '' ? (
-              <Dropdown id="login-dropdown" text="Login" pointing="top right" icon={'user'}>
-                <Dropdown.Menu>
-                  <Dropdown.Item id="login-dropdown-sign-in" icon="user" text="Sign In" as={NavLink} exact to="/signin"/>
-                  <Dropdown.Item id="login-dropdown-sign-up" icon="add user" text="Sign Up" as={NavLink} exact to="/signup"/>
-                </Dropdown.Menu>
-              </Dropdown>
-            ) : (
-              <Dropdown id="navbar-current-user" text={this.props.currentUser} pointing="top right" icon={'user'}>
-                <Dropdown.Menu>
-                  <Dropdown.Item id="navbar-sign-out" icon="sign out" text="Sign Out" as={NavLink} exact to="/signout"/>
-                </Dropdown.Menu>
-              </Dropdown>
-            )}
-          </Menu.Item>
-        </Menu>
         <Container>
           <Menu style={subMenuStyle} borderless attached="top" fluid secondary>
+            <Menu.Item as={NavLink} activeClassName="" exact to="/">
+              <Image size='tiny' circular src="/images/meteor-logo.png"/>
+            </Menu.Item>
             <Menu.Item as={NavLink} activeClassName="" exact to="/surfBreaks">
               <Header style={subMenuItemStyle} as='h3'>Find Your Break</Header>
             </Menu.Item>
@@ -51,6 +33,22 @@ class NavBar extends React.Component {
                 <Header style={subMenuItemStyle} as='h3'>Your Profile</Header>
               </Menu.Item>
             )}
+            <Menu.Item>
+              {this.props.currentUser === '' ? (
+                <Dropdown style={subMenuItemStyle} id="login-dropdown" text="Login" icon={'user'}>
+                  <Dropdown.Menu>
+                    <Dropdown.Item id="login-dropdown-sign-in" icon="user" text="Sign In" as={NavLink} exact to="/signin"/>
+                    <Dropdown.Item id="login-dropdown-sign-up" icon="add user" text="Sign Up" as={NavLink} exact to="/signup"/>
+                  </Dropdown.Menu>
+                </Dropdown>
+              ) : (
+                <Dropdown style={subMenuItemStyle} id="navbar-current-user" text={this.props.currentUser} icon={'user'}>
+                  <Dropdown.Menu>
+                    <Dropdown.Item id="navbar-sign-out" icon="sign out" text="Sign Out" as={NavLink} exact to="/signout"/>
+                  </Dropdown.Menu>
+                </Dropdown>
+              )}
+            </Menu.Item>
           </Menu>
         </Container>
       </div>

@@ -1,8 +1,22 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { Link, Redirect } from 'react-router-dom';
-import { Container, Form, Grid, Header, Message, Segment } from 'semantic-ui-react';
+import { Container, Form, Grid, Header, Message, Segment, Checkbox } from 'semantic-ui-react';
 import { Accounts } from 'meteor/accounts-base';
+
+const options = [
+  { key: 'r', text: 'regular', value: 'regular' },
+  { key: 'g', text: 'goofy', value: 'goofy' },
+  { key: 'o', text: 'other', value: 'other' },
+];
+
+const options2 = [
+  { key: 'b', text: 'beginner', value: 'beginner' },
+  { key: 'n', text: 'novice', value: 'novice' },
+  { key: 'c', text: 'competent', value: 'competent' },
+  { key: 'p', text: 'proficient', value: 'proficient' },
+  { key: 'x', text: 'expert', value: 'expert' },
+];
 
 /**
  * Signup component is similar to signin component, but we create a new user instead.
@@ -11,7 +25,7 @@ class Signup extends React.Component {
   /* Initialize state fields. */
   constructor(props) {
     super(props);
-    this.state = { email: '', password: '', error: '', redirectToReferer: false };
+    this.state = { firstname: '', lastname: '', email: '', about: '', skill: '', stance: '', password: '', error: '', redirectToReferer: false };
   }
 
   /* Update the form controls each time the user interacts with them. */
@@ -21,8 +35,8 @@ class Signup extends React.Component {
 
   /* Handle Signup submission. Create user account and a profile entry, then redirect to the home page. */
   submit = () => {
-    const { email, password } = this.state;
-    Accounts.createUser({ email, username: email, password }, (err) => {
+    const { firstname, lastname, email, about, skill, stance, password } = this.state;
+    Accounts.createUser({ firstname, lastname, email, about, skill, stance, username: email, password }, (err) => {
       if (err) {
         this.setState({ error: err.reason });
       } else {
@@ -47,10 +61,68 @@ class Signup extends React.Component {
             </Header>
             <Form onSubmit={this.submit}>
               <Segment stacked>
+
+                <Form.Group widths='equal'>
+                  <Form.Input
+                    label="First Name"
+                    id="signup-form-firstname"
+                    name="firstname"
+                    type="firstname"
+                    placeholder="First Name"
+                    onChange={this.handleChange}
+                  />
+                  <Form.Input
+                    label="Last Name"
+                    id="signup-form-lastname"
+                    name="lastname"
+                    type="lastname"
+                    placeholder="Last Name"
+                    onChange={this.handleChange}
+                  />
+                  <Form.Select
+                    fluid
+                    label='Stance'
+                    id="signup-form-stance"
+                    name="stance"
+                    type="stance"
+                    options={options}
+                    placeholder='Stance'
+                  />
+                </Form.Group>
+
+                <Form.Group inline>
+                  <Form.Select
+                    fluid
+                    label='Skill'
+                    id="signup-form-skill"
+                    name="skill"
+                    type="skill"
+                    options={options2}
+                    placeholder='Skill'
+                  />
+                </Form.Group>
+                Stay informed about:
+                <Form.Group>
+                  <Form.Field>
+                    <Checkbox label='North Shore'
+                      id="signup-form-north"
+                      name="north"/>
+                    <Checkbox label='West Side'
+                      id="signup-form-west"
+                      name="west"/>
+                    <Checkbox label='South Shore'
+                      id="signup-form-south"
+                      name="south"/>
+                    <Checkbox label='East Side'
+                      id="signup-form-east"
+                      name="east"/>
+                  </Form.Field>
+                </Form.Group>
+
                 <Form.Input
                   label="Email"
                   id="signup-form-email"
-                  icon="user"
+                  icon="user outline"
                   iconPosition="left"
                   name="email"
                   type="email"
@@ -67,7 +139,17 @@ class Signup extends React.Component {
                   type="password"
                   onChange={this.handleChange}
                 />
-                <Form.Button id="signup-form-submit" content="Submit"/>
+                <Form.Field>
+
+                  <Form.TextArea label="About"
+                    id="signup-form-about"
+                    name="about"
+                    type="about"
+                    placeholder="Tell us more about you..." />
+
+                  <Checkbox label='I agree to the Terms and Conditions' />
+                </Form.Field>
+                <Form.Button id="signup-form-submit" content="Get Pitted!"/>
               </Segment>
             </Form>
             <Message>
