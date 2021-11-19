@@ -11,7 +11,7 @@ class Signup extends React.Component {
   /* Initialize state fields. */
   constructor(props) {
     super(props);
-    this.state = { firstname: '', email: '', password: '', error: '', redirectToReferer: false };
+    this.state = { email: '', password: '', error: '', redirectToReferer: false };
   }
 
   /* Update the form controls each time the user interacts with them. */
@@ -21,8 +21,8 @@ class Signup extends React.Component {
 
   /* Handle Signup submission. Create user account and a profile entry, then redirect to the home page. */
   submit = () => {
-    const { firstname, email, password } = this.state;
-    Accounts.createUser({ firstname, email, username: email, password }, (err) => {
+    const { email, password } = this.state;
+    Accounts.createUser({ email, username: email, password }, (err) => {
       if (err) {
         this.setState({ error: err.reason });
       } else {
@@ -47,16 +47,6 @@ class Signup extends React.Component {
             </Header>
             <Form onSubmit={this.submit}>
               <Segment stacked>
-                <Form.Input
-                  label="First Name"
-                  id="signup-form-firstname"
-                  icon=""
-                  iconPosition="left"
-                  name="firstname"
-                  type="firstname"
-                  placeholder="First Name"
-                  onChange={this.handleChange}
-                />
                 <Form.Input
                   label="Email"
                   id="signup-form-email"
