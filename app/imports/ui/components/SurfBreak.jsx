@@ -10,7 +10,9 @@ class SurfBreak extends React.Component {
       <Card style={surfBreakCardStyle}>
         <Image src={this.props.surfBreak.image} wrapped ui={false} />
         <Card.Content>
-          <Card.Header style={blueTextStyle}>{this.props.surfBreak.name}</Card.Header>
+          <Card.Header style={blueTextStyle}>
+            <Link to={`/surfBreakPage/${this.props.surfBreak._id}`} >{this.props.surfBreak.name}</Link>
+          </Card.Header>
           <Card.Meta>
             <span >{this.props.surfBreak.address}</span>
           </Card.Meta>
