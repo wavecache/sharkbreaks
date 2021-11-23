@@ -1,5 +1,6 @@
 import { Meteor } from 'meteor/meteor';
 import { Stuffs } from '../../api/stuff/Stuff.js';
+import { SurfBreakData } from '../../api/surfbreak/SurfBreakData';
 
 /* eslint-disable no-console */
 
@@ -10,9 +11,9 @@ function addData(data) {
 }
 
 // Initialize the StuffsCollection if empty.
-if (Stuffs.collection.find().count() === 0) {
+if (SurfBreakData.collection.find().count() === 0) {
   if (Meteor.settings.defaultData) {
     console.log('Creating default data.');
-    Meteor.settings.defaultData.map(data => addData(data));
+    Meteor.settings.surf.map(data => addData(data));
   }
 }

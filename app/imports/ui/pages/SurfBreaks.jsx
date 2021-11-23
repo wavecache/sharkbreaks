@@ -1,8 +1,9 @@
 import React from 'react';
-import { CardGroup, Container, Header } from 'semantic-ui-react';
+import { Button, CardGroup, Container, Header } from 'semantic-ui-react';
 import { blueTextStyle } from '../layouts/style';
 import { surfBreakMockObjects } from '../../api/MockObjects';
 import SurfBreak from '../components/SurfBreak';
+import { Link } from 'react-router-dom';
 
 /** Renders a table containing all of the Stuff documents. Use <StuffItem> to render each row. */
 class SurfBreaks extends React.Component {
@@ -15,6 +16,9 @@ class SurfBreaks extends React.Component {
         <CardGroup centered>
           {surfBreakMockObjects.map((surfBreak, index) => <SurfBreak key={index} surfBreak={surfBreak}/>)}
         </CardGroup>
+        <Link to={'/addSurfBreak'}>
+          <Button>Add Your Favourite Break!</Button>
+        </Link>
       </Container>
     );
   }
