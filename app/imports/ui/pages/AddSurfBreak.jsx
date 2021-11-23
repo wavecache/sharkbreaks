@@ -5,18 +5,15 @@ import swal from 'sweetalert';
 import { Meteor } from 'meteor/meteor';
 import SimpleSchema2Bridge from 'uniforms-bridge-simple-schema-2';
 import SimpleSchema from 'simpl-schema';
-import PropTypes from 'prop-types';
 import { SurfBreakData } from '../../api/surfbreak/SurfBreakData';
 
 // Create a schema to specify the structure of the data to appear in the form.
 const formSchema = new SimpleSchema({
-  name: PropTypes.string,
-  followersIds: PropTypes.array,
-  image: PropTypes.string,
-  summary: PropTypes.string,
-  description: PropTypes.string,
-  address: PropTypes.string,
-  _id: PropTypes.string,
+  name: String,
+  image: String,
+  summary: String,
+  description: String,
+  address: String,
 });
 
 const bridge = new SimpleSchema2Bridge(formSchema);
