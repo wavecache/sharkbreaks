@@ -15,6 +15,7 @@ import NotFound from '../pages/NotFound';
 import Signin from '../pages/Signin';
 import Signup from '../pages/Signup';
 import Signout from '../pages/Signout';
+import Forum from '../pages/Forum';
 import { backgroundStyle, blueColor, blueTextStyle } from './style';
 import { membersMockArray, surfBreakConditionMockObject, surfBreakMockObjects } from '../../api/MockObjects';
 import SurfBreak from '../components/SurfBreak';
@@ -40,6 +41,7 @@ class App extends React.Component {
             <Route path="/surfBreakPage/:_id" component={SurfBreakPage}/>
             <Route path="/addSurfBreak" component={AddSurfBreak}/>
             <ProtectedRoute path="/list" component={ListFriends}/>
+            <ProtectedRoute path="/forum" component={Forum}/>
             <ProtectedRoute path="/add" component={AddStuff}/>
             <ProtectedRoute path="/edit/:_id" component={EditStuff}/>
             <AdminProtectedRoute path="/admin" component={ListStuffAdmin}/>
