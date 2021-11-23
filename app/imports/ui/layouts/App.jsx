@@ -44,17 +44,6 @@ class App extends React.Component {
             <Route component={NotFound}/>
           </Switch>
           <Footer/>
-          <div>
-            <hr color={blueColor}/>
-            <h2 style={ { ...blueTextStyle, ...{ textAlign: 'center' } } }>Test Area</h2>
-            <hr color={blueColor}/>
-            <h3 style={blueTextStyle}>Surf Break Card</h3>
-            <SurfBreak surfBreak={surfBreakMockObjects[2]} />
-            <hr/>
-            <h3 style={blueTextStyle}>Surf Break Page Stuff</h3>
-            <SurfBreakConditions surfBreakConditions={surfBreakConditionMockObject}/>
-            <SurfBreakMembers members={membersMockArray}/>
-          </div>
         </div>
       </Router>
     );
