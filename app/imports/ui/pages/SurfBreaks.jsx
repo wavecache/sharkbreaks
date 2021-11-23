@@ -1,9 +1,9 @@
 import React from 'react';
-import { Button, CardGroup, Container, Header, Loader } from 'semantic-ui-react';
-import { Link } from 'react-router-dom';
+import { Button, CardGroup, Container, Header, Loader, Menu } from 'semantic-ui-react';
+import { Link, NavLink } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import { withTracker } from 'meteor/react-meteor-data';
-import { blueTextStyle } from '../layouts/style';
+import { blueTextStyle, subMenuItemStyle } from '../layouts/style';
 import SurfBreak from '../components/SurfBreak';
 import { SurfBreakData } from '../../api/surfbreak/SurfBreakData';
 
@@ -22,9 +22,11 @@ class SurfBreaks extends React.Component {
         <CardGroup centered>
           {this.props.surfBreaks.map((surfBreak, index) => <SurfBreak key={index} surfBreak={surfBreak}/>)}
         </CardGroup>
-        <Link to={'/addSurfBreak'}>
-          <Button>Add Your Favourite Break!</Button>
-        </Link>
+        {this.props.currentUser === '' ? null : (
+          <Link to={'/addSurfBreak'}>
+            <Button>Add Your Favourite Break!</Button>
+          </Link>
+        )}
       </Container>
     );
   }
@@ -33,6 +35,7 @@ class SurfBreaks extends React.Component {
 // Require an array of Stuff documents in the props.
 SurfBreaks.propTypes = {
   surfBreaks: PropTypes.array.isRequired,
+  currentUser: PropTypes.string,
   ready: PropTypes.bool.isRequired,
 };
 
@@ -45,6 +48,7 @@ export default withTracker(() => {
   // Get the Stuff documents
   const surfBreaks = SurfBreakData.collection.find({}).fetch();
   return {
+    currentUser: Meteor.user() ? Meteor.user().username : '',
     surfBreaks,
     ready,
   };
