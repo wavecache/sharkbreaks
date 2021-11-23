@@ -15,7 +15,7 @@ class SurfBreak extends React.Component {
             <span >{this.props.surfBreak.address}</span>
           </Card.Meta>
           <Card.Description style={surfBreakCardStyle}>
-            {this.props.surfBreak.description}
+            {this.props.surfBreak.summary}
           </Card.Description>
         </Card.Content>
         <Card.Content>
@@ -38,7 +38,7 @@ SurfBreak.propTypes = {
     name: PropTypes.string,
     followersIds: PropTypes.array,
     image: PropTypes.string,
-    description: PropTypes.string,
+    summary: PropTypes.string,
     address: PropTypes.string,
     _id: PropTypes.string,
   }).isRequired,
