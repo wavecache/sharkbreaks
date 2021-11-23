@@ -12,7 +12,7 @@ import { Meteor } from 'meteor/meteor';
 import { withTracker } from 'meteor/react-meteor-data';
 import PropTypes from 'prop-types';
 import { blueTextStyle, centerStyle, fixedOverlayMenuStyle, fixedOverlayStyle, overlayMenuStyle, overlayStyle } from '../layouts/style';
-import { membersMockArray, paragraph, surfBreakConditionMockObject } from '../../api/MockObjects';
+import { membersMockArray, surfBreakConditionMockObject } from '../../api/MockObjects';
 import SurfBreakConditions from '../components/SurfBreakPage/SurfBreakConditions';
 import SurfBreakMembers from '../components/SurfBreakPage/SurfBreakMembers';
 import { SurfBreakData } from '../../api/surfbreak/SurfBreakData';
