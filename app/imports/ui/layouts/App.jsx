@@ -16,13 +16,9 @@ import Signin from '../pages/Signin';
 import Signup from '../pages/Signup';
 import Signout from '../pages/Signout';
 import Forum from '../pages/Forum';
-import { backgroundStyle, blueColor, blueTextStyle } from './style';
-import { membersMockArray, surfBreakConditionMockObject, surfBreakMockObjects } from '../../api/MockObjects';
-import SurfBreak from '../components/SurfBreak';
+import { backgroundStyle } from './style';
 import SurfBreaks from '../pages/SurfBreaks';
-import SurfBreakConditions from '../components/SurfBreakPage/SurfBreakConditions';
 import SurfBreakPage from '../pages/SurfBreakPage';
-import SurfBreakMembers from '../components/SurfBreakPage/SurfBreakMembers';
 import AddSurfBreak from '../pages/AddSurfBreak';
 
 /** Top-level layout component for this application. Called in imports/startup/client/startup.jsx. */

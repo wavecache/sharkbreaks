@@ -27,7 +27,7 @@ class AddSurfBreak extends React.Component {
     const followersIds = [];
     const creatorUsername = Meteor.user().username;
     const _surfBreakId = `${creatorUsername}${name}`;
-    console.log("here");
+    console.log('here');
     SurfBreakData.collection.insert({ name, creatorUsername, followersIds, image, summary, description, address, _surfBreakId },
       (error) => {
         if (error) {

@@ -1,9 +1,10 @@
 import React from 'react';
-import { Button, CardGroup, Container, Header, Loader, Menu } from 'semantic-ui-react';
-import { Link, NavLink } from 'react-router-dom';
+import { Button, CardGroup, Container, Header, Loader } from 'semantic-ui-react';
+import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import { withTracker } from 'meteor/react-meteor-data';
-import { blueTextStyle, subMenuItemStyle } from '../layouts/style';
+import { Meteor } from 'meteor/meteor';
+import { blueTextStyle } from '../layouts/style';
 import SurfBreak from '../components/SurfBreak';
 import { SurfBreakData } from '../../api/surfbreak/SurfBreakData';
 
@@ -53,4 +54,3 @@ export default withTracker(() => {
     ready,
   };
 })(SurfBreaks);
-
