@@ -1,8 +1,8 @@
 import React from 'react';
-import { Card, Image, Icon } from 'semantic-ui-react';
-import { withRouter, Link } from 'react-router-dom';
+import { Card, Image, Icon, Menu, Header } from 'semantic-ui-react';
+import { withRouter, Link, NavLink } from 'react-router-dom';
 import PropTypes from 'prop-types';
-import { blueTextStyle, surfBreakCardStyle } from '../layouts/style';
+import { blueTextStyle, subMenuItemStyle, surfBreakCardStyle } from '../layouts/style';
 
 class SurfBreak extends React.Component {
   render() {
@@ -23,6 +23,13 @@ class SurfBreak extends React.Component {
         <Card.Content>
           <Link to={`/surfBreakPage/${this.props.surfBreak._id}`} >Go to Surf Break page</Link>
         </Card.Content>
+        {this.props.currentUser === this.props.surfBreak.creatorUsername && (
+          <Card.Content>
+            <Link to={`/editSurfBreak/${this.props.surfBreak._id}`} >
+              Edit this Surf Break
+            </Link>
+          </Card.Content>
+        )}
         <Card.Content extra>
           <a>
             <Icon name='user' />
@@ -48,6 +55,7 @@ SurfBreak.propTypes = {
     creatorUsername: PropTypes.string,
     _id: PropTypes.string,
   }).isRequired,
+  currentUser: PropTypes.string,
 };
 
 // Wrap this component in withRouter since we use the <Link> React Router element.

@@ -20,6 +20,7 @@ import { backgroundStyle } from './style';
 import SurfBreaks from '../pages/SurfBreaks';
 import SurfBreakPage from '../pages/SurfBreakPage';
 import AddSurfBreak from '../pages/AddSurfBreak';
+import EditSurfBreak from '../pages/EditSurfBreak';
 
 /** Top-level layout component for this application. Called in imports/startup/client/startup.jsx. */
 class App extends React.Component {
@@ -35,6 +36,7 @@ class App extends React.Component {
             <Route path="/signout" component={Signout}/>
             <Route path="/surfBreaks" component={SurfBreaks}/>
             <Route path="/surfBreakPage/:_id" component={SurfBreakPage}/>
+            <Route path="/editSurfBreak/:_id" component={EditSurfBreak}/>
             <Route path="/addSurfBreak" component={AddSurfBreak}/>
             <ProtectedRoute path="/list" component={ListFriends}/>
             <ProtectedRoute path="/forum" component={Forum}/>

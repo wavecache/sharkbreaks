@@ -14,10 +14,7 @@ Meteor.publish(Stuffs.userPublicationName, function () {
 });
 
 Meteor.publish(SurfBreakData.userPublicationName, function () {
-  if (true) {
-    return SurfBreakData.collection.find();
-  }
-  return this.ready();
+  return SurfBreakData.collection.find();
 });
 
 // Admin-level publication.

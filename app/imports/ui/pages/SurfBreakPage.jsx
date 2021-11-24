@@ -96,7 +96,7 @@ class SurfBreakPage extends Component {
           </div>
 
           {_.times(3, (i) => (
-            <p>{this.surfBreakPage.description} {i}</p>
+            <p key={i}>{this.surfBreakPage.description} {i}</p>
           ))}
         </Container>
         <SurfBreakMembers members={membersMockArray}/>

@@ -21,7 +21,7 @@ class SurfBreaks extends React.Component {
       <Container>
         <Header style={ blueTextStyle } as="h2" textAlign="center">Surf Breaks</Header>
         <CardGroup centered>
-          {this.props.surfBreaks.map((surfBreak, index) => <SurfBreak key={index} surfBreak={surfBreak}/>)}
+          {this.props.surfBreaks.map((surfBreak, index) => <SurfBreak key={index} surfBreak={surfBreak} currentUser={this.props.currentUser}/>)}
         </CardGroup>
         {this.props.currentUser === '' ? null : (
           <Link to={'/addSurfBreak'} style={{ display: 'flex', justifyContent: 'center' }}>
