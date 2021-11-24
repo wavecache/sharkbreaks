@@ -1,13 +1,13 @@
 import React from 'react';
 import { Grid, Loader, Header, Segment } from 'semantic-ui-react';
 import swal from 'sweetalert';
-import { AutoForm, ErrorsField, HiddenField, LongTextField, SubmitField, TextField } from 'uniforms-semantic';
+import { AutoForm, ErrorsField, LongTextField, SubmitField, TextField } from 'uniforms-semantic';
 import { Meteor } from 'meteor/meteor';
 import { withTracker } from 'meteor/react-meteor-data';
 import PropTypes from 'prop-types';
 import SimpleSchema2Bridge from 'uniforms-bridge-simple-schema-2';
-import { SurfBreakData } from '../../api/surfbreak/SurfBreakData';
 import { Redirect } from 'react-router-dom';
+import { SurfBreakData } from '../../api/surfbreak/SurfBreakData';
 
 const bridge = new SimpleSchema2Bridge(SurfBreakData.schema);
 
@@ -60,13 +60,13 @@ class EditSurfBreak extends React.Component {
 // Require the presence of a Stuff document in the props object. Uniforms adds 'model' to the props, which we use.
 EditSurfBreak.propTypes = {
   surfBreak: PropTypes.shape({
-    name: String,
-    image: String,
-    summary: String,
-    description: String,
-    address: String,
-    creatorUsername: String,
-    _surfBreakId: String,
+    name: PropTypes.string,
+    image: PropTypes.string,
+    summary: PropTypes.string,
+    description: PropTypes.string,
+    address: PropTypes.string,
+    creatorUsername: PropTypes.string,
+    _surfBreakId: PropTypes.string,
   }).isRequired,
   surfBreakId: PropTypes.string.isRequired,
   currentUser: PropTypes.string.isRequired,

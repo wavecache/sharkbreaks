@@ -1,6 +1,6 @@
 import React from 'react';
-import { Card, Image, Icon, Menu, Header } from 'semantic-ui-react';
-import { withRouter, Link, NavLink } from 'react-router-dom';
+import { Card, Image, Icon} from 'semantic-ui-react';
+import { withRouter, Link} from 'react-router-dom';
 import PropTypes from 'prop-types';
 import { blueTextStyle, subMenuItemStyle, surfBreakCardStyle } from '../layouts/style';
 
