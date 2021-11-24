@@ -28,6 +28,13 @@ export const centerStyle = {
   justifyContent: 'center',
 };
 
+export const buttonStyle = {
+  fontFamily: standardFont,
+  color: blueTextStyle,
+  marginTop: '20px',
+  marginBottom: '20px',
+};
+
 /* ----------- Navigation bar ----------- */
 
 export const menuStyle = {

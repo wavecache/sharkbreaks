@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import { withTracker } from 'meteor/react-meteor-data';
 import { Meteor } from 'meteor/meteor';
-import { blueTextStyle } from '../layouts/style';
+import { blueTextStyle, buttonStyle } from '../layouts/style';
 import SurfBreak from '../components/SurfBreak';
 import { SurfBreakData } from '../../api/surfbreak/SurfBreakData';
 
@@ -24,8 +24,8 @@ class SurfBreaks extends React.Component {
           {this.props.surfBreaks.map((surfBreak, index) => <SurfBreak key={index} surfBreak={surfBreak}/>)}
         </CardGroup>
         {this.props.currentUser === '' ? null : (
-          <Link to={'/addSurfBreak'}>
-            <Button>Add Your Favourite Break!</Button>
+          <Link to={'/addSurfBreak'} style={{ display: 'flex', justifyContent: 'center' }}>
+            <Button style={buttonStyle}>Add Your Favourite Break!</Button>
           </Link>
         )}
       </Container>

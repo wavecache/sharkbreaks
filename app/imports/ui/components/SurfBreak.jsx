@@ -29,6 +29,9 @@ class SurfBreak extends React.Component {
             {this.props.surfBreak.followersIds.length} Friends are following this break
           </a>
         </Card.Content>
+        <Card.Content extra>
+          Added by {this.props.surfBreak.creatorUsername}
+        </Card.Content>
       </Card>
     );
   }
@@ -42,6 +45,7 @@ SurfBreak.propTypes = {
     image: PropTypes.string,
     summary: PropTypes.string,
     address: PropTypes.string,
+    creatorUsername: PropTypes.string,
     _id: PropTypes.string,
   }).isRequired,
 };
