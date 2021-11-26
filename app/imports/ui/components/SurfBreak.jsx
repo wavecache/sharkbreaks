@@ -1,8 +1,8 @@
 import React from 'react';
-import { Card, Image, Icon} from 'semantic-ui-react';
-import { withRouter, Link} from 'react-router-dom';
+import { Card, Image, Icon } from 'semantic-ui-react';
+import { withRouter, Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
-import { blueTextStyle, subMenuItemStyle, surfBreakCardStyle } from '../layouts/style';
+import { blueTextStyle, surfBreakCardStyle } from '../layouts/style';
 
 class SurfBreak extends React.Component {
   render() {
