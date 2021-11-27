@@ -24,8 +24,7 @@ export function getRelevantWeatherData(lat, lon) {
       weatherData.temperature = main.temp;
       weatherData.windSpeed = response.wind.speed;
       weatherData.windDir = response.wind.deg;
-      return weatherData;
     }
-    return 'no temperature found';
+    return weatherData;
   });
 }
