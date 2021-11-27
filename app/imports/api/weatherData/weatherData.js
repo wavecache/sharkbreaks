@@ -1,5 +1,3 @@
-import PropTypes, { number } from 'prop-types';
-
 async function getWeatherDataByCoordinate(lat, lon) {
   const apiKey = 'e456f65bff56a2386bbd869fad5f0b2d';
   const url = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=${apiKey}`;
