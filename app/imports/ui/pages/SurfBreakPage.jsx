@@ -53,7 +53,7 @@ class SurfBreakPage extends Component {
               <Image src={this.surfBreakPage.image} size='large' rounded={true}/>
             </GridColumn>
             <GridColumn style={centerStyle}>
-              <SurfBreakConditions lon='123' lat='15'/>
+              <SurfBreakConditions lat='10' lon='10'/>
             </GridColumn>
           </Grid>
         </Container>

@@ -1,14 +1,9 @@
 import React from 'react';
 import { Grid, Header } from 'semantic-ui-react';
 import { landingHeader } from '../layouts/style';
-import { getRelevantWeatherData } from '../../api/weatherData/weatherData';
 
 /** A simple static component to render some text for the landing page. */
 class Landing extends React.Component {
-  constructor(props) {
-    super(props);
-    getRelevantWeatherData(21, -157);
-  }
 
   render() {
     return (
