@@ -9,6 +9,14 @@ import StuffItem from '../components/StuffItem';
 /** Renders a table containing all of the Stuff documents. Use <StuffItem> to render each row. */
 class ListStuff extends React.Component {
 
+  contacts = [{
+    firstName: 'Philip', lastName: 'Johnson', skill: 'competent', stance: 'Goofy',
+    surfs: 'North Shore',
+    email: 'johnson@hawaii.edu',
+    about: 'I am a Professor of Information and Computer Sciences at the University of Hawaii, Director ' +
+      'of the Collaborative Software Development Laboratory, and the CEO of OpenPowerQuality.com.',
+  }]
+
   // If the subscription(s) have been received, render the page, otherwise show a loading icon.
   render() {
     return (this.props.ready) ? this.renderPage() : <Loader active>Getting data</Loader>;
@@ -18,7 +26,7 @@ class ListStuff extends React.Component {
   renderPage() {
     return (
       <Container>
-        <Header as="h2" textAlign="center" inverted>Profile</Header>
+        <Header as="h2" textAlign="center">Profile</Header>
         <Table celled>
           <Table.Header>
             <Table.Row>

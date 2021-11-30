@@ -26,7 +26,7 @@ class Signup extends React.Component {
   /* Initialize state fields. */
   constructor(props) {
     super(props);
-    this.state = { firstname: '', lastname: '', email: '', about: '', skill: '', stance: '', password: '', error: '', redirectToReferer: false };
+    this.state = { firstname: '', lastname: '', email: '', about: '', skill: '', stance: '', surfs: '', password: '', error: '', redirectToReferer: false };
   }
 
   /* Update the form controls each time the user interacts with them. */
