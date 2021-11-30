@@ -6,11 +6,17 @@ import { blueColor, blueTextStyle } from '../../layouts/style';
 export default function SurfBreakConditions(props) {
 
   const [data, setData] = useState([]);
+  const [timer, setTimer] = useState(1);
 
   useEffect(() => {
     const fetchData = async () => {
       const apiKey = 'e456f65bff56a2386bbd869fad5f0b2d';
       const url = `https://api.openweathermap.org/data/2.5/weather?lat=${props.lat}&lon=${props.lon}&appid=${apiKey}`;
+
+      setInterval(() => {
+        if (timer === 0) setTimer(1);
+        else setTimer(0);
+      }, 10000);
 
       // eslint-disable-next-line no-undef
       await fetch(url)
@@ -34,7 +40,7 @@ export default function SurfBreakConditions(props) {
         });
     };
     fetchData();
-  }, [data]);
+  }, [timer]);
 
   return (
     <Segment.Group compact size='large' style={{ ...blueTextStyle, ...{ borderColor: blueColor } }} >
