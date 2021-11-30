@@ -15,14 +15,12 @@ import NotFound from '../pages/NotFound';
 import Signin from '../pages/Signin';
 import Signup from '../pages/Signup';
 import Signout from '../pages/Signout';
-import { backgroundStyle, blueColor, blueTextStyle } from './style';
-import { membersMockArray, surfBreakConditionMockObject, surfBreakMockObjects } from '../../api/MockObjects';
-import SurfBreak from '../components/SurfBreak';
+import Forum from '../pages/Forum';
+import { backgroundStyle } from './style';
 import SurfBreaks from '../pages/SurfBreaks';
-import SurfBreakConditions from '../components/SurfBreakPage/SurfBreakConditions';
 import SurfBreakPage from '../pages/SurfBreakPage';
-import SurfBreakMembers from '../components/SurfBreakPage/SurfBreakMembers';
-import ListProfile from '../pages/ListProfile';
+import AddSurfBreak from '../pages/AddSurfBreak';
+import EditSurfBreak from '../pages/EditSurfBreak';
 
 /** Top-level layout component for this application. Called in imports/startup/client/startup.jsx. */
 class App extends React.Component {
@@ -37,9 +35,11 @@ class App extends React.Component {
             <Route path="/signup" component={Signup}/>
             <Route path="/signout" component={Signout}/>
             <Route path="/surfBreaks" component={SurfBreaks}/>
-            <Route path="/surfBreakPage" component={SurfBreakPage}/>
+            <Route path="/surfBreakPage/:_id" component={SurfBreakPage}/>
+            <Route path="/editSurfBreak/:_id" component={EditSurfBreak}/>
+            <Route path="/addSurfBreak" component={AddSurfBreak}/>
             <ProtectedRoute path="/list" component={ListFriends}/>
-            <ProtectedRoute path="/profile" component={ListProfile}/>
+            <ProtectedRoute path="/forum" component={Forum}/>
             <ProtectedRoute path="/add" component={AddStuff}/>
             <ProtectedRoute path="/edit/:_id" component={EditStuff}/>
             <AdminProtectedRoute path="/admin" component={ListStuffAdmin}/>

@@ -1,6 +1,7 @@
 import { Meteor } from 'meteor/meteor';
 import { Roles } from 'meteor/alanning:roles';
 import { Stuffs } from '../../api/stuff/Stuff';
+import { SurfBreakData } from '../../api/surfbreak/SurfBreakData';
 
 // User-level publication.
 // If logged in, then publish documents owned by this user. Otherwise publish nothing.
@@ -10,6 +11,10 @@ Meteor.publish(Stuffs.userPublicationName, function () {
     return Stuffs.collection.find({ owner: username });
   }
   return this.ready();
+});
+
+Meteor.publish(SurfBreakData.userPublicationName, function () {
+  return SurfBreakData.collection.find();
 });
 
 // Admin-level publication.

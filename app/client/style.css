@@ -1,0 +1,21 @@
+#uniforms-0000-0002,
+.ui.form textarea,
+#uniforms-0000-0001,
+#uniforms-0000-0000,
+#uniforms-0000-0004,
+.column,
+h2
+{
+  color: #2196f3 !important;
+  font-family: Comfortaa, serif !important;
+}
+
+label {
+  color: grey !important;
+  font-family: Comfortaa, serif !important;
+}
+
+.ui.button {
+  color: white !important;
+  background: #2196f3 !important;
+}

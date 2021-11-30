@@ -14,5 +14,29 @@
     { "name": "Bicycle", "quantity": 2, "owner": "john@foo.com", "condition": "poor" },
     { "name": "Banana", "quantity": 2, "owner": "admin@foo.com", "condition": "good" },
     { "name": "Boogie Board", "quantity": 2, "owner": "admin@foo.com", "condition": "excellent" }
+  ],
+
+  "defaultSurfBreaks": [
+    {
+      "name": "PUA’ENA POINT",
+      "followersIds": [],
+      "image": "https://lushpalm.com/wp-content/uploads/2017/11/oahu-surf-spots-haleiwa.webp",
+      "summary": "Located on Oahu's North Shore next to Haleiwa Beach Park, Pua'ena Point (see more photos, view panorama) is mainly known among the local surf crowd for being a good surf spot",
+      "description": "Fetched from https://www.to-hawaii.com/oahu/beaches/ Located on Oahu's North Shore next to Haleiwa Beach Park, Pua'ena Point (see more photos, view panorama) is mainly known among the local surf crowd for being a good surf spot.It can be a good spot for beginners when the waves aren't too high. Surfing lessons take place here. But when the surf is way up, it's for experts only. Most surfers enter the ocean from a small sandy beach before reaching Pua'ena Point.\n\nThe beach is a nice place for a picnic (there is some shade), and on the weekends local families come here with their children. The nearshore ocean bottom is a mixture of rocks and small sand patches. If you walk further along the shoreline (about three minutes), you'll reach Pua'ena Point (a rocky outcropping). Around the corner is Police Beach, where episodes of the popular TV series LOST were filmed.",
+      "address": "59-337 Ke Nui Rd, Haleiwa, HI 96712",
+      "creatorUsername": "admin@foo.com",
+      "_id": "adminPUAENAPOINT"
+    },
+
+    {
+      "name": "Banzai Pipeline",
+      "followersIds": [],
+      "image": "https://lushpalm.com/wp-content/uploads/2017/11/oahu-surf-spots-pipeline.webp",
+      "summary": "If you are on a quest to find the legendary Banzai Pipeline Hawaii, known around the world  for its perfect barreling waves, then head to Ehukai Beach Park on the North Shore Oahu.",
+      "description": "If you are on a quest to find the legendary Banzai Pipeline Hawaii, known around the world  for its perfect barreling waves, then head to Ehukai Beach Park on the North Shore Oahu.If you are on a quest to find the legendary Banzai Pipeline Hawaii, known around the world  for its perfect barreling waves, then head to Ehukai Beach Park on the North Shore Oahu.If you are on a quest to find the legendary Banzai Pipeline Hawaii, known around the world  for its perfect barreling waves, then head to Ehukai Beach Park on the North Shore Oahu.\"",
+      "address": "ess: '59-337 Ke Nui Rd, Haleiwa, HI 96712",
+      "creatorUsername": "admin@foo.com",
+      "_id": "adminBanzaiPipeline"
+    }
   ]
 }
