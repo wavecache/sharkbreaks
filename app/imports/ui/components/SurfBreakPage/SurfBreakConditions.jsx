@@ -59,7 +59,6 @@ export default function SurfBreakConditions(props) {
   );
 }
 
-
 SurfBreakConditions.propTypes = {
   lat: PropTypes.string.isRequired,
   lon: PropTypes.string.isRequired,
