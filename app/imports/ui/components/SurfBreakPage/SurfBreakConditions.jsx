@@ -43,7 +43,7 @@ export default function SurfBreakConditions(props) {
       </Segment>
       <Segment.Group style={{ borderColor: blueColor }}>
         <Segment>
-          <p>Temperature: {data.temperature} °F</p>
+          <p>Temperature: {(data.temperature - 273).toFixed(1)} °C</p>
         </Segment>
         <Segment>
           <p>Wind Speed: {data.windSpeed} mph</p>
