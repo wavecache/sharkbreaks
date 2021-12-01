@@ -18,7 +18,7 @@ class NavBar extends React.Component {
               <Image src='/images/meteor-logo.png' size='small'/>
 
             </Menu.Item>
-            <Menu.Item as={NavLink} activeClassName="" exact to="/surfBreaks">
+            <Menu.Item as={NavLink} activeClassName="" exact to="/surfBreaks" id="surfBreaks-page-navBar">
               <Header style={subMenuItemStyle} as='h2'>Find Your Break</Header>
             </Menu.Item>
             <Menu.Item as={NavLink} activeClassName="" exact to="/forum">

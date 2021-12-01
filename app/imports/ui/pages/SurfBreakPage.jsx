@@ -47,7 +47,7 @@ class SurfBreakPage extends Component {
 
     return (
       <div>
-        <Container>
+        <Container id='surfBreakPage-page'>
           <Grid columns={2} >
             <GridColumn style={centerStyle}>
               <Image src={this.surfBreakPage.image} size='large' rounded={true}/>

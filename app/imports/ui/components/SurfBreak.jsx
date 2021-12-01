@@ -10,7 +10,7 @@ class SurfBreak extends React.Component {
       <Card style={surfBreakCardStyle}>
         <Image src={this.props.surfBreak.image} wrapped ui={false} />
         <Card.Content>
-          <Card.Header style={blueTextStyle}>
+          <Card.Header style={blueTextStyle} id={ `#to-surf-${this.props.surfBreak._id}` } class='card-header'>
             <Link to={`/surfBreakPage/${this.props.surfBreak._id}`} >{this.props.surfBreak.name}</Link>
           </Card.Header>
           <Card.Meta>
@@ -20,8 +20,8 @@ class SurfBreak extends React.Component {
             {this.props.surfBreak.summary}
           </Card.Description>
         </Card.Content>
-        <Card.Content>
-          <Link to={`/surfBreakPage/${this.props.surfBreak._id}`} >Go to Surf Break page</Link>
+        <Card.Content >
+          <Link to={`/surfBreakPage/${this.props.surfBreak._id}`}>Go to Surf Break page</Link>
         </Card.Content>
         {this.props.currentUser === this.props.surfBreak.creatorUsername && (
           <Card.Content>

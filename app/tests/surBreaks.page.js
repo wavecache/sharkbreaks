@@ -1,5 +1,4 @@
 import { Selector } from 'testcafe';
-import { navBar } from './navbar.component';
 
 class SurfBreaksPage {
   constructor() {
@@ -10,6 +9,11 @@ class SurfBreaksPage {
   /** Checks that this page is currently displayed. */
   async isDisplayed(testController) {
     await testController.expect(this.pageSelector.exists).ok();
+  }
+
+  async hasDefaultBreaks(testController) {
+    const cardCount = Selector('.ui .card').count;
+    await testController.expect(cardCount).gte(2);
   }
 }
 
