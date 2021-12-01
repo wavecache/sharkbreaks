@@ -1,21 +1,21 @@
 import React from 'react';
 import { Meteor } from 'meteor/meteor';
-import { Container, Table, Header, Loader } from 'semantic-ui-react';
+import { Container, Header, Loader, Card } from 'semantic-ui-react';
 import { withTracker } from 'meteor/react-meteor-data';
 import PropTypes from 'prop-types';
 import { Stuffs } from '../../api/stuff/Stuff';
-import StuffItem from '../components/StuffItem';
+import Contact from '../components/Contact';
 
 /** Renders a table containing all of the Stuff documents. Use <StuffItem> to render each row. */
-class ListStuff extends React.Component {
+class ListProfile extends React.Component {
 
   contacts = [{
-    firstName: 'Philip', lastName: 'Johnson', skill: 'competent', stance: 'Goofy',
-    surfs: 'North Shore',
-    email: 'johnson@hawaii.edu',
-    about: 'I am a Professor of Information and Computer Sciences at the University of Hawaii, Director ' +
+    firstName: 'Philip', lastName: 'Johnson', address: 'POST 307, University of Hawaii',
+    image: 'https://philipmjohnson.github.io/images/philip2.jpeg',
+    description: 'I am a Professor of Information and Computer Sciences at the University of Hawaii, Director ' +
       'of the Collaborative Software Development Laboratory, and the CEO of OpenPowerQuality.com.',
-  }]
+  },
+  ];
 
   // If the subscription(s) have been received, render the page, otherwise show a loading icon.
   render() {
@@ -26,29 +26,17 @@ class ListStuff extends React.Component {
   renderPage() {
     return (
       <Container>
-        <Header as="h2" textAlign="center">Profile</Header>
-        <Table celled>
-          <Table.Header>
-            <Table.Row>
-              <Table.HeaderCell>Name</Table.HeaderCell>
-              <Table.HeaderCell>Skill</Table.HeaderCell>
-              <Table.HeaderCell>Stance</Table.HeaderCell>
-              <Table.HeaderCell>Surfs</Table.HeaderCell>
-              <Table.HeaderCell>Email</Table.HeaderCell>
-              <Table.HeaderCell>About</Table.HeaderCell>
-            </Table.Row>
-          </Table.Header>
-          <Table.Body>
-            {this.props.stuffs.map((stuff) => <StuffItem key={stuff._id} stuff={stuff} />)}
-          </Table.Body>
-        </Table>
+        <Header as="h2" textAlign="center">Your Profile</Header>
+        <Card.Group>
+          {this.contacts.map((contact, index) => <Contact key={index} contact={contact}/>) }
+        </Card.Group>
       </Container>
     );
   }
 }
 
 // Require an array of Stuff documents in the props.
-ListStuff.propTypes = {
+ListProfile.propTypes = {
   stuffs: PropTypes.array.isRequired,
   ready: PropTypes.bool.isRequired,
 };
@@ -65,4 +53,4 @@ export default withTracker(() => {
     stuffs,
     ready,
   };
-})(ListStuff);
+})(ListProfile);
