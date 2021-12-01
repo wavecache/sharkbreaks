@@ -21,6 +21,7 @@ import SurfBreaks from '../pages/SurfBreaks';
 import SurfBreakPage from '../pages/SurfBreakPage';
 import AddSurfBreak from '../pages/AddSurfBreak';
 import EditSurfBreak from '../pages/EditSurfBreak';
+import ListProfile from '../pages/ListProfile';
 
 /** Top-level layout component for this application. Called in imports/startup/client/startup.jsx. */
 class App extends React.Component {
@@ -38,6 +39,7 @@ class App extends React.Component {
             <Route path="/surfBreakPage/:_id" component={SurfBreakPage}/>
             <Route path="/editSurfBreak/:_id" component={EditSurfBreak}/>
             <Route path="/addSurfBreak" component={AddSurfBreak}/>
+            <Route path="/profile" component={ListProfile}/>
             <ProtectedRoute path="/list" component={ListFriends}/>
             <ProtectedRoute path="/forum" component={Forum}/>
             <ProtectedRoute path="/add" component={AddStuff}/>
