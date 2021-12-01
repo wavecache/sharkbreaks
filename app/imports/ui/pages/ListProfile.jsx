@@ -25,11 +25,11 @@ class ListProfile extends React.Component {
   // Render the page once subscriptions have been received.
   renderPage() {
     return (
-      <Container>
+      <Container fluid>
         <Header as="h2" textAlign="center">Your Profile</Header>
-        <Card.Group>
+        <Card centered>
           {this.contacts.map((contact, index) => <Contact key={index} contact={contact}/>) }
-        </Card.Group>
+        </Card>
       </Container>
     );
   }
