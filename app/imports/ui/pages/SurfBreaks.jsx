@@ -18,7 +18,7 @@ class SurfBreaks extends React.Component {
 
   renderPage() {
     return (
-      <Container>
+      <Container id='surfBreaks-page'>
         <Header style={ blueTextStyle } as="h2" textAlign="center">Surf Breaks</Header>
         <CardGroup centered>
           {this.props.surfBreaks.map((surfBreak, index) => <SurfBreak key={index} surfBreak={surfBreak} currentUser={this.props.currentUser}/>)}
