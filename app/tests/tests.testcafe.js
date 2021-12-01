@@ -6,6 +6,7 @@ import { navBar } from './navbar.component';
 import { surfBreaksPage } from './surBreaks.page';
 import { surfBreakPage } from './surfBreakpage.page';
 import { addSurfBreakPage } from './addSurfBreak.page';
+import { editSurfBreakPage } from './editSurfPage.page';
 
 /* global fixture:false, test:false */
 
@@ -42,13 +43,26 @@ test('SurfBreakPage page shows up', async (testController) => {
   await surfBreakPage.isDisplayed(testController);
 });
 
-test.only('Adding a surf break with valid inputs', async (testController) => {
+test('Adding a surf break with valid inputs', async (testController) => {
   await navBar.gotoSigninPage(testController);
   await signinPage.signin(testController, credentials.username, credentials.password);
   await testController.click('#surfBreaks-page-navBar');
   await testController.click(Selector('.ui .button').withText('Add Your Favourite Break!'));
   await addSurfBreakPage.isDisplayed(testController);
   await addSurfBreakPage.validBreakAdded(testController);
+  await testController.click('#surfBreaks-page-navBar');
+  await testController.click('#surfBreaks-page-navBar');
+  await surfBreaksPage.isDisplayed(testController);
+  await surfBreaksPage.hasDefaultBreaksAfterAdding(testController);
+});
+
+test('Editing a surf break with valid inputs', async (testController) => {
+  await navBar.gotoSigninPage(testController);
+  await signinPage.signin(testController, credentials.username, credentials.password);
+  await testController.click('#surfBreaks-page-navBar');
+  await testController.click(Selector('.ui .card .content').withText('Edit this Surf Break'));
+  await editSurfBreakPage.isDisplayed(testController);
+  await editSurfBreakPage.validBreakEdit(testController);
   await testController.click('#surfBreaks-page-navBar');
   await testController.click('#surfBreaks-page-navBar');
   await surfBreaksPage.isDisplayed(testController);

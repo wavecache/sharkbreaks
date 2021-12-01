@@ -4,7 +4,8 @@
 #uniforms-0000-0000,
 #uniforms-0000-0004,
 .column,
-h2
+h2,
+.ui .card .content
 {
   color: #2196f3 !important;
   font-family: Comfortaa, serif !important;

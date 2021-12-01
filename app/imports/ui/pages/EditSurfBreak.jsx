@@ -37,17 +37,17 @@ class EditSurfBreak extends React.Component {
     }
 
     return (
-      <Grid container centered>
+      <Grid container centered id='editSurfBreaks-page'>
         <Grid.Column>
           <Header as="h2" textAlign="center">Edit Surf Break</Header>
           <AutoForm schema={bridge} onSubmit={data => this.submit(data)} model={this.props.surfBreak}>
             <Segment>
-              <TextField name='name'/>
-              <TextField name='image'/>
-              <TextField name='summary'/>
-              <LongTextField name='description'/>
-              <TextField name='address'/>
-              <SubmitField value='Submit'/>
+              <TextField name='name' id='edit-break-name'/>
+              <TextField name='image' id='edit-break-image'/>
+              <TextField name='summary' id='edit-break-summary'/>
+              <LongTextField name='description' id='edit-break-description'/>
+              <TextField name='address' id='edit-break-address'/>
+              <SubmitField value='Submit' id='edit-break-submit'/>
               <ErrorsField/>
             </Segment>
           </AutoForm>

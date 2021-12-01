@@ -18,7 +18,7 @@ class AddSurfBreakPage {
     await testController.typeText('#add-break-description', 'Some random text to test');
     await testController.typeText('#add-break-address', 'Some random text to test');
     await testController.typeText('#add-break-name', 'Some random text to test');
-    await testController.click('#add-break-submit');
+    await testController.click('#edit-break-submit');
   }
 }
 
