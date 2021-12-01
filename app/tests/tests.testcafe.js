@@ -5,6 +5,7 @@ import { signoutPage } from './signout.page';
 import { navBar } from './navbar.component';
 import { surfBreaksPage } from './surBreaks.page';
 import { surfBreakPage } from './surfBreakpage.page';
+import { addSurfBreakPage } from './addSurfBreak.page';
 
 /* global fixture:false, test:false */
 
@@ -39,4 +40,17 @@ test('SurfBreakPage page shows up', async (testController) => {
   await surfBreaksPage.isDisplayed(testController);
   await testController.click(Selector('.ui .card .header').withText('PUA’ENA POINT'));
   await surfBreakPage.isDisplayed(testController);
+});
+
+test.only('Adding a surf break with valid inputs', async (testController) => {
+  await navBar.gotoSigninPage(testController);
+  await signinPage.signin(testController, credentials.username, credentials.password);
+  await testController.click('#surfBreaks-page-navBar');
+  await testController.click(Selector('.ui .button').withText('Add Your Favourite Break!'));
+  await addSurfBreakPage.isDisplayed(testController);
+  await addSurfBreakPage.validBreakAdded(testController);
+  await testController.click('#surfBreaks-page-navBar');
+  await testController.click('#surfBreaks-page-navBar');
+  await surfBreaksPage.isDisplayed(testController);
+  await surfBreaksPage.hasDefaultBreaksAfterAdding(testController);
 });

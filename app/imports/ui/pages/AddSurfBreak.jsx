@@ -43,17 +43,17 @@ class AddSurfBreak extends React.Component {
   render() {
     let fRef = null;
     return (
-      <Grid container centered>
+      <Grid container centered id='addSurfBreaks-page'>
         <Grid.Column>
           <Header as="h2" textAlign="center">Add Surf Break</Header>
           <AutoForm ref={ref => { fRef = ref; }} schema={bridge} onSubmit={data => this.submit(data, fRef)} >
             <Segment>
-              <TextField name='name'/>
-              <TextField name='image'/>
-              <TextField name='summary'/>
-              <LongTextField name='description'/>
-              <TextField name='address'/>
-              <SubmitField value='Submit'/>
+              <TextField name='name' id='add-break-name'/>
+              <TextField name='image' id='add-break-image'/>
+              <TextField name='summary' id='add-break-summary'/>
+              <LongTextField name='description' id='add-break-description'/>
+              <TextField name='address' id='add-break-address'/>
+              <SubmitField value='Submit' id='add-break-submit'/>
               <ErrorsField/>
             </Segment>
           </AutoForm>

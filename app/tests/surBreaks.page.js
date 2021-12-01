@@ -15,6 +15,11 @@ class SurfBreaksPage {
     const cardCount = Selector('.ui .card').count;
     await testController.expect(cardCount).gte(2);
   }
+
+  async hasDefaultBreaksAfterAdding(testController) {
+    const cardCount = Selector('.ui .card').count;
+    await testController.expect(cardCount).gte(3);
+  }
 }
 
 export const surfBreaksPage = new SurfBreaksPage();
