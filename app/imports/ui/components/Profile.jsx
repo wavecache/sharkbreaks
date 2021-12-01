@@ -10,29 +10,17 @@ const extra = (
     <Icon name='user' />
     16 Friends
   </a>
-)
+);
 
 class Profile extends React.Component {
-
-
-
   render() {
     return (
-        <Card
-          image='../../../public/images/Images/Kewalos.jpg'
-          header='Elliot Baker'
-          meta='Friend'
-          description='Elliot is a sound engineer living in Nashville who enjoys playing guitar and hanging with his cat.'
-          extra={extra}
-        />
-      )
-
       <Table.Row>
         <Table.Cell>{this.props.stuff.name}</Table.Cell>
         <Table.Cell>{this.props.stuff.quantity}</Table.Cell>
         <Table.Cell>{this.props.stuff.condition}</Table.Cell>
         <Table.Cell>
-          <Link to={`/edit/${this.props.stuff._id}`}>Edit</Link>
+          <Link to={`/edit/${this.props.stuff._id}`}>Edit Test</Link>
         </Table.Cell>
       </Table.Row>
     );

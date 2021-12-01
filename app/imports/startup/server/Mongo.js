@@ -1,20 +1,18 @@
-// noinspection DuplicatedCode
 import { Meteor } from 'meteor/meteor';
-import { SurfBreakData } from '../../api/surfbreak/SurfBreakData';
+import { Stuffs } from '../../api/stuff/Stuff.js';
 
 /* eslint-disable no-console */
 
 // Initialize the database with a default data document.
-function addSurfBreak(data) {
-  console.log('Adding Surf Break');
-  SurfBreakData.collection.insert(data);
+function addData(data) {
+  console.log(`  Adding: ${data.name} (${data.owner})`);
+  Stuffs.collection.insert(data);
 }
 
 // Initialize the StuffsCollection if empty.
-if (SurfBreakData.collection.find().count() === 0) {
-  // noinspection JSUnresolvedVariable
-  if (Meteor.settings.defaultSurfBreaks) {
+if (Stuffs.collection.find().count() === 0) {
+  if (Meteor.settings.defaultData) {
     console.log('Creating default data.');
-    Meteor.settings.defaultSurfBreaks.map(data => addSurfBreak(data));
+    Meteor.settings.defaultData.map(data => addData(data));
   }
 }
