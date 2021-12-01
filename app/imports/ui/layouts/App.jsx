@@ -15,12 +15,18 @@ import NotFound from '../pages/NotFound';
 import Signin from '../pages/Signin';
 import Signup from '../pages/Signup';
 import Signout from '../pages/Signout';
-import Forum from '../pages/Forum';
-import { backgroundStyle } from './style';
+import { backgroundStyle, blueColor, blueTextStyle } from './style';
+import { membersMockArray, surfBreakConditionMockObject, surfBreakMockObjects } from '../../api/MockObjects';
+import SurfBreak from '../components/SurfBreak';
 import SurfBreaks from '../pages/SurfBreaks';
+import SurfBreakConditions from '../components/SurfBreakPage/SurfBreakConditions';
 import SurfBreakPage from '../pages/SurfBreakPage';
+<<<<<<< HEAD
 import AddSurfBreak from '../pages/AddSurfBreak';
 import EditSurfBreak from '../pages/EditSurfBreak';
+=======
+import SurfBreakMembers from '../components/SurfBreakPage/SurfBreakMembers';
+>>>>>>> parent of d4f46bd (Merge branch 'master' into issue-17-profile-page)
 import ListProfile from '../pages/ListProfile';
 
 /** Top-level layout component for this application. Called in imports/startup/client/startup.jsx. */
@@ -36,12 +42,13 @@ class App extends React.Component {
             <Route path="/signup" component={Signup}/>
             <Route path="/signout" component={Signout}/>
             <Route path="/surfBreaks" component={SurfBreaks}/>
-            <Route path="/surfBreakPage/:_id" component={SurfBreakPage}/>
-            <Route path="/editSurfBreak/:_id" component={EditSurfBreak}/>
-            <Route path="/addSurfBreak" component={AddSurfBreak}/>
+            <Route path="/surfBreakPage" component={SurfBreakPage}/>
             <ProtectedRoute path="/list" component={ListFriends}/>
             <ProtectedRoute path="/profile" component={ListProfile}/>
+<<<<<<< HEAD
             <ProtectedRoute path="/forum" component={Forum}/>
+=======
+>>>>>>> parent of d4f46bd (Merge branch 'master' into issue-17-profile-page)
             <ProtectedRoute path="/add" component={AddStuff}/>
             <ProtectedRoute path="/edit/:_id" component={EditStuff}/>
             <AdminProtectedRoute path="/admin" component={ListStuffAdmin}/>
