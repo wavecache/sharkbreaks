@@ -12,7 +12,7 @@ class StuffItem extends React.Component {
         <Table.Cell>{this.props.stuff.quantity}</Table.Cell>
         <Table.Cell>{this.props.stuff.condition}</Table.Cell>
         <Table.Cell>
-          <Link to={`/edit/${this.props.stuff._id}`}>Edit</Link>
+          <Link to={`/edit/${this.props.stuff._id}`}>Edit Test</Link>
         </Table.Cell>
       </Table.Row>
     );

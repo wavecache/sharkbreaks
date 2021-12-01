@@ -27,7 +27,6 @@ class Profile extends React.Component {
         />
       )
 
-
       <Table.Row>
         <Table.Cell>{this.props.stuff.name}</Table.Cell>
         <Table.Cell>{this.props.stuff.quantity}</Table.Cell>
