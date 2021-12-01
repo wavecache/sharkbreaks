@@ -8,21 +8,18 @@ import {
   Menu,
   Visibility,
 } from 'semantic-ui-react';
+import { Meteor } from 'meteor/meteor';
+import { withTracker } from 'meteor/react-meteor-data';
+import PropTypes from 'prop-types';
 import { blueTextStyle, centerStyle, fixedOverlayMenuStyle, fixedOverlayStyle, overlayMenuStyle, overlayStyle } from '../layouts/style';
-import { membersMockArray, paragraph, surfBreakConditionMockObject } from '../../api/MockObjects';
+import { membersMockArray } from '../../api/MockObjects';
 import SurfBreakConditions from '../components/SurfBreakPage/SurfBreakConditions';
 import SurfBreakMembers from '../components/SurfBreakPage/SurfBreakMembers';
+import { SurfBreakData } from '../../api/surfbreak/SurfBreakData';
 
-export default class SurfBreakPage extends Component {
+class SurfBreakPage extends Component {
 
-  surfBreakPage = {
-    name: 'PUA’ENA POINT',
-    followersIds: ['sldknflskdnf', 'sdlkfnvosdfngo'],
-    image: 'https://lushpalm.com/wp-content/uploads/2017/11/oahu-surf-spots-haleiwa.webp',
-    description: paragraph,
-    address: '59-337 Ke Nui Rd, Haleiwa, HI 96712',
-    _id: 'sfgebfefgbrgnhfgndfbdfb',
-  }
+  surfBreakPage = this.props.surfBreak;
 
   state = {
     menuFixed: false,
@@ -56,7 +53,7 @@ export default class SurfBreakPage extends Component {
               <Image src={this.surfBreakPage.image} size='large' rounded={true}/>
             </GridColumn>
             <GridColumn style={centerStyle}>
-              <SurfBreakConditions surfBreakConditions={surfBreakConditionMockObject}/>
+              <SurfBreakConditions lat='10' lon='10'/>
             </GridColumn>
           </Grid>
         </Container>
@@ -99,7 +96,7 @@ export default class SurfBreakPage extends Component {
           </div>
 
           {_.times(3, (i) => (
-            <p>{this.surfBreakPage.description} {i}</p>
+            <p key={i}>{this.surfBreakPage.description} {i}</p>
           ))}
         </Container>
         <SurfBreakMembers members={membersMockArray}/>
@@ -108,13 +105,30 @@ export default class SurfBreakPage extends Component {
   }
 }
 
-/* SurfBreakPage.propTypes = {
-  surfBreakPage: PropTypes.shape({
+SurfBreakPage.propTypes = {
+  surfBreak: PropTypes.shape({
     name: PropTypes.string,
     followersIds: PropTypes.array,
     image: PropTypes.string,
+    summary: PropTypes.string,
     description: PropTypes.string,
     address: PropTypes.string,
     _id: PropTypes.string,
   }).isRequired,
-}; */
+};
+
+// withTracker connects Meteor data to React components. https://guide.meteor.com/react.html#using-withTracker
+export default withTracker(({ match }) => {
+  // Get the documentID from the URL field. See imports/ui/layouts/App.jsx for the route containing :_id.
+  const documentId = match.params._id;
+  // Get access to Stuff documents.
+  const subscription = Meteor.subscribe(SurfBreakData.userPublicationName);
+  // Determine if the subscription is ready
+  const ready = subscription.ready();
+  // Get the document
+  const surfBreak = SurfBreakData.collection.findOne(documentId);
+  return {
+    surfBreak,
+    ready,
+  };
+})(SurfBreakPage);

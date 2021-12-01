@@ -4,6 +4,7 @@ import { landingHeader } from '../layouts/style';
 
 /** A simple static component to render some text for the landing page. */
 class Landing extends React.Component {
+
   render() {
     return (
       <div style={{ backgroundImage: 'url(./images/Images/RockyPoint.jpg)',
