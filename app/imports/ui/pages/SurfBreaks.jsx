@@ -5,7 +5,7 @@ import PropTypes from 'prop-types';
 import { withTracker } from 'meteor/react-meteor-data';
 import { Meteor } from 'meteor/meteor';
 import _ from 'lodash';
-import { blueTextStyle, buttonStyle } from '../layouts/style';
+import { blueTextStyle, buttonStyle, searchBarStyle } from '../layouts/style';
 import SurfBreak from '../components/SurfBreak';
 import { SurfBreakData } from '../../api/surfbreak/SurfBreakData';
 
@@ -40,7 +40,6 @@ class SurfBreaks extends React.Component {
   renderPage() {
     let renderSurfBreaks = [];
     if (this.state.currentSurfBreaks.length === 0 && this.initialValue) {
-      console.log('Hello')
       this.initialValue = false;
       renderSurfBreaks = this.props.surfBreaks;
     } else {
@@ -49,7 +48,7 @@ class SurfBreaks extends React.Component {
     return (
       <Container id='surfBreaks-page'>
         <Header style={ blueTextStyle } as="h2" textAlign="center">Surf Breaks</Header>
-        <Input placeholder='' onChange={(surfBreaks) => this.filterSurfBreaks(surfBreaks.target.value, this.props.surfBreaks)}/>
+        <Input placeholder='' size='big' style={searchBarStyle} label='Filter' onChange={(surfBreaks) => this.filterSurfBreaks(surfBreaks.target.value, this.props.surfBreaks)}/>
         <CardGroup centered>
           {renderSurfBreaks.map((surfBreak, index) => <SurfBreak id={`surfBreak${index}`} key={index} surfBreak={surfBreak} currentUser={this.props.currentUser}/>)}
         </CardGroup>

@@ -71,6 +71,16 @@ export const footerStyle = {
   marginTop: '1rem',
 };
 
+/* ----------- Surf Breaks Page ----------- */
+
+export const searchBarStyle = {
+  paddingBottom: '1em',
+  marginTop: '1em',
+  fontFamily: standardFont,
+  display: 'flex',
+  justifyContent: 'center',
+};
+
 /* ----------- Surf Break Card ----------- */
 
 export const surfBreakCardStyle = {
