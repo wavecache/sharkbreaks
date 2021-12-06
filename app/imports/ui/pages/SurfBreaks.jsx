@@ -1,5 +1,5 @@
 import React from 'react';
-import { Button, CardGroup, Container, Header, Input, Loader, Search } from 'semantic-ui-react';
+import { Button, CardGroup, Container, Header, Input, Loader } from 'semantic-ui-react';
 import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import { withTracker } from 'meteor/react-meteor-data';
