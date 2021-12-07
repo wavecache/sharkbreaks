@@ -23,7 +23,7 @@ class SurfBreak extends React.Component {
         <Card.Content >
           <Link to={`/surfBreakPage/${this.props.surfBreak._id}`}>Go to Surf Break page</Link>
         </Card.Content>
-        {this.props.currentUser === this.props.surfBreak.creatorUsername && (
+        {(this.props.currentUser === this.props.surfBreak.creatorUsername || this.props.currentUser === 'admin@foo.com') && (
           <Card.Content>
             <Link to={`/editSurfBreak/${this.props.surfBreak._id}`} >
               Edit this Surf Break
