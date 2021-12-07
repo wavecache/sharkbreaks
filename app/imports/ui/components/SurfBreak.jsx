@@ -1,5 +1,5 @@
 import React from 'react';
-import { Card, Image, Icon } from 'semantic-ui-react';
+import { Card, Image, Icon, Button } from 'semantic-ui-react';
 import { withRouter, Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import { blueTextStyle, surfBreakCardStyle } from '../layouts/style';
@@ -36,6 +36,13 @@ class SurfBreak extends React.Component {
             {this.props.surfBreak.followersIds.length} Friends are following this break
           </a>
         </Card.Content>
+        {(this.props.currentUser === this.props.surfBreak.creatorUsername || this.props.currentUser === 'admin@foo.com') && (
+          <Card.Content extra>
+            <Button className='deleteButton'>
+              Delete Break
+            </Button>
+          </Card.Content>
+        )}
         <Card.Content extra>
           Added by {this.props.surfBreak.creatorUsername}
         </Card.Content>

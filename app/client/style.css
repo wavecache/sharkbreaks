@@ -20,3 +20,8 @@ label {
   color: white !important;
   background: #2196f3 !important;
 }
+
+.ui.button.deleteButton {
+  color: white !important;
+  background: red !important;
+}
