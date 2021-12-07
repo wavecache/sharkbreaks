@@ -21,7 +21,7 @@ if (SurfBreakData.collection.find().count() === 0) {
 }
 
 function addProfile(profile) {
-  console.log('Adding Profile');
+  console.log(`Adding Profile ${profile.firstName + " " + profile.lastName}`);
   Profiles.collection.insert(profile);
 }
 
