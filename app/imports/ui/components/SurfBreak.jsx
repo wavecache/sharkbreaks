@@ -3,8 +3,13 @@ import { Card, Image, Icon, Button } from 'semantic-ui-react';
 import { withRouter, Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import { blueTextStyle, surfBreakCardStyle } from '../layouts/style';
+import { SurfBreakData } from '../../api/surfbreak/SurfBreakData';
 
 class SurfBreak extends React.Component {
+  deleteBreak(_id) {
+    SurfBreakData.collection.remove(_id);
+  }
+
   render() {
     return (
       <Card style={surfBreakCardStyle}>
@@ -38,7 +43,7 @@ class SurfBreak extends React.Component {
         </Card.Content>
         {(this.props.currentUser === this.props.surfBreak.creatorUsername || this.props.currentUser === 'admin@foo.com') && (
           <Card.Content extra>
-            <Button className='deleteButton'>
+            <Button className='deleteButton' onClick={() => this.deleteBreak(this.props.surfBreak._id)}>
               Delete Break
             </Button>
           </Card.Content>
