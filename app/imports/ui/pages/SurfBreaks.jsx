@@ -49,7 +49,7 @@ class SurfBreaks extends React.Component {
         <Header style={ blueTextStyle } as="h2" textAlign="center">Surf Breaks</Header>
         <Input placeholder='' size='big' style={searchBarStyle} label='Filter' onChange={(surfBreaks) => this.filterSurfBreaks(surfBreaks.target.value, this.props.surfBreaks)}/>
         <CardGroup centered>
-          {renderSurfBreaks.map((surfBreak, index) => <SurfBreak surfBreakCard={this} id={`surfBreak${index}`} key={index} surfBreak={surfBreak} currentUser={this.props.currentUser}/>)}
+          {renderSurfBreaks.map((surfBreak, index) => <SurfBreak surfBreakPage={this} id={`surfBreak${index}`} key={index} surfBreak={surfBreak} currentUser={this.props.currentUser}/>)}
         </CardGroup>
         {this.props.currentUser === '' ? null : (
           <Link to={'/addSurfBreak'} style={{ display: 'flex', justifyContent: 'center' }}>

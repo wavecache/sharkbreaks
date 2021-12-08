@@ -16,8 +16,8 @@ class EditSurfBreak extends React.Component {
 
   // On successful submit, insert the data.
   submit(data) {
-    const { name, image, summary, description, address } = data;
-    SurfBreakData.collection.update(this.props.surfBreakId, { $set: { summary, image, address, name, description } }, (error) => (error ?
+    const { name, image, summary, description, address, xPos, yPos } = data;
+    SurfBreakData.collection.update(this.props.surfBreakId, { $set: { summary, image, address, name, description, xPos, yPos } }, (error) => (error ?
       swal('Error', error.message, 'error') :
       swal('Success', 'Item updated successfully', 'success')));
   }
@@ -47,6 +47,10 @@ class EditSurfBreak extends React.Component {
               <TextField name='summary' id='edit-break-summary'/>
               <LongTextField name='description' id='edit-break-description'/>
               <TextField name='address' id='edit-break-address'/>
+              <Segment>
+                <TextField name='xPos' id='edit-break-address'/>
+                <TextField name='yPos' id='edit-break-address'/>
+              </Segment>
               <SubmitField value='Submit' id='edit-break-submit'/>
               <ErrorsField/>
             </Segment>
@@ -66,6 +70,7 @@ EditSurfBreak.propTypes = {
     description: PropTypes.string,
     address: PropTypes.string,
     creatorUsername: PropTypes.string,
+    coordinates: PropTypes.object,
     _surfBreakId: PropTypes.string,
   }).isRequired,
   surfBreakId: PropTypes.string.isRequired,

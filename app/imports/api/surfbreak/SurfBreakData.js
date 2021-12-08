@@ -20,6 +20,8 @@ class SurfBreakCollection {
       description: String,
       address: String,
       creatorUsername: String,
+      xPos: String,
+      yPos: String,
       _id: String,
     }, { tracker: Tracker });
     // Attach the schema to the collection, so all attempts to insert a document are checked against schema.

@@ -5,6 +5,10 @@ export const surfBreakMockObject = {
   followersIds: ['ksdnfksfn', 'sldknflskdnf', 'sdlkfnvosdfngo'],
   image: 'https://lushpalm.com/wp-content/uploads/2017/11/oahu-surf-spots-pipeline.webp',
   description: 'If you are on a quest to find the legendary Banzai Pipeline Hawaii, known around the world  for its perfect barreling waves, then head to Ehukai Beach Park on the North Shore Oahu.',
+  coordinates: {
+    xPos: '19',
+    yPos: '-155',
+  },
   address: '59-337 Ke Nui Rd, Haleiwa, HI 96712',
 };
 
@@ -14,6 +18,8 @@ const surfBreakMockObject2 = {
   image: 'https://lushpalm.com/wp-content/uploads/2017/11/oahu-surf-spots-north-shore.webp',
   // eslint-disable-next-line max-len
   description: 'Elmo is a red Muppet character on the long-running PBS/HBO children\'s television show Sesame Street. A furry red monster with a falsetto voice, he has illeism, and also hosts the last full fifteen-minute segment on Sesame Street, "Elmo\'s World", which is aimed at toddlers.',
+  xPos: '19',
+  yPos: '-155',
   address: 'Hale`iwa, Hawai`i 96712',
 };
 
@@ -29,6 +35,8 @@ const surfBreakMockObject3 = {
     'Step 6: Add Eggs One at a Time. ...\n' +
     'Step 7: Alternate Adding Dry and Wet Ingredients. ...\n' +
     'Step 8: Pour Batter into Pans and Bake.',
+  xPos: '19',
+  yPos: '-155',
   address: '59-337 Ke Nui Rd, Haleiwa, HI 96712',
 };
 

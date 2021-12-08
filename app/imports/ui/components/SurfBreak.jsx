@@ -7,7 +7,7 @@ import { SurfBreakData } from '../../api/surfbreak/SurfBreakData';
 
 class SurfBreak extends React.Component {
   deleteBreak(_id) {
-    this.props.surfBreakCard.initialValue = true;
+    this.props.surfBreakPage.initialValue = true;
     SurfBreakData.collection.remove(_id);
   }
 
@@ -66,10 +66,12 @@ SurfBreak.propTypes = {
     summary: PropTypes.string,
     address: PropTypes.string,
     creatorUsername: PropTypes.string,
+    xPos: PropTypes.string,
+    yPos: PropTypes.string,
     _id: PropTypes.string,
   }).isRequired,
   currentUser: PropTypes.string,
-  surfBreakCard: PropTypes.object,
+  surfBreakPage: PropTypes.object,
 };
 
 // Wrap this component in withRouter since we use the <Link> React Router element.

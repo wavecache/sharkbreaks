@@ -23,12 +23,11 @@ class AddSurfBreak extends React.Component {
 
   // On submit, insert the data.
   submit(data, formRef) {
-    const { name, image, summary, description, address } = data;
+    const { name, image, summary, description, address, xPos, yPos } = data;
     const followersIds = [];
     const creatorUsername = Meteor.user().username;
     const _surfBreakId = `${creatorUsername}${name}`;
-    console.log('here');
-    SurfBreakData.collection.insert({ name, creatorUsername, followersIds, image, summary, description, address, _surfBreakId },
+    SurfBreakData.collection.insert({ name, creatorUsername, followersIds, image, summary, description, address, xPos, yPos, _surfBreakId },
       (error) => {
         if (error) {
           swal('Error', error.message, 'error');
@@ -53,6 +52,10 @@ class AddSurfBreak extends React.Component {
               <TextField name='summary' id='add-break-summary'/>
               <LongTextField name='description' id='add-break-description'/>
               <TextField name='address' id='add-break-address'/>
+              <Segment>
+                <TextField name='xPos' id='edit-break-address'/>
+                <TextField name='yPos' id='edit-break-address'/>
+              </Segment>
               <SubmitField value='Submit' id='add-break-submit'/>
               <ErrorsField/>
             </Segment>
