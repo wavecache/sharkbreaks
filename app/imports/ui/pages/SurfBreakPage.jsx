@@ -78,7 +78,8 @@ class SurfBreakPage extends Component {
               style={ overlayFixed ? fixedOverlayMenuStyle : overlayMenuStyle }
               vertical
             >
-              <Menu.Item style={ { color: 'grey' } }>
+              {/* eslint-disable-next-line no-undef */}
+              <Menu.Item style={ { color: 'grey' } } onClick={() => window.location.replace(`https://maps.google.com?q=${this.props.surfBreak.xPos},${this.props.surfBreak.yPos}`)}>
                 <Icon name='map'/>
                 Google maps location
               </Menu.Item>
