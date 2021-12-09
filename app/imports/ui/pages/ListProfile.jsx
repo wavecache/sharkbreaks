@@ -6,6 +6,7 @@ import { Meteor } from 'meteor/meteor';
 import { Profiles } from '../../api/Profiles/Profiles';
 import Profile from '../components/Profile';
 import { blueTextStyle } from '../layouts/style';
+import { profiles } from '../../api/MockObjects';
 
 /** Renders a table containing all of the Stuff documents. Use <StuffItem> to render each row. */
 class ListProfile extends React.Component {
@@ -29,6 +30,8 @@ class ListProfile extends React.Component {
       <Container fluid>
         <Header as="h2" textAlign="center" style={blueTextStyle}>Your Profile</Header>
         <Card.Group>
+          { /*this.props.profiles.map((profile, index) => <Profile key={index} profile={profile}/>)*/ }
+          {profiles.map((profile, index) => <Profile key={index} profile={profile}/>)}
         </Card.Group>
       </Container>
     );
@@ -37,7 +40,7 @@ class ListProfile extends React.Component {
 
 // Require an array of Stuff documents in the props.
 ListProfile.propTypes = {
-  // profiles: PropTypes.array.isRequired,
+  profiles: PropTypes.array,
   ready: PropTypes.bool.isRequired,
 };
 

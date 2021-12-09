@@ -84,3 +84,12 @@ export const contacts = [{
   bio: 'Eh, no drop in on me brah',
 },
 ];
+
+export const profiles = [
+  { firstName: 'Philip', lastName: 'Johnson', address: 'POST 307, University of Hawaii',
+    image: 'https://philipmjohnson.github.io/images/philip2.jpeg',
+    description: 'I am a Professor of Information and Computer Sciences at the University of Hawaii, Director of the Collaborative Software Development Laboratory, and the CEO of OpenPowerQuality.com.',
+    skill: 'Jedi Master',
+    owner: 'john@foo.com',
+  },
+];

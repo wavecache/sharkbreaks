@@ -11,7 +11,7 @@ class Profile extends React.Component {
       <Card style={ { ...backgroundStyle, ...blueTextStyle } }>
         <Image src={this.props.profile.image} wrapped ui={false} />
         <Card.Content>
-          <Card.Header style={ { ...backgroundStyle, ...blueTextStyle } }>{this.props.profile.firstName} {this.props.profile.lastName}</Card.Header>
+          <Card.Header style={ { ...backgroundStyle, ...blueTextStyle } }>{this.props.profile.firstName} {this.props.profile.lastName} {this.props.profile.skill} {this.props.profile.description} </Card.Header>
           <Card.Meta>
             <span className='date'>{this.props.profile.level}</span>
           </Card.Meta>
