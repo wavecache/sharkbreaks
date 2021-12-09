@@ -69,7 +69,7 @@ export const paragraph = [
 ].join('');
 
 export const membersMockArray = [
-  'Constantin',
+  'Constantine',
   'Kevin',
   'Quinn',
   'Chase',
