@@ -48,8 +48,8 @@ class EditSurfBreak extends React.Component {
               <LongTextField name='description' id='edit-break-description'/>
               <TextField name='address' id='edit-break-address'/>
               <Segment>
-                <TextField name='xPos' id='edit-break-address'/>
-                <TextField name='yPos' id='edit-break-address'/>
+                <TextField name='xPos' id='edit-break-x-pos'/>
+                <TextField name='yPos' id='edit-break-y-pos'/>
               </Segment>
               <SubmitField value='Submit' id='edit-break-submit'/>
               <ErrorsField/>

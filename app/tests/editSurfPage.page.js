@@ -18,6 +18,8 @@ class EditSurfBreakPage {
     await testController.typeText('#edit-break-description', 'Some random text to test');
     await testController.typeText('#edit-break-address', 'Some random text to test');
     await testController.typeText('#edit-break-name', 'Some random text to test');
+    await testController.typeText('#edit-break-x-pos', '100');
+    await testController.typeText('#edit-break-y-pos', '100');
     await testController.click('#edit-break-submit');
   }
 }

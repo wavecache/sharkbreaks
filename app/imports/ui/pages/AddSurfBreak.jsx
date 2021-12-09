@@ -14,6 +14,8 @@ const formSchema = new SimpleSchema({
   summary: String,
   description: String,
   address: String,
+  xPos: String,
+  yPos: String,
 });
 
 const bridge = new SimpleSchema2Bridge(formSchema);
@@ -53,8 +55,8 @@ class AddSurfBreak extends React.Component {
               <LongTextField name='description' id='add-break-description'/>
               <TextField name='address' id='add-break-address'/>
               <Segment>
-                <TextField name='xPos' id='edit-break-address'/>
-                <TextField name='yPos' id='edit-break-address'/>
+                <TextField name='xPos' id='add-break-x-pos'/>
+                <TextField name='yPos' id='add-break-y-pos'/>
               </Segment>
               <SubmitField value='Submit' id='add-break-submit'/>
               <ErrorsField/>
