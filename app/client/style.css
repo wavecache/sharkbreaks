@@ -25,3 +25,7 @@ label {
   color: white !important;
   background: red !important;
 }
+
+.ui .segment {
+  background-color: #E9FFFD !important;
+}
