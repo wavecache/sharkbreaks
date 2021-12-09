@@ -1,13 +1,8 @@
 import React from 'react';
-import { Meteor } from 'meteor/meteor';
-import { Container, Header, Loader, Card } from 'semantic-ui-react';
-import { withTracker } from 'meteor/react-meteor-data';
-import PropTypes from 'prop-types';
-import { Stuffs } from '../../api/stuff/Stuff';
-import Contact from '../components/Contact';
+import { Card, Container, Header } from 'semantic-ui-react';
 
 /** Renders a table containing all of the Stuff documents. Use <StuffItem> to render each row. */
-class ListProfile extends React.Component {
+export default class ListProfile extends React.Component {
 
   contacts = [{
     firstName: 'Philip', lastName: 'Johnson', address: 'POST 307, University of Hawaii',
@@ -19,7 +14,7 @@ class ListProfile extends React.Component {
 
   // If the subscription(s) have been received, render the page, otherwise show a loading icon.
   render() {
-    return (this.props.ready) ? this.renderPage() : <Loader active>Getting data</Loader>;
+    return this.renderPage();
   }
 
   // Render the page once subscriptions have been received.
@@ -28,29 +23,10 @@ class ListProfile extends React.Component {
       <Container fluid>
         <Header as="h2" textAlign="center">Your Profile</Header>
         <Card centered>
-          {this.contacts.map((contact, index) => <Contact key={index} contact={contact}/>) }
+          {/* eslint-disable-next-line no-unused-vars */}
+          {/* Create a friend component, just copy what you did if it was based on the stuff code */}
         </Card>
       </Container>
     );
   }
 }
-
-// Require an array of Stuff documents in the props.
-ListProfile.propTypes = {
-  stuffs: PropTypes.array.isRequired,
-  ready: PropTypes.bool.isRequired,
-};
-
-// withTracker connects Meteor data to React components. https://guide.meteor.com/react.html#using-withTracker
-export default withTracker(() => {
-  // Get access to Stuff documents.
-  const subscription = Meteor.subscribe(Stuffs.userPublicationName);
-  // Determine if the subscription is ready
-  const ready = subscription.ready();
-  // Get the Stuff documents
-  const stuffs = Stuffs.collection.find({}).fetch();
-  return {
-    stuffs,
-    ready,
-  };
-})(ListProfile);

@@ -1,17 +1,13 @@
 import React from 'react';
-import { Meteor } from 'meteor/meteor';
-import { Button, Comment, Form, Header, Loader, Container } from 'semantic-ui-react';
-import { withTracker } from 'meteor/react-meteor-data';
-import PropTypes from 'prop-types';
-import { Stuffs } from '../../api/stuff/Stuff';
+import { Button, Comment, Form, Header, Container } from 'semantic-ui-react';
 import { blueTextStyle } from '../layouts/style';
 
 /** Renders a table containing all of the Stuff documents. Use <StuffItem> to render each row. */
-class Forum extends React.Component {
+export default class Forum extends React.Component {
 
   // If the subscription(s) have been received, render the page, otherwise show a loading icon.
   render() {
-    return (this.props.ready) ? this.renderPage() : <Loader active>Getting data</Loader>;
+    return this.renderPage();
   }
 
   // Render the page once subscriptions have been received.
@@ -19,12 +15,12 @@ class Forum extends React.Component {
     return (
       <Container>
         <Comment.Group threaded>
-          <Header as='h3' style={ blueTextStyle } dividing>
-          Sharkbreaks Forum
+          <Header as='h3' style={blueTextStyle} dividing>
+            Sharkbreaks Forum
           </Header>
 
-          <Comment style={ blueTextStyle } >
-            <Comment.Avatar as='a' src='https://react.semantic-ui.com/images/avatar/small/matt.jpg' />
+          <Comment style={blueTextStyle}>
+            <Comment.Avatar as='a' src='https://react.semantic-ui.com/images/avatar/small/matt.jpg'/>
             <Comment.Content>
               <Comment.Author as='a'>Matt</Comment.Author>
               <Comment.Metadata>
@@ -37,8 +33,8 @@ class Forum extends React.Component {
             </Comment.Content>
           </Comment>
 
-          <Comment style={ blueTextStyle }>
-            <Comment.Avatar as='a' src='https://react.semantic-ui.com/images/avatar/small/elliot.jpg' />
+          <Comment style={blueTextStyle}>
+            <Comment.Avatar as='a' src='https://react.semantic-ui.com/images/avatar/small/elliot.jpg'/>
             <Comment.Content>
               <Comment.Author as='a'>Elliot Fu</Comment.Author>
               <Comment.Metadata>
@@ -52,9 +48,9 @@ class Forum extends React.Component {
               </Comment.Actions>
             </Comment.Content>
 
-            <Comment.Group style={ blueTextStyle }>
+            <Comment.Group style={blueTextStyle}>
               <Comment>
-                <Comment.Avatar as='a' src='https://react.semantic-ui.com/images/avatar/small/jenny.jpg' />
+                <Comment.Avatar as='a' src='https://react.semantic-ui.com/images/avatar/small/jenny.jpg'/>
                 <Comment.Content>
                   <Comment.Author as='a'>Jenny Hess</Comment.Author>
                   <Comment.Metadata>
@@ -69,8 +65,8 @@ class Forum extends React.Component {
             </Comment.Group>
           </Comment>
 
-          <Comment style={ blueTextStyle }>
-            <Comment.Avatar as='a' src='https://react.semantic-ui.com/images/avatar/small/joe.jpg' />
+          <Comment style={blueTextStyle}>
+            <Comment.Avatar as='a' src='https://react.semantic-ui.com/images/avatar/small/joe.jpg'/>
             <Comment.Content>
               <Comment.Author as='a'>Joe Henderson</Comment.Author>
               <Comment.Metadata>
@@ -84,31 +80,11 @@ class Forum extends React.Component {
           </Comment>
 
           <Form reply>
-            <Form.TextArea />
-            <Button content='Add Reply' labelPosition='left' icon='edit' primary />
+            <Form.TextArea/>
+            <Button content='Add Reply' labelPosition='left' icon='edit' primary/>
           </Form>
         </Comment.Group>
       </Container>
     );
   }
 }
-
-// Require an array of Stuff documents in the props.
-Forum.propTypes = {
-  stuffs: PropTypes.array.isRequired,
-  ready: PropTypes.bool.isRequired,
-};
-
-// withTracker connects Meteor data to React components. https://guide.meteor.com/react.html#using-withTracker
-export default withTracker(() => {
-  // Get access to Stuff documents.
-  const subscription = Meteor.subscribe(Stuffs.userPublicationName);
-  // Determine if the subscription is ready
-  const ready = subscription.ready();
-  // Get the Stuff documents
-  const stuffs = Stuffs.collection.find({}).fetch();
-  return {
-    stuffs,
-    ready,
-  };
-})(Forum);
