@@ -14,9 +14,9 @@ class SurfBreak extends React.Component {
   render() {
     return (
       <Card style={surfBreakCardStyle}>
-        <Image src={this.props.surfBreak.image} wrapped ui={false} />
+        <Image src={this.props.surfBreak.image} wrapped ui={false}/>
         <Card.Content>
-          <Card.Header style={blueTextStyle} id={ `#to-surf-${this.props.surfBreak._id}` } class='card-header'>
+          <Card.Header style={blueTextStyle} id={ `#to-surf-${this.props.surfBreak._id}` } class='card-hseader'>
             <Link to={`/surfBreakPage/${this.props.surfBreak._id}`} >{this.props.surfBreak.name}</Link>
           </Card.Header>
           <Card.Meta>

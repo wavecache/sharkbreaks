@@ -25,11 +25,16 @@ function addProfile(profile) {
   Profiles.collection.insert(profile);
 }
 
-// Initialize the StuffsCollection if empty.
 if (Profiles.collection.find().count() === 0) {
   // noinspection JSUnresolvedVariable
   if (Meteor.settings.defaultProfiles) {
     console.log('Creating default profile.');
     Meteor.settings.defaultProfiles.map(profile => addProfile(profile));
   }
+}
+
+if ((Meteor.settings.loadAssetsFile) && SurfBreakData.collection.find().count() === 0) {
+  const assetsFileName = 'data.json';
+  const jsonData = JSON.parse(Assets.getText(assetsFileName));
+  jsonData.defaultSurfBreaks.map(surfBreak => addSurfBreak(surfBreak));
 }
