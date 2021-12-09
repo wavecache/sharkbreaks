@@ -45,7 +45,7 @@ class SurfBreak extends React.Component {
         {(this.props.currentUser === this.props.surfBreak.creatorUsername || this.props.currentUser === 'admin@foo.com') && (
           <Card.Content extra>
             <Button className='deleteButton' onClick={() => this.deleteBreak(this.props.surfBreak._id)}>
-              Delete Break
+              Delete {this.props.surfBreak.name}
             </Button>
           </Card.Content>
         )}
