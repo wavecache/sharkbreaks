@@ -1,8 +1,14 @@
 import React from 'react';
-import { Card, Container, Header } from 'semantic-ui-react';
+import { Card, Container, Header, Loader } from 'semantic-ui-react';
+import PropTypes from 'prop-types';
+import { withTracker } from 'meteor/react-meteor-data';
+import { Meteor } from 'meteor/meteor';
+import { Profiles } from '../../api/Profiles/Profiles';
+import Profile from '../components/Profile';
+import { blueTextStyle } from '../layouts/style';
 
 /** Renders a table containing all of the Stuff documents. Use <StuffItem> to render each row. */
-export default class ListProfile extends React.Component {
+class ListProfile extends React.Component {
 
   contacts = [{
     firstName: 'Philip', lastName: 'Johnson', address: 'POST 307, University of Hawaii',
@@ -14,19 +20,38 @@ export default class ListProfile extends React.Component {
 
   // If the subscription(s) have been received, render the page, otherwise show a loading icon.
   render() {
-    return this.renderPage();
+    return (this.props.ready) ? this.renderPage() : <Loader active>Getting data</Loader>;
   }
 
   // Render the page once subscriptions have been received.
   renderPage() {
     return (
       <Container fluid>
-        <Header as="h2" textAlign="center">Your Profile</Header>
-        <Card centered>
-          {/* eslint-disable-next-line no-unused-vars */}
-          {/* Create a friend component, just copy what you did if it was based on the stuff code */}
-        </Card>
+        <Header as="h2" textAlign="center" style={blueTextStyle}>Your Profile</Header>
+        <Card.Group>
+        </Card.Group>
       </Container>
     );
   }
 }
+
+// Require an array of Stuff documents in the props.
+ListProfile.propTypes = {
+  // profiles: PropTypes.array.isRequired,
+  ready: PropTypes.bool.isRequired,
+};
+
+// withTracker connects Meteor data to React components. https://guide.meteor.com/react.html#using-withTracker
+export default withTracker(() => {
+  // Get access to Stuff documents.
+  const subscription = Meteor.subscribe(Profiles.userPublicationName);
+  // Determine if the subscription is ready
+  const ready = subscription.ready();
+  // Get the Stuff documents
+  const profile = Profiles.collection.find({}).fetch();
+  return {
+    currentUser: Meteor.user() ? Meteor.user().username : '',
+    profile,
+    ready,
+  };
+})(ListProfile);
