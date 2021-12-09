@@ -11,7 +11,7 @@ import { editSurfBreakPage } from './editSurfPage.page';
 /* global fixture:false, test:false */
 
 /** Credentials for one of the sample users defined in settings.development.json. */
-const credentials = { username: 'john@foo.com', password: 'changeme' };
+const credentials = { username: 'admin@foo.com', password: 'changeme' };
 
 fixture('meteor-application-template-react localhost test with default db')
   .page('http://localhost:3000');
@@ -67,4 +67,15 @@ test('Editing a surf break with valid inputs', async (testController) => {
   await testController.click('#surfBreaks-page-navBar');
   await surfBreaksPage.isDisplayed(testController);
   await surfBreaksPage.hasDefaultBreaksAfterAdding(testController);
+});
+
+test('Deleting a surf break', async (testController) => {
+  await navBar.gotoSigninPage(testController);
+  await signinPage.signin(testController, credentials.username, credentials.password);
+  await testController.click('#surfBreaks-page-navBar');
+  const beforeDelete = await Selector('.ui .card').count;
+  await testController.click(Selector('.ui .card .button').withText('Delete'));
+  await surfBreaksPage.isDisplayed(testController);
+  const afterDelete = await Selector('.ui .card').count;
+  await testController.expect(afterDelete + 1).eql(beforeDelete);
 });
