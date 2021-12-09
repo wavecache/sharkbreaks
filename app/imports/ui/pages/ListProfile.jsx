@@ -4,6 +4,7 @@ import PropTypes from 'prop-types';
 import { withTracker } from 'meteor/react-meteor-data';
 import { Meteor } from 'meteor/meteor';
 import { Profiles } from '../../api/Profiles/Profiles';
+import Profile from '../components/Profile';
 import { blueTextStyle } from '../layouts/style';
 
 /** Renders a table containing all of the Stuff documents. Use <StuffItem> to render each row. */
@@ -27,10 +28,8 @@ class ListProfile extends React.Component {
     return (
       <Container fluid>
         <Header as="h2" textAlign="center" style={blueTextStyle}>Your Profile</Header>
-        <Card centered>
-          {/* eslint-disable-next-line no-unused-vars */}
-          {/* Create a friend component, just copy what you did if it was based on the stuff code */}
-        </Card>
+        <Card.Group>
+        </Card.Group>
       </Container>
     );
   }
@@ -38,7 +37,7 @@ class ListProfile extends React.Component {
 
 // Require an array of Stuff documents in the props.
 ListProfile.propTypes = {
-  profile: PropTypes.array.isRequired,
+  // profiles: PropTypes.array.isRequired,
   ready: PropTypes.bool.isRequired,
 };
 
