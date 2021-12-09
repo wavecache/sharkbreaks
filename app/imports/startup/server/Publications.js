@@ -1,8 +1,13 @@
 import { Meteor } from 'meteor/meteor';
 import { SurfBreakData } from '../../api/surfbreak/SurfBreakData';
+import { Profiles } from '../../api/Profiles/Profiles';
 
 Meteor.publish(SurfBreakData.userPublicationName, function () {
   return SurfBreakData.collection.find();
+});
+
+Meteor.publish(Profiles.userPublicationName, function () {
+  return Profiles.collection.find();
 });
 
 // alanning:roles publication
