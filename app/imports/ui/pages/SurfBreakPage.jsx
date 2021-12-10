@@ -12,7 +12,6 @@ import { Meteor } from 'meteor/meteor';
 import { withTracker } from 'meteor/react-meteor-data';
 import PropTypes from 'prop-types';
 import { blueTextStyle, centerStyle, fixedOverlayMenuStyle, fixedOverlayStyle, overlayMenuStyle, overlayStyle } from '../layouts/style';
-import { membersMockArray } from '../../api/MockObjects';
 import SurfBreakConditions from '../components/SurfBreakPage/SurfBreakConditions';
 import SurfBreakMembers from '../components/SurfBreakPage/SurfBreakMembers';
 import { SurfBreakData } from '../../api/surfbreak/SurfBreakData';
@@ -20,6 +19,8 @@ import { SurfBreakData } from '../../api/surfbreak/SurfBreakData';
 class SurfBreakPage extends Component {
 
   surfBreakPage = this.props.surfBreak;
+
+  // documentID = this.props.surfBreak._id;
 
   state = {
     menuFixed: false,
@@ -50,7 +51,7 @@ class SurfBreakPage extends Component {
         <Container id='surfBreakPage-page'>
           <Grid columns={2} >
             <GridColumn style={centerStyle}>
-              <Image src={this.surfBreakPage.image} size='large' rounded={true}/>
+              <Image src={this.props.surfBreak.image} size='large' rounded={true}/>
             </GridColumn>
             <GridColumn style={centerStyle}>
               <SurfBreakConditions lat={this.props.surfBreak.xPos} lon={this.props.surfBreak.yPos}/>
@@ -100,7 +101,7 @@ class SurfBreakPage extends Component {
             <p key={i}>{this.surfBreakPage.description} {i}</p>
           ))}
         </Container>
-        <SurfBreakMembers members={membersMockArray}/>
+        <SurfBreakMembers members={this.surfBreakPage.followersIds} pageId={this.surfBreakPage._id}/>
       </div>
     );
   }

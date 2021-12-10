@@ -30,7 +30,7 @@ class ListProfile extends React.Component {
       <Container fluid>
         <Header as="h2" textAlign="center" style={blueTextStyle}>Your Profile</Header>
         <Card.Group>
-          { /*this.props.profiles.map((profile, index) => <Profile key={index} profile={profile}/>)*/ }
+          { /* this.props.profiles.map((profile, index) => <Profile key={index} profile={profile}/>) */ }
           {profiles.map((profile, index) => <Profile key={index} profile={profile}/>)}
         </Card.Group>
       </Container>
