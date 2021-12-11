@@ -1,9 +1,6 @@
-#uniforms-0000-0002,
-.ui.form textarea,
-#uniforms-0000-0001,
-#uniforms-0000-0000,
-#uniforms-0000-0004,
+.ui .form,
 .column,
+.ui .input,
 h2,
 .ui .card .content
 {
@@ -28,4 +25,16 @@ label {
 
 .ui .segment {
   background-color: #E9FFFD !important;
+}
+
+#edit-break-name,
+#edit-break-image,
+#edit-break-summary,
+#edit-break-description,
+#edit-break-address,
+#edit-break-x-pos,
+#edit-break-y-pos
+{
+  color: #2196f3 !important;
+  font-family: Comfortaa, serif !important;
 }
