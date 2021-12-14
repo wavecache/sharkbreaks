@@ -26,19 +26,21 @@ class SurfBreakPage extends Component {
     overlayFixed: false,
   }
 
-  addUserToLiked(user) {
-    const newMembers = this.surfBreakPage.followersIds;
+  addUserToLiked = (user) => {
+    const newMembers = this.props.surfBreak.followersIds;
     newMembers.push(user);
-    if (_.findIndex(this.surfBreakPage.followersIds, user) !== -1) {
-      SurfBreakData.collection.update(this.surfBreakPage._id, { $set: { followersIds: _.remove(this.surfBreakPage.followersIds, function (userID) { return userID === user; }) } }, (error) => (error ?
+    if (_.findIndex(this.props.surfBreak.followersIds, user) !== -1) {
+      SurfBreakData.collection.update(this.props.surfBreak._id, { $set: { followersIds: _.remove(this.props.surfBreak.followersIds, function (userID) { return userID === user; }) } }, (error) => (error ?
         swal('Error', error.message, 'error') :
         swal('Success', 'Item updated successfully', 'success')));
+      this.setState({ following: false });
     } else {
-      SurfBreakData.collection.update(this.surfBreakPage._id, { $set: { followersIds: newMembers } }, (error) => (error ?
+      SurfBreakData.collection.update(this.props.surfBreak._id, { $set: { followersIds: newMembers } }, (error) => (error ?
         swal('Error', error.message, 'error') :
         swal('Success', 'Item updated successfully', 'success')));
+      this.setState({ following: true });
     }
-  } 
+  }
 
   handleOverlayRef = (c) => {
     const { overlayRect } = this.state;
@@ -120,7 +122,7 @@ class SurfBreakPage extends Component {
             <p key={i}>{this.props.surfBreak.description} {i}</p>
           ))}
         </Container>
-        <SurfBreakMembers members={this.surfBreakPage.followersIds}/>
+        <SurfBreakMembers members={this.props.surfBreak.followersIds}/>
         <Container>
           <Button style={blueTextStyle} onClick={this.addUserToLiked(Meteor.user().username)}>
             Like this break
