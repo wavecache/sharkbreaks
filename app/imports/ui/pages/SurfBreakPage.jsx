@@ -1,6 +1,7 @@
 import _ from 'lodash';
 import React, { Component } from 'react';
 import {
+  Button,
   Container, Grid, GridColumn,
   Header,
   Icon,
@@ -11,6 +12,7 @@ import {
 import { Meteor } from 'meteor/meteor';
 import { withTracker } from 'meteor/react-meteor-data';
 import PropTypes from 'prop-types';
+import swal from 'sweetalert';
 import { blueTextStyle, centerStyle, fixedOverlayMenuStyle, fixedOverlayStyle, overlayMenuStyle, overlayStyle } from '../layouts/style';
 import SurfBreakConditions from '../components/SurfBreakPage/SurfBreakConditions';
 import SurfBreakMembers from '../components/SurfBreakPage/SurfBreakMembers';
@@ -20,12 +22,24 @@ class SurfBreakPage extends Component {
 
   surfBreakPage = this.props.surfBreak;
 
-  // documentID = this.props.surfBreak._id;
-
   state = {
     menuFixed: false,
     overlayFixed: false,
   }
+
+  addUserToLiked(user) {
+    const newMembers = this.surfBreakPage.followersIds;
+    newMembers.push(user);
+    if (_.findIndex(this.surfBreakPage.followersIds, user) !== -1) {
+      SurfBreakData.collection.update(this.surfBreakPage._id, { $set: { followersIds: _.remove(this.surfBreakPage.followersIds, function (userID) { return userID === user; }) } }, (error) => (error ?
+        swal('Error', error.message, 'error') :
+        swal('Success', 'Item updated successfully', 'success')));
+    } else {
+      SurfBreakData.collection.update(this.surfBreakPage._id, { $set: { followersIds: newMembers } }, (error) => (error ?
+        swal('Error', error.message, 'error') :
+        swal('Success', 'Item updated successfully', 'success')));
+    }
+  } 
 
   handleOverlayRef = (c) => {
     const { overlayRect } = this.state;
@@ -51,7 +65,7 @@ class SurfBreakPage extends Component {
         <Container id='surfBreakPage-page'>
           <Grid columns={2} >
             <GridColumn style={centerStyle}>
-              <Image src={this.props.surfBreak.image} size='large' rounded={true}/>
+              <Image src={this.surfBreakPage.image} size='large' rounded={true}/>
             </GridColumn>
             <GridColumn style={centerStyle}>
               <SurfBreakConditions lat={this.props.surfBreak.xPos} lon={this.props.surfBreak.yPos}/>
@@ -101,7 +115,12 @@ class SurfBreakPage extends Component {
             <p key={i}>{this.surfBreakPage.description} {i}</p>
           ))}
         </Container>
-        <SurfBreakMembers members={this.surfBreakPage.followersIds} pageId={this.surfBreakPage._id}/>
+        <SurfBreakMembers members={this.surfBreakPage.followersIds}/>
+        <Container>
+          <Button style={blueTextStyle} onClick={this.addUserToLiked(Meteor.user().username)}>
+            Like this break
+          </Button>
+        </Container>
       </div>
     );
   }

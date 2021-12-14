@@ -13,7 +13,7 @@ class Landing extends React.Component {
         paddingTop: '300px',
         paddingRight: '400px',
       }}>
-        <Grid id='landing-page' verticalAlign='center' textAlign='center' container>
+        <Grid id='landing-page' textAlign='center' container>
 
           <Grid.Column width={7} floated = 'left'>
             <Header style={landingHeader} as='h1' inverted>Wave Cache</Header>

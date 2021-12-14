@@ -1,21 +1,17 @@
 import React from 'react';
-import { Button, Container, Segment } from 'semantic-ui-react';
-import { Meteor } from 'meteor/meteor';
-import _ from 'underscore';
+import { Container, Segment } from 'semantic-ui-react';
 import PropTypes from 'prop-types';
-import { SurfBreakData } from '../../../api/surfbreak/SurfBreakData';
 import { blueColor, blueTextStyle, subMenuStyle } from '../../layouts/style';
 
 class SurfBreakMembers extends React.Component {
 
-  addUserToLiked(user) {
-    const surfBreak = SurfBreakData.collection.findOne(this.documentID);
-    if (_.contains(surfBreak.followersIds, user) === true) {
-      surfBreak.followersIds = _.reject(surfBreak.followersIds, function (userID) { return userID === user; });
-    } else {
-      surfBreak.followersIds.push(user);
-    }
-  }
+  /* addUserToLiked(user) {
+     const newMembers = this.props.members;
+    newMembers.push(user);
+    SurfBreakData.collection.update(this.props.surfBreakId, { $set: { followersIds: newMembers } }, (error) => (error ?
+      swal('Error', error.message, 'error') :
+      swal('Success', 'Item updated successfully', 'success')));
+  } */
 
   render() {
 
@@ -34,9 +30,6 @@ class SurfBreakMembers extends React.Component {
               ))
             }
           </Segment.Group>
-          <Button style={blueTextStyle} Active onClick={this.addUserToLiked(Meteor.user().username)}>
-            Like this break
-          </Button>
         </Segment.Group>
       </Container>
     );
