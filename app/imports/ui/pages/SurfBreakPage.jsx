@@ -30,13 +30,14 @@ class SurfBreakPage extends Component {
   }
 
   addUserToLiked(user) {
-    const newMembers = this.props.surfBreak.followersIds;
-    newMembers.push(user);
-    if (_.findIndex(this.props.surfBreak.followersIds, user) !== -1) {
-      SurfBreakData.collection.update(this.props.surfBreak._id, { $set: { followersIds: _.remove(this.props.surfBreak.followersIds, function (userID) { return userID === user; }) } }, (error) => (error ?
+    let newMembers = this.props.surfBreak.followersIds;
+    if (this.props.surfBreak.followersIds.includes(user)) {
+      newMembers = _.remove(this.props.surfBreak.followersIds, (userID) => userID === user);
+      SurfBreakData.collection.update(this.props.surfBreak._id, { $set: { followersIds: newMembers } }, (error) => (error ?
         swal('Error', error.message, 'error') :
         swal('Success', 'Item updated successfully', 'success')));
     } else {
+      newMembers.push(user);
       SurfBreakData.collection.update(this.props.surfBreak._id, { $set: { followersIds: newMembers } }, (error) => (error ?
         swal('Error', error.message, 'error') :
         swal('Success', 'Item updated successfully', 'success')));
