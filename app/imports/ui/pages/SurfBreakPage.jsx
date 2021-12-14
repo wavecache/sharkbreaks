@@ -21,24 +21,25 @@ import { SurfBreakData } from '../../api/surfbreak/SurfBreakData';
 
 class SurfBreakPage extends Component {
 
-  state = {
-    menuFixed: false,
-    overlayFixed: false,
+  constructor(props) {
+    super(props);
+    this.state = {
+      menuFixed: false,
+      overlayFixed: false,
+    };
   }
 
-  addUserToLiked = (user) => {
+  addUserToLiked(user) {
     const newMembers = this.props.surfBreak.followersIds;
     newMembers.push(user);
     if (_.findIndex(this.props.surfBreak.followersIds, user) !== -1) {
       SurfBreakData.collection.update(this.props.surfBreak._id, { $set: { followersIds: _.remove(this.props.surfBreak.followersIds, function (userID) { return userID === user; }) } }, (error) => (error ?
         swal('Error', error.message, 'error') :
         swal('Success', 'Item updated successfully', 'success')));
-      this.setState({ following: false });
     } else {
       SurfBreakData.collection.update(this.props.surfBreak._id, { $set: { followersIds: newMembers } }, (error) => (error ?
         swal('Error', error.message, 'error') :
         swal('Success', 'Item updated successfully', 'success')));
-      this.setState({ following: true });
     }
   }
 
@@ -59,7 +60,6 @@ class SurfBreakPage extends Component {
   unStickTopMenu = () => this.setState({ menuFixed: false })
 
   render() {
-    console.log(this.props.ready);
     return (this.props.ready) ? this.renderPage() : <Loader active>Getting data</Loader>;
   }
 
@@ -124,7 +124,7 @@ class SurfBreakPage extends Component {
         </Container>
         <SurfBreakMembers members={this.props.surfBreak.followersIds}/>
         <Container>
-          <Button style={blueTextStyle} onClick={this.addUserToLiked(Meteor.user().username)}>
+          <Button style={blueTextStyle} onClick={() => this.addUserToLiked(Meteor.user().username)}>
             Like this break
           </Button>
         </Container>
