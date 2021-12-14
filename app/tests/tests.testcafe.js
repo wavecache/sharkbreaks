@@ -79,3 +79,13 @@ test('Deleting a surf break', async (testController) => {
   const afterDelete = await Selector('.ui .card').count;
   await testController.expect(afterDelete + 1).eql(beforeDelete);
 });
+
+test('Filter surf breaks', async (testController) => {
+  await testController.click('#surfBreaks-page-navBar');
+  await surfBreaksPage.isDisplayed(testController);
+  const cardCount = await Selector('.ui .card').count;
+  await testController.typeText('#filter-breaks', 'P');
+  const newCardCount = await Selector('.ui .card').count;
+  await testController.expect(newCardCount).gte(1);
+  await testController.expect(newCardCount).lte(cardCount - 1);
+});

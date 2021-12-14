@@ -8,6 +8,7 @@ import {
   Image,
   Menu,
   Visibility,
+  Loader,
 } from 'semantic-ui-react';
 import { Meteor } from 'meteor/meteor';
 import { withTracker } from 'meteor/react-meteor-data';
@@ -19,8 +20,6 @@ import SurfBreakMembers from '../components/SurfBreakPage/SurfBreakMembers';
 import { SurfBreakData } from '../../api/surfbreak/SurfBreakData';
 
 class SurfBreakPage extends Component {
-
-  surfBreakPage = this.props.surfBreak;
 
   state = {
     menuFixed: false,
@@ -58,6 +57,12 @@ class SurfBreakPage extends Component {
   unStickTopMenu = () => this.setState({ menuFixed: false })
 
   render() {
+    console.log(this.props.ready);
+    return (this.props.ready) ? this.renderPage() : <Loader active>Getting data</Loader>;
+  }
+
+  renderPage() {
+
     const { overlayFixed, overlayRect } = this.state;
 
     return (
@@ -65,7 +70,7 @@ class SurfBreakPage extends Component {
         <Container id='surfBreakPage-page'>
           <Grid columns={2} >
             <GridColumn style={centerStyle}>
-              <Image src={this.surfBreakPage.image} size='large' rounded={true}/>
+              <Image src={this.props.surfBreak.image} size='large' rounded={true}/>
             </GridColumn>
             <GridColumn style={centerStyle}>
               <SurfBreakConditions lat={this.props.surfBreak.xPos} lon={this.props.surfBreak.yPos}/>
@@ -74,7 +79,7 @@ class SurfBreakPage extends Component {
         </Container>
 
         <Container text style={{ marginTop: '2em', marginBottom: '2em' }}>
-          <Header as='h1' style={ blueTextStyle }>{this.surfBreakPage.name}</Header>
+          <Header as='h1' style={ blueTextStyle }>{this.props.surfBreak.name}</Header>
         </Container>
 
         <Container text>
@@ -112,7 +117,7 @@ class SurfBreakPage extends Component {
           </div>
 
           {_.times(3, (i) => (
-            <p key={i}>{this.surfBreakPage.description} {i}</p>
+            <p key={i}>{this.props.surfBreak.description} {i}</p>
           ))}
         </Container>
         <SurfBreakMembers members={this.surfBreakPage.followersIds}/>
@@ -137,19 +142,20 @@ SurfBreakPage.propTypes = {
     xPos: PropTypes.string,
     yPos: PropTypes.string,
     _id: PropTypes.string,
-  }).isRequired,
+  }),
+  ready: PropTypes.bool.isRequired,
 };
 
 // withTracker connects Meteor data to React components. https://guide.meteor.com/react.html#using-withTracker
 export default withTracker(({ match }) => {
   // Get the documentID from the URL field. See imports/ui/layouts/App.jsx for the route containing :_id.
-  const documentId = match.params._id;
-  // Get access to Stuff documents.
+  const breakId = match.params._id;
   const subscription = Meteor.subscribe(SurfBreakData.userPublicationName);
   // Determine if the subscription is ready
   const ready = subscription.ready();
   // Get the document
-  const surfBreak = SurfBreakData.collection.findOne(documentId);
+  const surfBreak = SurfBreakData.collection.findOne({ _id: breakId });
+
   return {
     surfBreak,
     ready,
