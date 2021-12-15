@@ -11,15 +11,6 @@ function addSurfBreak(data) {
   SurfBreakData.collection.insert(data);
 }
 
-// Initialize the StuffsCollection if empty.
-if (SurfBreakData.collection.find().count() === 0) {
-  // noinspection JSUnresolvedVariable
-  if (Meteor.settings.defaultSurfBreaks) {
-    console.log('Creating default data.');
-    Meteor.settings.defaultSurfBreaks.map(data => addSurfBreak(data));
-  }
-}
-
 function addProfile(profile) {
   console.log(`Adding Profile ${profile.lastName}`);
   Profiles.collection.insert(profile);
