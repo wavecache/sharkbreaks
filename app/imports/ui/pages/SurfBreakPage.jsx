@@ -42,7 +42,6 @@ class SurfBreakPage extends Component {
   unStickTopMenu = () => this.setState({ menuFixed: false })
 
   render() {
-    console.log(this.props.ready);
     return (this.props.ready) ? this.renderPage() : <Loader active>Getting data</Loader>;
   }
 
@@ -101,9 +100,8 @@ class SurfBreakPage extends Component {
             </Menu>
           </div>
 
-          {_.times(3, (i) => (
-            <p key={i}>{this.props.surfBreak.description} {i}</p>
-          ))}
+          <p>{this.props.surfBreak.description}</p>
+
         </Container>
         <SurfBreakMembers members={membersMockArray}/>
       </div>
