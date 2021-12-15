@@ -6,7 +6,7 @@
       "image": "https://lushpalm.com/wp-content/uploads/2017/11/oahu-surf-spots-pipeline.webp",
       "summary": "If you are on a quest to find the legendary Banzai Pipeline Hawaii, known around the world  for its perfect barreling waves, then head to Ehukai Beach Park on the North Shore Oahu.",
       "description": "If you are on a quest to find the legendary Banzai Pipeline Hawaii, known around the world  for its perfect barreling waves, then head to Ehukai Beach Park on the North Shore Oahu.If you are on a quest to find the legendary Banzai Pipeline Hawaii, known around the world  for its perfect barreling waves, then head to Ehukai Beach Park on the North Shore Oahu.If you are on a quest to find the legendary Banzai Pipeline Hawaii, known around the world  for its perfect barreling waves, then head to Ehukai Beach Park on the North Shore Oahu.\"",
-      "address": "ess: '59-337 Ke Nui Rd, Haleiwa, HI 96712",
+      "address": "59-337 Ke Nui Rd, Haleiwa, HI 96712",
       "creatorUsername": "admin@foo.com",
       "xPos": "21.6116145",
       "yPos": "-158.1464932",
@@ -118,16 +118,185 @@
     },
 
     {
-      "name": "Log Cabins",
+      "name": "Gas Chambers",
       "followersIds": [],
-      "image": "https://i0.heartyhosting.com/www.surfer.com/wp-content/uploads/2015/07/12414_BLW_0574-copy.jpg?resize=1200%2C630",
-      "summary": "Located on Oahu's North Shore next to Log Cabins, Kaena Point (see more photos, view panorama) is mainly known among the local surf crowd for being a good surf spot",
-      "description": "Fetched from https://www.to-hawaii.com/oahu/beaches/ Located on Oahu's North Shore next to Haleiwa Beach Park, Log Cabins (see more photos, view panorama) is mainly known among the local surf crowd for being a good surf spot.It can be a good spot for beginners when the waves aren't too high. Surfing lessons take place here. But when the surf is way up, it's for experts only. Most surfers enter the ocean from a small sandy beach before reaching Pua'ena Point.\n\nThe beach is a nice place for a picnic (there is some shade), and on the weekends local families come here with their children. The nearshore ocean bottom is a mixture of rocks and small sand patches. If you walk further along the shoreline (about three minutes), you'll reach Pua'ena Point (a rocky outcropping). Around the corner is Police Beach, where episodes of the popular TV series LOST were filmed.",
+      "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ5kWJWaUquoUl6DGcUBgo1WwXYOXDAZRjAJw&usqp=CAU",
+      "summary": "Gas Chambers is a fast, hollow and shallow point break type of wave. It is a high performance wave that is well-suited for the average to pro level surfer.",
+      "description": "Fetched from https://en.wikipedia.org/wiki/Gas_Chambers# Gas Chambers is a beach located on the North Shore of Oahu about a 1/4 of a mile north of Ehukai Beach Park and 1/2 a mile west of Sunset Beach Park",
       "address": "North Shore",
       "creatorUsername": "admin@foo.com",
-      "xPos": "21.601662",
-      "yPos": "-158.104661",
+      "xPos": "21.6701",
+      "yPos": "-158.0463",
       "_id": "adminLogCabins"
+    },
+
+    {
+      "name": "Rocky Point",
+      "followersIds": [],
+      "image": "https://spot-thumbnails.cdn-surfline.com/spots/5842041f4e65fad6a7708895/5842041f4e65fad6a7708895_1500.jpg",
+      "summary": "Rocky's is generally divided into two sections known as Rocky Rights and Rocky Lefts, but within those are several different takeoff points in different conditions. ",
+      "description": "Rocky Point is a flat, curving reef that is about 250-yards wide and perhaps the most consistent wave on the North Shore, breaking up to double overhead-plus on nearly any winter swell direction. Rocky's somehow satisfies even its most frightening crowds with a range of waves -- from soft walls to clean barrels to crazy air sections.",
+      "address": "North Shore",
+      "creatorUsername": "admin@foo.com",
+      "xPos": "21.6702",
+      "yPos": "-158.0464",
+      "_id": "adminRockyPoint"
+    },
+
+    {
+      "name": "Rocky Point Lefts",
+      "followersIds": [],
+      "image": "https://spot-thumbnails.cdn-surfline.com/spots/5842041f4e65fad6a7708895/5842041f4e65fad6a7708895_1500.jpg",
+      "summary": "Rocky Point Lefts in Oahu is an exposed beach and reef break that has very consistent surf, although summer tends to be mostly flat.",
+      "description": "Fetched from https://surfing-waves.com/ One of the most consistent waves on the North Shore. Best from chest to overhead. Gets busy during the winter swells.",
+      "address": "North Shore",
+      "creatorUsername": "admin@foo.com",
+      "xPos": "21.67",
+      "yPos": "-158.0478",
+      "_id": "adminRPLefts"
+    },
+
+    {
+      "name": "Backdoor",
+      "followersIds": [],
+      "image": "data:image/jpeg;base64,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",
+      "summary": "Backdoor. Sometimes Backdoor Pipe, but usually just Backdoor. Same break, two names, and it occurs to me that this is odd, possibly unique.",
+      "description": "Fetched from https://www.surfline.com/ Backdoor was somewhat ignored during Pipeline's first golden days in the 1970s. It makes you wonder how many heaving barrels roared right off the peak before everyone kind of clicked on it. The wave relies on a slight breaking up of swell lines from the northwest (shorter to mid period swells are best, of a swell combo) and a thin channel between the Pipe reef and Off-The-Wall. The broken swell allows a tapering wall, which hits square on the shallowest part of first reef and creates an intense and very hollow, deep tube",
+      "address": "59-337 Ke Nui Rd, Haleiwa, HI 96712",
+      "creatorUsername": "admin@foo.com",
+      "xPos": "21.6116145",
+      "yPos": "-158.1464932",
+      "_id": "adminBackdoor"
+    },
+
+    {
+      "name": "Off the Wall",
+      "followersIds": [],
+      "image": "https://i.pinimg.com/originals/13/7f/04/137f04dce7b8094efa0a7f02f2bc7b2a.jpg",
+      "summary": "As close to a hoax as any famous wave of the past 30 years, Off-The-Wall (OTW) is a single slab of reef just to the west of Backdoor and Pipeline.",
+      "description": "Fetched from https://www.surfline.com/ OTW is separated from the Backdoor reef by a narrow, deep crevice, which blocks some swells from closing out across both breaks. The OTW reef is largely flat lava, with a mound of shallower reef near its northern edge. It is best in a slightly fractured, overhead NW swell. It's a wedging right, with some smaller lefts peeling back toward Backdoor. On precisely the right wave, OTW will produce a beautiful almond-shaped barrel; many waves will be caught and ridden to closeout point by the hopeful surfer before that ideal one is found.",
+      "address": "59-337 Ke Nui Rd, Haleiwa, HI 96712",
+      "creatorUsername": "admin@foo.com",
+      "xPos": "21.6116145",
+      "yPos": "-158.1464932",
+      "_id": "adminLogCabins"
+    },
+
+    {
+      "name": "Rockpile",
+      "followersIds": [],
+      "image": "data:image/jpeg;base64,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",
+      "summary": "Rockpile is located between Log Cabins and Off-The-Wall",
+      "description": "Fetched from https://www.surfline.com/ This spot offers a big, powerful left that is best on the more NW to WNW angled swells, and a right on the more northerly angled swells. During a more northerly angled swell, this spot is a magnet, pulling in more size than any spot around. During big swells, it's not uncommon for Kam Hwy to get washed out at this spot.",
+      "address": "North Shore",
+      "creatorUsername": "admin@foo.com",
+      "xPos": "21.6632",
+      "yPos": "-158.0546",
+      "_id": "adminRockpile"
+    },
+
+    {
+      "name": "Waimea Bay",
+      "followersIds": [],
+      "image": "http://www.theinertia.com/wp-content/uploads/2021/01/waimea.jpg",
+      "summary": "The birthplace of big wave surfing",
+      "description": "Fetched from https://www.surfline.com/ Rideable waves first begin to break when the surf climbs into the overhead to double overhead-plus zone on a section known as Pinballs -- a lumpy reef almost parallel with the tip of the Bay's north point that can be fun on clean NW swells with a light tradewind blowing. As the swell grows beyond 3-4 times overhead, waves begin to peak and break just inside a big boil 80 yards out past Pinballs, providing a drop, a fat shoulder and some reform shots further in. As the surf increases further, waves will starting breaking on the shallower regions of the true Waimea takeoff area ",
+      "address": "North Shore",
+      "creatorUsername": "admin@foo.com",
+      "xPos": "21.6402",
+      "yPos": "-158.065",
+      "_id": "adminWaimeaBay"
+    },
+
+    {
+      "name": "Chun's",
+      "followersIds": [],
+      "image": "https://cdn.shopify.com/s/files/1/0323/7068/8140/articles/ChunsScenic_Keoki_DSCF8641_1728x.jpg?v=1587590813",
+      "summary": "The surf site Chun’s Reef was named for John Chun, a former resident of Kawailoa",
+      "description": "Fetched from https://www.hawaiibeachsafety.com/ Chun’s Reef Support Park is a small undeveloped parcel of land owned by the City and County of Honolulu on the inland side of Kamehameha Highway at Chun’s Reef. Surfers cross the wide sand beach fronting the park to reach several surf sites besides Chun’s Reef, including Pidleys and Jocko’s",
+      "address": "North Shore",
+      "creatorUsername": "admin@foo.com",
+      "xPos": "21.6225",
+      "yPos": "-158.0829",
+      "_id": "adminchuns"
+    },
+
+    {
+      "name": "Jockos",
+      "followersIds": [],
+      "image": "https://i0.heartyhosting.com/www.surfer.com/wp-content/uploads/2015/07/12414_BLW_0574-copy.jpg?resize=1200%2C630",
+      "summary": "Named after North Shore legend Jock Sutherland",
+      "description": "Jocko's is a worthy left reef pointbreak, offering up a relatively easy takeoff compared to its higher profile North Shore counterparts and long rides. But don't be fooled into complacency -- when a big WNW-NW swell fills in, Jocko's transforms into a proper, heavy left barrel. Also, at this size, the current here is notoriously vicious",
+      "address": "North Shore",
+      "creatorUsername": "admin@foo.com",
+      "xPos": "21.6225",
+      "yPos": "-158.0829",
+      "_id": "adminLogJockos"
+    },
+
+    {
+      "name": "Jockos",
+      "followersIds": [],
+      "image": "https://i0.heartyhosting.com/www.surfer.com/wp-content/uploads/2015/07/12414_BLW_0574-copy.jpg?resize=1200%2C630",
+      "summary": "Named after North Shore legend Jock Sutherland",
+      "description": "",
+      "address": "North Shore",
+      "creatorUsername": "admin@foo.com",
+      "xPos": "21.6225",
+      "yPos": "-158.0829",
+      "_id": "adminLogJockos"
+    },
+
+    {
+      "name": "Jockos",
+      "followersIds": [],
+      "image": "https://i0.heartyhosting.com/www.surfer.com/wp-content/uploads/2015/07/12414_BLW_0574-copy.jpg?resize=1200%2C630",
+      "summary": "Named after North Shore legend Jock Sutherland",
+      "description": "",
+      "address": "North Shore",
+      "creatorUsername": "admin@foo.com",
+      "xPos": "21.6225",
+      "yPos": "-158.0829",
+      "_id": "adminLogJockos"
+    },
+
+    {
+      "name": "Jockos",
+      "followersIds": [],
+      "image": "https://i0.heartyhosting.com/www.surfer.com/wp-content/uploads/2015/07/12414_BLW_0574-copy.jpg?resize=1200%2C630",
+      "summary": "Named after North Shore legend Jock Sutherland",
+      "description": "",
+      "address": "North Shore",
+      "creatorUsername": "admin@foo.com",
+      "xPos": "21.6225",
+      "yPos": "-158.0829",
+      "_id": "adminLogJockos"
+    },
+
+    {
+      "name": "Jockos",
+      "followersIds": [],
+      "image": "https://i0.heartyhosting.com/www.surfer.com/wp-content/uploads/2015/07/12414_BLW_0574-copy.jpg?resize=1200%2C630",
+      "summary": "Named after North Shore legend Jock Sutherland",
+      "description": "",
+      "address": "North Shore",
+      "creatorUsername": "admin@foo.com",
+      "xPos": "21.6225",
+      "yPos": "-158.0829",
+      "_id": "adminLogJockos"
+    },
+
+    {
+      "name": "Jockos",
+      "followersIds": [],
+      "image": "https://i0.heartyhosting.com/www.surfer.com/wp-content/uploads/2015/07/12414_BLW_0574-copy.jpg?resize=1200%2C630",
+      "summary": "Named after North Shore legend Jock Sutherland",
+      "description": "",
+      "address": "North Shore",
+      "creatorUsername": "admin@foo.com",
+      "xPos": "21.6225",
+      "yPos": "-158.0829",
+      "_id": "adminLogJockos"
     }
   ]
 }
