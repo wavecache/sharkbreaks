@@ -14,7 +14,6 @@ class SurfBreaks extends React.Component {
   constructor(props) {
     super(props);
     this.state = { currentSurfBreaks: [] };
-    this.initialValue = true;
   }
 
   filterSurfBreaks(surfBreaksSearch, allSurfBreaks) {
@@ -23,10 +22,13 @@ class SurfBreaks extends React.Component {
       return;
     }
     this.setState(() => {
-      const filteredBreaks = _.filter(allSurfBreaks, (surfBreak) => {
+      let filteredBreaks = _.filter(allSurfBreaks, (surfBreak) => {
         const searchLength = surfBreaksSearch.length;
         return surfBreak.name.substr(0, searchLength) === surfBreaksSearch;
       });
+      if (filteredBreaks === []) {
+        filteredBreaks = this.props.surfBreaks;
+      }
       return { currentSurfBreaks: filteredBreaks };
     });
   }
@@ -38,8 +40,7 @@ class SurfBreaks extends React.Component {
 
   renderPage() {
     let renderSurfBreaks = [];
-    if (this.state.currentSurfBreaks.length === 0 && this.initialValue) {
-      this.initialValue = false;
+    if (this.state.currentSurfBreaks.length === 0) {
       renderSurfBreaks = this.props.surfBreaks;
     } else {
       renderSurfBreaks = this.state.currentSurfBreaks;
