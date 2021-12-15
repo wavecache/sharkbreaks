@@ -22,8 +22,10 @@ class ListProfile extends React.Component {
       <Container fluid>
         <Header as="h2" textAlign="center" style={blueTextStyle}>Your Profile</Header>
         <Card.Group>
-          { /* this.props.profiles.map((profile, index) => <Profile key={index} profile={profile}/>) */ }
           {profiles.map((profile, index) => <Profile key={index} profile={profile}/>)}
+        </Card.Group>
+        <Card.Group>
+          { /* this.props.profiles.map((profile, index) => <Profile key={index} profile={profile}/>) */ }
         </Card.Group>
       </Container>
     );
@@ -41,12 +43,9 @@ export default withTracker(() => {
   // Get access to Stuff documents.
   const subscription = Meteor.subscribe(Profiles.userPublicationName);
   // Determine if the subscription is ready
-  const ready = subscription.ready();
   // Get the Stuff documents
-  const profile = Profiles.collection.find({}).fetch();
   return {
-    currentUser: Meteor.user() ? Meteor.user().username : '',
-    profile,
-    ready,
+    profile: Profiles.collection.find({}).fetch(),
+    ready: subscription.ready(),
   };
 })(ListProfile);
