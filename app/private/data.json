@@ -235,42 +235,107 @@
     },
 
     {
-      "name": "Jockos",
+      "name": "Turtle Bay",
       "followersIds": [],
-      "image": "https://i0.heartyhosting.com/www.surfer.com/wp-content/uploads/2015/07/12414_BLW_0574-copy.jpg?resize=1200%2C630",
-      "summary": "Named after North Shore legend Jock Sutherland",
-      "description": "",
-      "address": "North Shore",
+      "image": "https://www.turtlebayresort.com/sites/default/files/styles/footer_bg_768_441/public/2021-11/footer-image-alt.jpeg?itok=I4vGhEHU",
+      "summary": "Turtle Bay East and West are Located at Turtle Bay Resort on North Shore Oahu",
+      "description": "It used to be a haven from the North Shore crush, but during the winter months these days, the right breaking in the shadow of the colossus Turtle Bay Resort on the eastern edge of Kawela Bay is a bonafide surfing hotspot. Though considered mellow by North Shore standards, Turtle Bay West can get really good on a proper N swell, even offering up some worthy barrel sections. Meanwhile, around the peninsula and on the east side of the resort, Turtle Bay East turns on during a proper N or NW swell",
+      "address": "57-091 Kamehameha Hwy, Kahuku, HI 96731",
       "creatorUsername": "admin@foo.com",
-      "xPos": "21.6225",
-      "yPos": "-158.0829",
-      "_id": "adminLogJockos"
+      "xPos": "21.7049",
+      "yPos": "-158.0002",
+      "_id": "adminLogTurtleBay"
     },
 
     {
-      "name": "Jockos",
+      "name": "Makaha",
       "followersIds": [],
-      "image": "https://i0.heartyhosting.com/www.surfer.com/wp-content/uploads/2015/07/12414_BLW_0574-copy.jpg?resize=1200%2C630",
-      "summary": "Named after North Shore legend Jock Sutherland",
-      "description": "",
-      "address": "North Shore",
+      "image": "https://www.surf-forecast.com/system/images/18975/large/Makaha.jpg?1513577744",
+      "summary": "Makaha in Oahu is an exposed beach and reef break that has reliable surf and can work at any time of the year.",
+      "description": "Makaha is a reer and beach break that is well exposed to westerly swells, providing consistent surf. The waves break left and right over the reefs and on the beach breaks.\nThe break can hold huge swells, during the winter months the surf can reach 25 feet on the point, providing some of the most challenging surfing in the whole of Hawaii.\nIt does get crowded here so take care.",
+      "address": "84-369 Farrington Hwy, Waianae, HI",
       "creatorUsername": "admin@foo.com",
-      "xPos": "21.6225",
-      "yPos": "-158.0829",
-      "_id": "adminLogJockos"
+      "xPos": "21.477",
+      "yPos": "-158.2222",
+      "_id": "adminLogMakaha"
     },
 
     {
-      "name": "Jockos",
+      "name": "Tracks",
       "followersIds": [],
       "image": "https://i0.heartyhosting.com/www.surfer.com/wp-content/uploads/2015/07/12414_BLW_0574-copy.jpg?resize=1200%2C630",
-      "summary": "Named after North Shore legend Jock Sutherland",
-      "description": "",
-      "address": "North Shore",
+      "summary": "Find tracks beach just north of the power plant. Best throughout the winter on a west or north swell. Best at any size up to head high.\nNice beach.",
+      "description": "Tracks(Nanakuli) in Oahu is an exposed beach and reef break that has consistent surf and can work at any time of the year. Offshore winds are from the northeast. Groundswells more frequent than windswells and the ideal swell angle is from the west. A choice of left and right reefs. Sometimes crowded. Take care of sharks",
+      "address": "92-201 Farrington Hwy, Kapolei, HI",
       "creatorUsername": "admin@foo.com",
-      "xPos": "21.6225",
-      "yPos": "-158.0829",
-      "_id": "adminLogJockos"
+      "xPos": "21.3654",
+      "yPos": "-158.1366",
+      "_id": "adminLogTracks"
+    },
+
+    {
+      "name": "Yokohama Bay",
+      "followersIds": [],
+      "image": "https://www.surf-forecast.com/system/images/19544/medium/Yokohama-Bay.jpg?1525773590",
+      "summary": "If fellow West Side spot Makaha is classic Oahu in the historical sense, Yokohama Bay, just fifteen minutes up Farrington Highway, is classic Oahu in the natural sense.",
+      "description": "Yokohama Bay in Oahu is an exposed beach break that has very consistent surf and works all around the year. Offshore winds are from the east northeast. Clean groundswells prevail and the ideal swell direction is from the west northwest. A left hand reef break. When the surf is up, it can get quite busy in the water. Beware of rips, rocks and locals.",
+      "address": "93 Farrington Hwy, Waianae, HI",
+      "creatorUsername": "admin@foo.com",
+      "xPos": "21.5077",
+      "yPos": "-158.2325",
+      "_id": "adminLogYokohama"
+    },
+
+    {
+      "name": "Ma'ili",
+      "followersIds": [],
+      "image": "https://ec2-im-1.msw.ms/md/image.php?id=247691&type=PHOTOLAB&resize_type=STREAM_MEDIUM_SQUARE&fromS3",
+      "summary": "There are a couple of fun wave options on the 40-acre Ma'ili Beach Park. The two prominent breaks are called Green Lanterns and Tumbleland",
+      "description": "Ma'ili Point in Oahu is an exposed reef and point break that usually has waves and can work at any time of the year. Offshore winds are from the east northeast. Clean groundswells prevail and the ideal swell direction is from the west northwest. A left hand reef break. A fairly popular wave that can sometimes get crowded Beware of sharks and rocks.",
+      "address": "Waianae, HI",
+      "creatorUsername": "admin@foo.com",
+      "xPos": "21.4211",
+      "yPos": "-158.1812",
+      "_id": "adminLogMaili"
+    },
+
+    {
+      "name": "Barber's Point",
+      "followersIds": [],
+      "image": "https://ec2-im-1.msw.ms/md/image.php?id=388463&type=PHOTOLAB&resize_type=STREAM_MEDIUM_SQUARE&fromS3",
+      "summary": "Good surf spot for beginners, White Sands is a very nice break, with easy waves. Safe swimming for keiki",
+      "description": "Barbers Point picks up Southern Hemi swells from all directions, and it can also absorb Northern Hemi energy that has a lot of W in it (between 390-329 degrees) or has snuck under Ni'ihau and Kauai (under 285 degrees). There is a point wave that breaks directly out beyond the lighthouse, but there are a variety of peaks spread out down the beach that offer good surf, depending on swell direction. Due to Barbers Point's exposed location, wind is often a factor.",
+      "address": "Kapolei, HI",
+      "creatorUsername": "admin@foo.com",
+      "xPos": "21.2941",
+      "yPos": "-158.1067",
+      "_id": "adminLogBarbersPoint"
+    },
+
+    {
+      "name": "Ewa Beach",
+      "followersIds": [],
+      "image": "https://ec2-im-1.msw.ms/md/image.php?id=390059&type=PHOTOLAB&resize_type=STREAM_MEDIUM_SQUARE&fromS3",
+      "summary": "Ewa Beach is located just west of Pearl Harbor and offers up a variety of smaller wave options, from lefts to rights, barrels to shoulders. Like Barbers Point eight miles to the west, Ewa Beach is wind-sensitive.",
+      "description": "Ewa Beach Park in Oahu is an exposed reef break that has quite reliable surf and can work at any time of the year. The best wind direction is from the north northwest. Groundswells and windswells are equally likely and the ideal swell direction is from the south southeast. Reef breaks provide lefts and rights. It's sometimes crowded here. Watch out for rocks.",
+      "address": "91-050 Fort Weaver Rd. Ewa Beach, HI 96706",
+      "creatorUsername": "admin@foo.com",
+      "xPos": "21.3103",
+      "yPos": "-158.002",
+      "_id": "adminLogEwa"
+    },
+
+    {
+      "name": "Sand Island",
+      "followersIds": [],
+      "image": "https://d1li3p7kp8c46b.cloudfront.net/14000/13018.900.9e3e7c31ee.jpg",
+      "summary": "Despite its proximity to Town, Sand Island is often one of the best places to beat the crowds -- seems almost hidden in plain sight. There are a few different peaks to choose from that offer both rights and lefts. Water quality is often suspect with harbor entrances on each side, one of which leads to a large industrial harbor. This spot is known for shark sightings as well, following commercial fishing boats going into the harbor.",
+      "description": "Sand Island is an arid, urban coastal park which offers picnicking, camping, walking, shore fishing and board surfing. It fronts a small sand beach and has good views of Honolulu Harbor and ocean sunsets.",
+      "address": "1499 Sand Island Pkwy Honolulu",
+      "creatorUsername": "admin@foo.com",
+      "xPos": "21.3018",
+      "yPos": "-157.9163",
+      "_id": "adminLogSandIsland"
     },
 
     {
