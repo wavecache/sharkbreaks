@@ -1,6 +1,7 @@
 import _ from 'lodash';
 import React, { Component } from 'react';
 import {
+  Button,
   Container, Grid, GridColumn,
   Header,
   Icon,
@@ -12,17 +13,35 @@ import {
 import { Meteor } from 'meteor/meteor';
 import { withTracker } from 'meteor/react-meteor-data';
 import PropTypes from 'prop-types';
+import swal from 'sweetalert';
 import { blueTextStyle, centerStyle, fixedOverlayMenuStyle, fixedOverlayStyle, overlayMenuStyle, overlayStyle } from '../layouts/style';
-import { membersMockArray } from '../../api/MockObjects';
 import SurfBreakConditions from '../components/SurfBreakPage/SurfBreakConditions';
 import SurfBreakMembers from '../components/SurfBreakPage/SurfBreakMembers';
 import { SurfBreakData } from '../../api/surfbreak/SurfBreakData';
 
 class SurfBreakPage extends Component {
 
-  state = {
-    menuFixed: false,
-    overlayFixed: false,
+  constructor(props) {
+    super(props);
+    this.state = {
+      menuFixed: false,
+      overlayFixed: false,
+    };
+  }
+
+  addUserToLiked(user) {
+    let newMembers = this.props.surfBreak.followersIds;
+    if (this.props.surfBreak.followersIds.includes(user)) {
+      newMembers = _.remove(this.props.surfBreak.followersIds, (userID) => userID === user);
+      SurfBreakData.collection.update(this.props.surfBreak._id, { $set: { followersIds: newMembers } }, (error) => (error ?
+        swal('Error', error.message, 'error') :
+        swal('Success', 'Item updated successfully', 'success')));
+    } else {
+      newMembers.push(user);
+      SurfBreakData.collection.update(this.props.surfBreak._id, { $set: { followersIds: newMembers } }, (error) => (error ?
+        swal('Error', error.message, 'error') :
+        swal('Success', 'Item updated successfully', 'success')));
+    }
   }
 
   handleOverlayRef = (c) => {
@@ -103,7 +122,12 @@ class SurfBreakPage extends Component {
           <p>{this.props.surfBreak.description}</p>
 
         </Container>
-        <SurfBreakMembers members={membersMockArray}/>
+        <SurfBreakMembers members={this.props.surfBreak.followersIds}/>
+        <Container>
+          <Button style={blueTextStyle} onClick={() => this.addUserToLiked(Meteor.user().username)}>
+            Like this break
+          </Button>
+        </Container>
       </div>
     );
   }

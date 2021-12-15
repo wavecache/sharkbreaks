@@ -1,9 +1,17 @@
 import React from 'react';
-import { Button, Container, Segment } from 'semantic-ui-react';
+import { Container, Segment } from 'semantic-ui-react';
 import PropTypes from 'prop-types';
 import { blueColor, blueTextStyle, subMenuStyle } from '../../layouts/style';
 
 class SurfBreakMembers extends React.Component {
+
+  /* addUserToLiked(user) {
+     const newMembers = this.props.members;
+    newMembers.push(user);
+    SurfBreakData.collection.update(this.props.surfBreakId, { $set: { followersIds: newMembers } }, (error) => (error ?
+      swal('Error', error.message, 'error') :
+      swal('Success', 'Item updated successfully', 'success')));
+  } */
 
   render() {
 
@@ -22,9 +30,6 @@ class SurfBreakMembers extends React.Component {
               ))
             }
           </Segment.Group>
-          <Button style={blueTextStyle}>
-            Like this break
-          </Button>
         </Segment.Group>
       </Container>
     );
