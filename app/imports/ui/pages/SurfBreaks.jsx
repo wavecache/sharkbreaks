@@ -24,7 +24,7 @@ class SurfBreaks extends React.Component {
     this.setState(() => {
       let filteredBreaks = _.filter(allSurfBreaks, (surfBreak) => {
         const searchLength = surfBreaksSearch.length;
-        return surfBreak.name.substr(0, searchLength) === surfBreaksSearch;
+        return surfBreak.name.substr(0, searchLength).toLowerCase() === surfBreaksSearch.toLowerCase();
       });
       if (filteredBreaks === []) {
         filteredBreaks = this.props.surfBreaks;
