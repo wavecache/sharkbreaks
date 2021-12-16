@@ -17,7 +17,6 @@ export default class ListFriends extends React.Component {
       <Container>
         <Header as="h2" textAlign="center" style={blueTextStyle}>Friends</Header>
         <Card.Group>
-          {contacts.map((friend, index) => <Friend key={index} friend={friend}/>)}
         </Card.Group>
       </Container>
     );
